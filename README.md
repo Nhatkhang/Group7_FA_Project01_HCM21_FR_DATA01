@@ -1,7 +1,7 @@
 # Decsription of this project
 **Business Question**: *Social Media	- User behavior analysis (based on engagement, content, user's personnal information…) to maximize advertisement income*
 
-This project is initialize and create data pipeline to answer the aboved Bussiness Question
+This project is for initialize=ing and creating data pipeline to answer the aboved Bussiness Question
 # Working data
 
 Crawling data from e-commerce website: [Tiki.vn](https/tiki.vn)
