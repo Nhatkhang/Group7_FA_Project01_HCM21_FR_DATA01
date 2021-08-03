@@ -11,7 +11,7 @@ Crawling data from e-commerce website: [Tiki.vn](https/tiki.vn)
 1. Design data pipeline [here](./docs/design.png "Architecture")
 2. Normalize and Denormalize data
 3. Build data model
-4. Ingest data from flat file
+4. Ingest data from flat file csv
 5. Extract and Load into Data warehouse using SSIS
 6. Load data onto Cloud with the transformation
 7. Enrich data with different data sources
