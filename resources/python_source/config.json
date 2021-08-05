@@ -1,0 +1,8 @@
+{
+    "parameters": {
+        "customer_record": 100,
+        "product_record": 500,
+        "ads_header_record":50,
+        "ads_detail_record": 2000
+    }
+}
