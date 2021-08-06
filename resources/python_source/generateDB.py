@@ -13,6 +13,7 @@ current_path = os.getcwd()
 raw_path = current_path + '\Raw-Folder'
 work_path = current_path+'\Working-Folder'
 
+
 ## VARIABLES ##
 product_categories = ["Books", "Electronics", "Movies and TV", "CDs and Vinyl", 
                       "Clothing, Shoes and Jewelry","Home and Kitchen", "Kindle Store", 
@@ -33,12 +34,16 @@ product_id_list = []
 
 ## CREATE DATA FOR CUSTOMER ## 
 def createCustomerDB(CUSTOMER_RECORD):
-    with open(f'{raw_path}\CustomerData.csv', "a", newline='') as csvfile:
+    mode = checkmode(f'{raw_path}\CustomerData.csv')
+    with open(f'{raw_path}\CustomerData.csv', mode, newline='') as csvfile:
         fieldnames = ['Customer_ID', 'Full_Name', 'Gender', 'Email', 'Address', 'City', 'Region',
                       'Age', 'Income', 'Reg_Date', 'Modified_Date']
         start_date = date(year=2013, month=1, day=1)
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        if mode == "a":
+            print("Appending data ...")
+        else:
+            writer.writeheader()
         for i in range(CUSTOMER_RECORD):
             tmp_id = fake.random_int(1,92123)
             customer_id_list.append(tmp_id)
@@ -61,11 +66,15 @@ def createCustomerDB(CUSTOMER_RECORD):
 
 ## CREATE DATA FOR ADS HEADER ##
 def createAdsHeaderDB(ADS_HEADER_RECORD):
-    with open(f'{raw_path}\AdsHeaderData.csv', "a", newline='') as csvfile:
+    mode = checkmode(f'{raw_path}\AdsHeaderData.csv')
+    with open(f'{raw_path}\AdsHeaderData.csv', mode, newline='') as csvfile:
         fieldnames = ['Ads_ID', 'Ads_Name', 'Ads_Category', 'Platform', 'Standard_Cost', 
                       'Cost_Per_Click', 'Modified_Date']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        if mode == "a":
+            print("Appending data ...")
+        else:
+            writer.writeheader()
         for i in range(ADS_HEADER_RECORD):
             tmp_id = fake.random_int()
             ads_id_list.append(tmp_id)
@@ -84,11 +93,15 @@ def createAdsHeaderDB(ADS_HEADER_RECORD):
 
 ## CREATE DATA FOR PRODUCT ##
 def createProductDB(PRODUCT_RECORD):
-    with open(f'{raw_path}\ProductData.csv', "a", newline='') as csvfile:
+    mode = checkmode(f'{raw_path}\ProductData.csv')
+    with open(f'{raw_path}\ProductData.csv', mode, newline='') as csvfile:
         fieldnames = ['Product_ID', 'Product_Name', 'Product_Category', 'Color', 'Cost',
                       'Price', 'Modified_Date']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        if mode == "a":
+            print("Appending data ...")
+        else:
+            writer.writeheader()
         for i in range(PRODUCT_RECORD):
             tmp=round(random.uniform(100,5000),2) # max/min cost: 5000/100
             tmp_id = fake.random_int(1,30288)
@@ -108,12 +121,16 @@ def createProductDB(PRODUCT_RECORD):
 
 ## CREATE DATA FOR ADS DETAILS ##
 def createAdsDetailsDB(ADS_DETAILS_RECORD, START_DATE, END_DATE):
-    with open(f'{raw_path}\AdsDetailsData.csv', "a", newline='') as csvfile:
+    mode = checkmode(f'{raw_path}\AdsDetailsData.csv')
+    with open(f'{raw_path}\AdsDetailsData.csv', mode, newline='') as csvfile:
         fieldnames = ['Date', 'Customer_ID', 'Product_ID','Time_Spent_On_Ads', 'Ads_ID', 
                       'Daily_Internet_Usage', 'Number_ClicksAds', 'Number_ProductBought',
                       'Modified_Date']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+        if mode == "a":
+            print("Appending data ...")
+        else:
+            writer.writeheader()
         for i in range(ADS_DETAILS_RECORD):
             writer.writerow(
                 {
@@ -129,3 +146,10 @@ def createAdsDetailsDB(ADS_DETAILS_RECORD, START_DATE, END_DATE):
                 }
             )
     return
+
+def checkmode(filename):
+    if os.path.isfile(filename):
+        mode = "a"
+    else:
+        mode = "w"
+    return mode
