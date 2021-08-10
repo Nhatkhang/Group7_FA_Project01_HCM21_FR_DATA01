@@ -3,7 +3,7 @@ SET NOCOUNT ON
 --CREATE DATABASE
 CREATE DATABASE FA_Project01_DB;
 GO
-/********************CREATE DATABASE***************************/
+/********************CREATE SCHEMA***************************/
 USE [FA_Project01_DB];
 GO
 CREATE SCHEMA AdsBI;
@@ -51,15 +51,17 @@ CREATE TABLE [AdsBI].[AdsTransactionDetails](
 	[ProductID] [int] NOT NULL,
 	[AdsID] [int] NOT NULL,
 	[TimeOnAdSite] [int] NOT NULL,
-	[DailySpentOnPlaftForm] [numeric] (3,2) NOT NULL,
+	[DailySpentOnPlaftForm] [float] (2) NOT NULL,
 	[ClickTimes] [tinyint] NOT NULL,
 	[NumberOfBoughtProduct] [tinyint] NOT NULL,
-	[PurchaseRate] [numeric] (3,2) NULL,
+	[PurchaseRate] [float] (2) NULL,
 	CONSTRAINT PK_AdsFACT PRIMARY KEY (CustomerID, ProductID, AdsID),
 	CONSTRAINT FK_Customer FOREIGN KEY (CustomerID) REFERENCES [AdsBI].[CustomerDetails](CustomerID),
 	CONSTRAINT FK_Product FOREIGN KEY (ProductID) REFERENCES [AdsBI].[ProductDetails](ProductID),
 	CONSTRAINT FK_Ads FOREIGN KEY (AdsID) REFERENCES [AdsBI].[AdsHeaderDetails](AdsID),
 );
+/********************CREATE STORE PROCEDURE***************************/
+/********************CREATE VIEW***************************/
 
 
 

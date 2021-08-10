@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">CVPKHANGNHN</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGjeW7NTqJEOn4Uoo/EmAhQAAAAACAAAAAAADZgAAwAAAABAAAAA7wLX6KBGrkLMwVBZ+nqsDAAAAAASAAACgAAAAEAAAAG/WD6CO2pPn5vaxG9UbeleIAAAA9tlzG8YY17SLLlBB4xsWYREa/2OAShMlhAsa4HzJzVD1cf+XVFpSKCu2JG5fjel+V1O+/HM8jGKX+CJVG8Ry/u8/rWk+npHNvC4lCJLtg28BRlsixQ+QJtxnV2VX7eSmDANyKUKvsVxrKV+YCm87j+0ku3uo6VOuCqoxr9WDeI095nGFaFjUWRQAAACm7hLzGCxUW7ePkEQ+OW4vKKHeag==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGjeW7NTqJEOn4Uoo/EmAhQAAAAACAAAAAAADZgAAwAAAABAAAADhcEZALOp5mDeoCizAXJIWAAAAAASAAACgAAAAEAAAAMe7fYF5PVv0eKCl8TsY45GIAAAAwd28KGOTrlgjD+emInaCLd5leVoBjbXdzoVMnB2hj6FQrULWJ12xuXwnC15pIIED1bVtrtcYXAoIUwKKJxV+IG/zorzdUIIkDzv8i8At863nzTDTadM3o7NDul+2EYL4AWZZb32+TVT+LQn9oO9PrkisrjEwvpfP7+ZqD6053OpvkkIpsWLznxQAAACRuOSaH0Sk+raRcUcg94Vvwmn7UQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,17 +42,17 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5D2F581C-5C55-4D5D-985D-7B7E0AC4E5FB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{20FCED2E-29A5-4D56-A052-61F53D327B04}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -67,7 +67,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -82,7 +82,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -97,7 +97,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -112,7 +112,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -127,7 +127,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.Format">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -142,7 +142,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -158,7 +158,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -173,7 +173,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -188,7 +188,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -204,7 +204,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -219,7 +219,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataCovert_Error.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.AdsDetailDataETL_Error.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -598,7 +598,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -613,7 +613,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -628,7 +628,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -643,7 +643,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -658,7 +658,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -673,7 +673,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.Format">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -688,7 +688,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -704,7 +704,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -719,7 +719,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -734,7 +734,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -750,7 +750,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -765,7 +765,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataConverted_Error.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.AdsHeaderDataETL_Error.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1110,7 +1110,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1125,7 +1125,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1140,7 +1140,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1155,7 +1155,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1170,7 +1170,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1185,7 +1185,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.Format">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1200,7 +1200,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1216,7 +1216,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1231,7 +1231,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1246,7 +1246,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1262,7 +1262,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1277,7 +1277,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.CustomerDataConverted_Error.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.CustomerDataETL_Error.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1474,7 +1474,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1489,7 +1489,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1504,7 +1504,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1519,7 +1519,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1534,7 +1534,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1549,7 +1549,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.Format">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1564,7 +1564,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1580,7 +1580,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1595,7 +1595,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1610,7 +1610,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1626,7 +1626,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1641,7 +1641,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.ProductDataConverted_Error.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.ProductDataETL_Error.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
