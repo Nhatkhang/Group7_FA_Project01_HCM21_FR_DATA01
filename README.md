@@ -45,7 +45,7 @@ Please note that the Data will be replaced each time the python script is execut
 
 0. Generate Data
     - [x] Generate rawdata and copy to $path/Working-Folder
-1. Design data pipeline ![ProjectDesign](./docs/Project Design.png)
+1. Design data pipeline ![ProjectDesign](./docs/Project_Design.png)
     - [x] Create Drawio file
 2. Build data model ![DataModel](./docs/data_model_SQL.png)
     - [x] Generate Dim/Facts Tables scheme
