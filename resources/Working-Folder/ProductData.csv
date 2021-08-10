@@ -1,0 +1,501 @@
+Product_ID,Product_Name,Product_Category,Color,Cost,Price,Modified_Date
+23168,Horton-White omK_7878,Pet Supplies,LightSlateGray,1789.53,2002.2,2021_08_06-03_32_20_PM
+6467,Williams PLC pMo_0654,Apps for Android,Azure,3837.77,4300.02,2021_08_06-03_32_20_PM
+7898,Price-Wheeler yat_1362,Kindle Store,LightPink,2530.58,3162.89,2021_08_06-03_32_20_PM
+18336,"Alvarez, Jordan and Acosta lBZ_6378",Tools and Home Improvement,DarkSalmon,4754.45,5693.14,2021_08_06-03_32_20_PM
+2792,Coleman-Walls OFq_5313,"Clothing, Shoes and Jewelry",Brown,1129.12,1417.61,2021_08_06-03_32_20_PM
+11007,Smith LLC lDw_3100,Instant Video,YellowGreen,2866.09,3323.23,2021_08_06-03_32_20_PM
+24353,"Gardner, Young and Jones KcE_6609",Instant Video,Chocolate,2778.56,3604.49,2021_08_06-03_32_20_PM
+7449,Cunningham-Sanchez hYj_7099,Tools and Home Improvement,Olive,102.53,129.09,2021_08_06-03_32_20_PM
+10965,Thomas PLC ncj_0765,Office Products,Beige,1976.38,2466.87,2021_08_06-03_32_20_PM
+16867,Abbott-Fields iSE_5683,Sports and Outdoors,DarkBlue,858.64,1088.86,2021_08_06-03_32_20_PM
+11163,"Sanchez, Herman and Kramer RDD_8466",Baby,BlueViolet,2063.5,2423.36,2021_08_06-03_32_20_PM
+3487,"Mitchell, Simpson and Hahn iiS_9710",Digital Music,Gainsboro,542.96,644.78,2021_08_06-03_32_20_PM
+27208,Robinson Inc krI_9938,Cell Phones and Accessories,YellowGreen,2910.16,3459.99,2021_08_06-03_32_20_PM
+3158,Love Ltd aLX_7866,Baby,DarkGray,2122.91,2608.56,2021_08_06-03_32_20_PM
+3186,Garrett Inc mim_4747,Cell Phones and Accessories,MediumBlue,4237.52,5031.22,2021_08_06-03_32_20_PM
+5764,Wells PLC TNb_2964,Electronics,SaddleBrown,4830.44,5352.1,2021_08_06-03_32_20_PM
+14807,Hughes and Sons egT_6003,Movies and TV,Chartreuse,4927.97,5467.13,2021_08_06-03_32_20_PM
+20852,Hunter-Clarke TTJ_0589,"Patio, Lawn and Garden",Azure,2142.24,2654.12,2021_08_06-03_32_20_PM
+7072,Ramos-Mckenzie asB_4893,Health and Personal Care,PapayaWhip,2817.92,3500.75,2021_08_06-03_32_20_PM
+8672,"Sanchez, Diaz and King MHn_5192",Baby,Bisque,2002.89,2455.98,2021_08_06-03_32_20_PM
+7193,"Williams, Mann and Roberts brg_8373",Sports and Outdoors,SeaGreen,647.75,738.41,2021_08_06-03_32_20_PM
+16250,Doyle and Sons Rzk_3989,Automotive,Khaki,1637.43,2035.07,2021_08_06-03_32_20_PM
+12190,"Porter, Cline and Thomas lAp_8745",Movies and TV,Red,1450.31,1815.29,2021_08_06-03_32_20_PM
+4776,Lopez Ltd QHV_7565,Cell Phones and Accessories,Orange,690.65,765.41,2021_08_06-03_32_20_PM
+18284,Jackson-Werner eMz_3011,Kindle Store,DarkBlue,3073.55,3810.65,2021_08_06-03_32_20_PM
+22342,"Miller, Hill and Lewis qqn_9536",Instant Video,LightGreen,4530.63,5428.05,2021_08_06-03_32_20_PM
+12525,White-Robinson IrQ_8854,Musical Instruments,GreenYellow,4343.34,5231.92,2021_08_06-03_32_20_PM
+4807,Clark-Castro Zrd_9173,"Clothing, Shoes and Jewelry",AntiqueWhite,448.93,583.06,2021_08_06-03_32_20_PM
+439,"Cross, Weber and Cox mtg_9422",Office Products,HotPink,4990.51,5606.94,2021_08_06-03_32_20_PM
+17904,Petty Ltd KtV_2154,Kindle Store,MediumPurple,3157.49,4056.1,2021_08_06-03_32_20_PM
+23448,Gutierrez LLC Ptf_7854,Electronics,LightSteelBlue,4393.47,5108.75,2021_08_06-03_32_20_PM
+11110,Rose-Vargas NQb_2464,Baby,Violet,388.36,461.28,2021_08_06-03_32_20_PM
+7154,Thompson and Sons KGD_3987,Pet Supplies,Gray,1883.09,2388.94,2021_08_06-03_32_20_PM
+5980,"Thomas, Page and Banks sYz_1005",Baby,LightCoral,4812.48,6090.7,2021_08_06-03_32_20_PM
+7075,Gonzalez Inc iwO_3394,Automotive,Indigo,3175.95,3730.04,2021_08_06-03_32_20_PM
+2598,Burns Ltd gdf_0083,Pet Supplies,MediumTurquoise,1829.87,2336.75,2021_08_06-03_32_20_PM
+17803,"Goodwin, Castillo and Scott KRw_6839",Cell Phones and Accessories,DarkRed,1576.89,1826.24,2021_08_06-03_32_20_PM
+9286,Wood-Baker kpn_5565,Toys and Games,LightCoral,3962.42,4759.32,2021_08_06-03_32_20_PM
+22664,Warner LLC xGx_7274,Video Games,MintCream,1174.09,1370.23,2021_08_06-03_32_20_PM
+15053,Sanders-Rodriguez TPA_3534,Office Products,Plum,2897.55,3632.24,2021_08_06-03_32_20_PM
+6414,Estes Group EIg_0349,Kindle Store,OldLace,126.8,146.77,2021_08_06-03_32_20_PM
+23717,"Wilson, Baker and Salazar stz_5307",Digital Music,LightSkyBlue,314.76,367.93,2021_08_06-03_32_20_PM
+27908,Ray-Rodgers PmB_1495,Toys and Games,Gainsboro,1788.88,2262.22,2021_08_06-03_32_20_PM
+29760,Hopkins-Ramos qJF_6357,Grocery and Gourmet Food,Peru,263.15,337.46,2021_08_06-03_32_20_PM
+29597,"Gonzalez, Chan and Yang yCs_5456",Books,DarkOrchid,1246.52,1377.83,2021_08_06-03_32_20_PM
+28819,"Kelly, Davis and Houston eAP_3360","Clothing, Shoes and Jewelry",OrangeRed,4449.63,4938.19,2021_08_06-03_32_20_PM
+25400,Williams-Hoffman EjI_4848,Video Games,DarkKhaki,3448.71,4176.57,2021_08_06-03_32_20_PM
+13213,Hull-Brown EjA_3065,Electronics,BurlyWood,364.47,424.62,2021_08_06-03_32_20_PM
+25358,Pineda Inc BFN_7021,Baby,BurlyWood,4583.55,5387.57,2021_08_06-03_32_20_PM
+29562,Franco Ltd AlI_2925,Automotive,MediumTurquoise,680.96,788.5,2021_08_06-03_32_20_PM
+15912,Hall Ltd Noc_9154,Sports and Outdoors,Indigo,3436.22,4340.18,2021_08_06-03_32_20_PM
+2453,Hudson-Moore OzP_5791,Musical Instruments,Gold,572.53,655.66,2021_08_06-03_32_20_PM
+3829,Dodson Inc fPO_0491,Video Games,Indigo,706.94,864.19,2021_08_06-03_32_20_PM
+24116,White and Sons bck_0150,Beauty,PaleTurquoise,478.14,540.37,2021_08_06-03_32_20_PM
+18954,Hill-Noble hNI_3402,Sports and Outdoors,DarkOrange,553.68,667.33,2021_08_06-03_32_20_PM
+18305,Griffith Inc YLi_0422,Health and Personal Care,Gold,3326.9,4198.69,2021_08_06-03_32_20_PM
+21320,Jones-Wu GDl_6020,Apps for Android,PaleVioletRed,1926.24,2211.68,2021_08_06-03_32_20_PM
+28359,"Lambert, Holland and Rodriguez lwW_0215",Electronics,DarkSalmon,3453.25,4003.35,2021_08_06-03_32_20_PM
+30114,Holmes Ltd mUf_2173,Sports and Outdoors,GoldenRod,4429.54,5153.45,2021_08_06-03_32_20_PM
+23204,"Cook, Sims and Sims MLA_3257",Automotive,Beige,3359.97,4243.95,2021_08_06-03_32_20_PM
+6521,Palmer-Hall PPm_9886,Video Games,Peru,1694.88,1990.2,2021_08_06-03_32_20_PM
+22799,Black Group RTF_0798,Baby,PowderBlue,413.92,476.38,2021_08_06-03_32_20_PM
+22394,"Fowler, Hughes and Gonzalez oPq_2601","Patio, Lawn and Garden",SandyBrown,937.59,1177.72,2021_08_06-03_32_20_PM
+7201,Figueroa Group giv_5143,Books,DarkSlateBlue,3411.28,3976.05,2021_08_06-03_32_20_PM
+30049,Reilly Ltd zDy_2811,Movies and TV,MidnightBlue,1116.51,1342.21,2021_08_06-03_32_20_PM
+2218,Browning Group JuW_6243,Cell Phones and Accessories,Indigo,883.82,1130.22,2021_08_06-03_32_20_PM
+12796,Davis-Murray TaW_2306,Electronics,Blue,1097.46,1299.3,2021_08_06-03_32_20_PM
+13457,"Roth, Berry and Gordon snO_5348",Apps for Android,RosyBrown,258.31,310.45,2021_08_06-03_32_20_PM
+14072,Crawford Group qBl_0356,Baby,AntiqueWhite,2332.3,2582.33,2021_08_06-03_32_20_PM
+2785,Price-Tyler ggB_0086,Cell Phones and Accessories,MidnightBlue,3397.99,4180.48,2021_08_06-03_32_20_PM
+29166,"Peters, Kennedy and Terry BzO_6966",Toys and Games,MediumPurple,3025.85,3919.61,2021_08_06-03_32_20_PM
+5528,Miller-Ewing Tvr_6207,Video Games,DarkOrchid,2754.52,3222.78,2021_08_06-03_32_20_PM
+18840,"Cruz, Orr and Salinas zKf_5221",Health and Personal Care,BlanchedAlmond,3265.41,4047.14,2021_08_06-03_32_20_PM
+23094,Vasquez Group iFM_2965,Grocery and Gourmet Food,LightGreen,2123.39,2496.5,2021_08_06-03_32_20_PM
+26023,"Palmer, Rodriguez and Cox XFw_5662",Musical Instruments,LightPink,4542.44,5456.18,2021_08_06-03_32_20_PM
+12169,Smith-Myers ydc_0969,CDs and Vinyl,SlateBlue,4181.09,4825.81,2021_08_06-03_32_20_PM
+489,Blackburn Inc WaI_3623,"Clothing, Shoes and Jewelry",LightCyan,4088.83,4908.44,2021_08_06-03_32_20_PM
+2574,"Gibson, Rogers and Palmer lQl_9651",Electronics,MediumPurple,3274.64,3648.02,2021_08_06-03_32_20_PM
+25116,Campbell LLC Hst_1828,Musical Instruments,Gray,1064.93,1235.25,2021_08_06-03_32_20_PM
+2803,"Anderson, Singleton and Gill NNy_1611",Pet Supplies,MediumSlateBlue,3535.44,4100.58,2021_08_06-03_32_20_PM
+28939,Jackson-Flynn mZi_0906,Instant Video,DarkGray,3509.15,4472.2,2021_08_06-03_32_20_PM
+7488,"Collier, Rojas and Robertson agp_7619",Musical Instruments,Olive,1735.16,2082.82,2021_08_06-03_32_20_PM
+25834,"Murray, Burke and Thompson aJm_4770",Grocery and Gourmet Food,PowderBlue,755.7,981.89,2021_08_06-03_32_20_PM
+7693,Cohen Inc Cgh_8049,Musical Instruments,DimGray,4736.17,5220.31,2021_08_06-03_32_20_PM
+26820,Nelson and Sons XdJ_9992,Movies and TV,LavenderBlush,3815.02,4864.43,2021_08_06-03_32_20_PM
+21214,Cox-Guzman WuL_2186,Movies and TV,LightSteelBlue,4640.0,5878.55,2021_08_06-03_32_20_PM
+25141,Arnold-Jackson PVJ_0444,Kindle Store,Lime,4351.92,5350.49,2021_08_06-03_32_20_PM
+29639,"Graves, Washington and Thompson Ker_1968",Digital Music,Brown,761.43,951.2,2021_08_06-03_32_20_PM
+28865,"Fisher, Aguilar and Thomas wQH_2950",Beauty,MediumPurple,1583.02,1846.94,2021_08_06-03_32_20_PM
+21213,Watson-Haley pDZ_7214,Kindle Store,Magenta,2844.77,3412.46,2021_08_06-03_32_20_PM
+14487,Baxter and Sons ZmA_2372,Books,Turquoise,2961.52,3763.94,2021_08_06-03_32_20_PM
+14941,Thompson Inc owS_2848,CDs and Vinyl,PaleGoldenRod,2526.05,2854.66,2021_08_06-03_32_20_PM
+28640,"Martin, Walters and Smith Ksh_6811",Electronics,MediumVioletRed,472.44,522.97,2021_08_06-03_32_20_PM
+7075,"Anderson, Trujillo and Montgomery PuG_0826",Health and Personal Care,BlueViolet,1954.02,2474.67,2021_08_06-03_32_20_PM
+28654,Ibarra PLC Znu_1494,Electronics,SlateGray,2744.4,3116.77,2021_08_06-03_32_20_PM
+21850,King Ltd oLr_5638,Apps for Android,MediumVioletRed,2214.84,2461.99,2021_08_06-03_32_20_PM
+20587,"Walsh, Lindsey and Cabrera zvg_8922",Tools and Home Improvement,LightCoral,1742.39,1960.72,2021_08_06-03_32_20_PM
+23802,"Stanley, Taylor and Wiggins YIG_4466",Books,Orchid,759.42,961.9,2021_08_06-03_32_20_PM
+18613,Price and Sons sEv_0220,Instant Video,Moccasin,2217.63,2463.5,2021_08_06-03_32_20_PM
+10825,"Hensley, Garrison and Owens wFq_3971",Automotive,LightSlateGray,4086.53,4672.84,2021_08_06-03_32_20_PM
+1507,Atkins Inc TtD_1344,Toys and Games,Tomato,4998.67,5636.82,2021_08_06-03_32_20_PM
+655,Young Ltd pTc_9718,Electronics,DarkCyan,845.0,1089.45,2021_08_06-03_32_20_PM
+20704,Williamson-Pineda ITc_3741,Baby,Linen,2897.71,3420.78,2021_08_06-03_32_20_PM
+21891,Randolph-Morris UgJ_0550,Beauty,Yellow,3189.32,3633.61,2021_08_06-03_32_20_PM
+17751,Santos Group ynP_2196,Video Games,DodgerBlue,2661.61,2927.83,2021_08_06-03_32_20_PM
+22880,"Brown, Garner and White xcg_2666",Baby,SaddleBrown,414.5,512.9,2021_08_06-03_32_20_PM
+7476,Munoz and Sons qWt_9962,Kindle Store,Thistle,4663.69,5203.25,2021_08_06-03_32_20_PM
+26659,Porter-Robertson Nty_1180,Sports and Outdoors,MidnightBlue,1220.79,1426.39,2021_08_06-03_32_20_PM
+3011,"Newton, Brown and Green QKW_0676",Tools and Home Improvement,LightGoldenRodYellow,4398.64,5068.0,2021_08_06-03_32_20_PM
+11415,Sullivan-Cooper jNJ_5258,Apps for Android,MediumSlateBlue,2061.81,2656.17,2021_08_06-03_32_20_PM
+13461,Mejia LLC DoR_3182,Movies and TV,BurlyWood,2719.2,3355.11,2021_08_06-03_32_20_PM
+17668,"Baker, Wright and Abbott lyH_0944",Cell Phones and Accessories,Gold,1353.89,1704.37,2021_08_06-03_32_20_PM
+25742,"Morrow, Johnson and Brooks XAU_8941",Musical Instruments,SandyBrown,464.5,546.13,2021_08_06-03_32_20_PM
+7902,Keller LLC Vam_4955,Cell Phones and Accessories,OliveDrab,2304.34,2699.01,2021_08_06-03_32_20_PM
+420,Sims-Callahan ZCl_7431,Toys and Games,Salmon,4647.45,5128.74,2021_08_06-03_32_20_PM
+9151,"Wright, Rivera and Thomas QTH_3714",Baby,Gainsboro,3312.82,4262.02,2021_08_06-03_32_20_PM
+14955,"Pineda, Lawson and White Ijs_1783",Sports and Outdoors,DarkOrchid,4863.92,5912.43,2021_08_06-03_32_20_PM
+20076,Gomez-Kennedy SzW_3653,Grocery and Gourmet Food,LightGreen,4979.15,6390.02,2021_08_06-03_32_20_PM
+22853,"Andrews, Butler and Ware JeN_9249",Sports and Outdoors,Black,4898.43,5492.57,2021_08_06-03_32_20_PM
+28701,Smith-Washington PdX_1973,Musical Instruments,Cornsilk,1074.88,1261.6,2021_08_06-03_32_20_PM
+14111,"Turner, Peck and Reynolds sIo_3736",Home and Kitchen,DeepPink,4842.78,5970.57,2021_08_06-03_32_20_PM
+26760,Johnson Group dDu_5863,Digital Music,PowderBlue,1421.4,1727.99,2021_08_06-03_32_20_PM
+13162,"Levy, Logan and Malone LDJ_3445",Baby,Orange,1890.2,2283.21,2021_08_06-03_32_20_PM
+29314,Page Group wAY_7235,Kindle Store,MediumVioletRed,2801.93,3607.13,2021_08_06-03_32_20_PM
+21534,Henry-Davis Elb_0379,Sports and Outdoors,MediumTurquoise,1091.06,1366.73,2021_08_06-03_32_20_PM
+14486,Anderson and Sons rCr_2657,CDs and Vinyl,Gainsboro,4538.55,5280.71,2021_08_06-03_32_20_PM
+23307,Dunn PLC NgI_9495,"Clothing, Shoes and Jewelry",Azure,1070.14,1320.52,2021_08_06-03_32_20_PM
+4717,"Bush, Cummings and Cox aFZ_2217",Electronics,Peru,286.77,341.37,2021_08_06-03_32_20_PM
+21982,Wright-Martinez uWc_9220,Baby,FloralWhite,1549.65,1862.87,2021_08_06-03_32_20_PM
+7647,"Garcia, Bradshaw and Harris LPu_4582",Video Games,PeachPuff,4036.17,4550.94,2021_08_06-03_32_20_PM
+23519,Levine Inc nND_1151,Instant Video,Fuchsia,1617.09,1869.71,2021_08_06-03_32_20_PM
+3489,White-Greene SeT_2106,"Patio, Lawn and Garden",LightCoral,1634.9,2016.01,2021_08_06-03_32_20_PM
+19725,White-Watts SBO_1455,CDs and Vinyl,Lavender,3354.79,3820.16,2021_08_06-03_32_20_PM
+14646,"Morris, Nelson and Hawkins LgG_4135",Sports and Outdoors,MediumPurple,985.45,1232.6,2021_08_06-03_32_20_PM
+1793,"Cohen, Burns and Myers AHU_5981",Apps for Android,SeaShell,2539.2,2807.78,2021_08_06-03_32_20_PM
+3995,Jimenez-Wood bks_0865,Cell Phones and Accessories,LightSalmon,1180.06,1403.64,2021_08_06-03_32_20_PM
+19017,Wright PLC vJY_7889,Sports and Outdoors,LemonChiffon,1582.75,2015.06,2021_08_06-03_32_20_PM
+28226,"Sanders, Brown and Banks tse_7689",Beauty,Gainsboro,4044.76,5001.4,2021_08_06-03_32_20_PM
+5378,"Wilson, Thompson and Harvey atZ_3022",Beauty,OldLace,623.18,778.79,2021_08_06-03_32_20_PM
+9050,"Morales, Kennedy and Patterson gEY_0457",Apps for Android,DarkSeaGreen,3176.08,3828.22,2021_08_06-03_32_20_PM
+28614,"Carter, Sparks and Dean WBY_3947",Pet Supplies,DarkBlue,2647.57,3438.98,2021_08_06-03_32_20_PM
+750,Bowen Inc RNF_8048,Office Products,MediumOrchid,1352.37,1513.8,2021_08_06-03_32_20_PM
+227,Hall and Sons yQK_1104,"Clothing, Shoes and Jewelry",Crimson,3893.4,4444.05,2021_08_06-03_32_20_PM
+5176,Chang Ltd XmC_1808,Instant Video,Black,2041.94,2365.85,2021_08_06-03_32_20_PM
+24746,Huynh Inc vzW_6787,Cell Phones and Accessories,Chartreuse,1169.15,1425.11,2021_08_06-03_32_20_PM
+29548,Roberson Group oPB_3723,Tools and Home Improvement,LightGreen,4532.99,5679.25,2021_08_06-03_32_20_PM
+3911,"Novak, Barrett and Delgado JVp_7186",Office Products,MediumOrchid,1366.31,1592.51,2021_08_06-03_32_20_PM
+6018,"Bauer, Suarez and Short ytB_6606",Pet Supplies,GreenYellow,2221.55,2767.05,2021_08_06-03_32_20_PM
+8482,Moore LLC ZcL_9801,Instant Video,Lavender,4688.29,5857.01,2021_08_06-03_32_20_PM
+180,Diaz-Gutierrez xau_2602,Automotive,Gainsboro,1032.35,1251.42,2021_08_06-03_32_20_PM
+18852,Giles LLC IIv_5160,"Patio, Lawn and Garden",Green,1615.98,1786.98,2021_08_06-03_32_20_PM
+5765,West-Baldwin Blp_1405,Books,Snow,2588.94,3092.08,2021_08_06-03_32_20_PM
+29113,Johnston-Bird PNj_2868,Home and Kitchen,DarkCyan,447.84,536.66,2021_08_06-03_32_20_PM
+20575,Hughes Ltd sSK_2515,Baby,Orange,1296.26,1652.76,2021_08_06-03_32_20_PM
+28740,Schmidt-Good Adh_4747,Beauty,DarkOrange,2831.89,3195.15,2021_08_06-03_32_20_PM
+17082,"Moreno, Crawford and Hernandez JqZ_3535",Musical Instruments,IndianRed,2952.85,3837.04,2021_08_06-03_32_20_PM
+14341,Smith-Douglas ybN_6927,Instant Video,Purple,1980.17,2222.39,2021_08_06-03_32_20_PM
+5665,Porter and Sons lnt_2659,Digital Music,AntiqueWhite,3310.74,3670.58,2021_08_06-03_32_20_PM
+17384,Allison PLC Qui_4025,Pet Supplies,Magenta,863.27,1059.46,2021_08_06-03_32_20_PM
+3873,"Alvarado, Tucker and Oliver lka_3590","Patio, Lawn and Garden",HotPink,2556.79,3322.97,2021_08_06-03_32_20_PM
+4734,"Brown, Alvarez and Nguyen iyb_4491","Clothing, Shoes and Jewelry",DarkCyan,501.9,612.23,2021_08_06-03_32_20_PM
+8654,Calhoun-Best kfg_1632,Apps for Android,LavenderBlush,2739.32,3177.11,2021_08_06-03_32_20_PM
+24835,Stevenson-Mcclure jkX_5408,"Clothing, Shoes and Jewelry",YellowGreen,3686.43,4449.02,2021_08_06-03_32_20_PM
+6338,"Evans, Stevens and Baker hhE_8260",Movies and TV,DarkOliveGreen,3521.08,4131.49,2021_08_06-03_32_20_PM
+20215,"Becker, Fletcher and Graham uOM_5277","Patio, Lawn and Garden",SandyBrown,4013.71,4972.86,2021_08_06-03_32_20_PM
+23627,Rodriguez-Turner qvB_4056,Beauty,Peru,1601.04,1921.41,2021_08_06-03_32_20_PM
+16422,"Hurley, Smith and Perez tUI_9011",Pet Supplies,LightSeaGreen,447.02,505.46,2021_08_06-03_32_20_PM
+20696,Williams Group XNW_7501,Books,DarkGray,2120.39,2730.22,2021_08_06-03_32_20_PM
+21657,Rodriguez-Mullins wax_1238,Pet Supplies,DarkTurquoise,1292.75,1436.22,2021_08_06-03_32_20_PM
+9838,Miller LLC IOz_0594,Sports and Outdoors,Peru,1646.6,1965.1,2021_08_06-03_32_20_PM
+4374,Vaughn and Sons FpI_6520,Health and Personal Care,DimGray,1468.21,1620.53,2021_08_06-03_32_20_PM
+25005,Howell-Oliver Mad_5097,Books,FireBrick,3692.0,4394.75,2021_08_06-03_32_20_PM
+11146,Mercado-Kidd ALG_3851,Office Products,ForestGreen,3107.8,3841.47,2021_08_06-03_32_20_PM
+28254,Hull and Sons QGR_5469,Sports and Outdoors,PeachPuff,1025.74,1206.87,2021_08_06-03_32_20_PM
+7745,Holder-Ramirez Vzk_0106,Books,MediumAquaMarine,2229.14,2514.64,2021_08_06-03_32_20_PM
+4215,"Wallace, Wilson and Lucero AKO_2136",Cell Phones and Accessories,DarkGreen,4092.32,5168.16,2021_08_06-03_32_20_PM
+16871,Wise Group ECM_3403,Health and Personal Care,RosyBrown,3383.07,4236.54,2021_08_06-03_32_20_PM
+10234,Tran PLC GxK_1857,Sports and Outdoors,LightSlateGray,546.32,702.41,2021_08_06-03_32_20_PM
+2038,Sanchez-Mckenzie vRN_4498,Pet Supplies,GoldenRod,2502.18,3070.67,2021_08_06-03_32_20_PM
+10358,Smith Inc OyR_4562,CDs and Vinyl,Aquamarine,1810.57,2351.55,2021_08_06-03_32_20_PM
+3313,Flores-Young hbk_1201,Video Games,BlanchedAlmond,3951.17,4839.24,2021_08_06-03_32_20_PM
+18833,Taylor-Myers Dgx_4773,Home and Kitchen,SlateBlue,2805.27,3137.82,2021_08_06-03_32_20_PM
+29385,Taylor-Wright OMN_8546,Books,SandyBrown,1579.22,2012.3,2021_08_06-03_32_20_PM
+28436,"Baker, Kidd and Peters hiN_8729",Books,SpringGreen,1185.2,1506.02,2021_08_06-03_32_20_PM
+17028,"Martinez, Cook and Miller sVW_5839",Pet Supplies,Purple,578.55,740.03,2021_08_06-03_32_20_PM
+4160,"Shaw, Watts and Diaz Slg_3246","Patio, Lawn and Garden",MediumPurple,210.34,251.63,2021_08_06-03_32_20_PM
+11192,Lamb LLC aen_9356,Apps for Android,LightCyan,2585.01,2940.37,2021_08_06-03_32_20_PM
+28955,Mora Ltd BzX_4981,Apps for Android,PapayaWhip,4866.44,5451.8,2021_08_06-03_32_20_PM
+18590,Esparza-Leonard ljw_6988,Digital Music,OliveDrab,4907.23,5493.62,2021_08_06-03_32_20_PM
+26625,Morgan Group mdr_6897,Sports and Outdoors,DarkSalmon,1590.73,1941.49,2021_08_06-03_32_20_PM
+20114,Rogers PLC gsA_7353,Instant Video,DarkOrchid,2620.01,3174.78,2021_08_06-03_32_20_PM
+25021,Ortiz and Sons vel_3663,Automotive,DarkCyan,2131.9,2740.33,2021_08_06-03_32_20_PM
+9956,"Parsons, Spencer and Franco mdR_5786",Kindle Store,DarkSlateGray,3402.66,4079.91,2021_08_06-03_32_20_PM
+18213,Hardy-Nielsen dTl_5439,Tools and Home Improvement,Moccasin,3993.85,5013.44,2021_08_06-03_32_20_PM
+10156,"Smith, Sherman and Rogers mDN_8413",Office Products,PaleGreen,4569.52,5633.15,2021_08_06-03_32_20_PM
+2124,"Malone, Davis and Scott bgr_4359",Instant Video,Bisque,3190.82,3880.49,2021_08_06-03_32_20_PM
+11745,Ellis LLC IOH_9331,Kindle Store,LightSalmon,2231.92,2812.33,2021_08_06-03_32_20_PM
+3274,Kemp-Thornton RhJ_2969,Automotive,DarkRed,1931.03,2214.43,2021_08_06-03_32_20_PM
+2433,"Perez, Stewart and Mcdonald VsL_8380",Grocery and Gourmet Food,AliceBlue,3092.89,4003.84,2021_08_06-03_32_20_PM
+13463,"Beasley, Hamilton and Peterson izC_3944","Patio, Lawn and Garden",Wheat,735.71,897.03,2021_08_06-03_32_20_PM
+11870,Rose-Rivas viN_0049,"Patio, Lawn and Garden",Teal,3576.22,4536.91,2021_08_06-03_32_20_PM
+18608,Ball Ltd jAt_2007,Pet Supplies,Purple,664.76,749.59,2021_08_06-03_32_20_PM
+3518,"Henderson, Hudson and Benson pGP_8898",Health and Personal Care,Navy,745.37,939.64,2021_08_06-03_32_20_PM
+24276,Dunn Inc zsO_6880,Office Products,DarkGoldenRod,2630.86,3295.77,2021_08_06-03_32_20_PM
+10368,Lopez-Chambers Jkv_3956,Instant Video,OrangeRed,686.58,840.92,2021_08_06-03_32_20_PM
+5247,"Hernandez, Marks and Calderon VPX_9775",Digital Music,MediumBlue,449.01,540.29,2021_08_06-03_32_20_PM
+14790,Brown-Nelson CKa_3415,Books,MediumSpringGreen,2320.9,2859.27,2021_08_06-03_32_20_PM
+23530,Burns-Dixon Ggn_1228,CDs and Vinyl,MediumAquaMarine,4689.51,5730.19,2021_08_06-03_32_20_PM
+29555,Chaney Ltd HZo_1857,Beauty,LightBlue,2967.64,3531.49,2021_08_06-03_32_20_PM
+20023,Wells Group rUw_4148,Home and Kitchen,Salmon,3174.91,3696.35,2021_08_06-03_32_20_PM
+28752,Guerra and Sons UEr_5774,CDs and Vinyl,LightGray,852.04,1064.03,2021_08_06-03_32_20_PM
+4533,Mckee Ltd WXK_9255,Books,PeachPuff,744.05,876.89,2021_08_06-03_32_20_PM
+8932,"Odonnell, Martinez and Smith pcE_4926",Electronics,HoneyDew,2473.02,2740.31,2021_08_06-03_32_20_PM
+30093,Murphy LLC kUx_0721,Baby,MistyRose,3785.33,4469.03,2021_08_06-03_32_20_PM
+9344,Woods-Roberts Mmg_8681,Toys and Games,Khaki,4676.96,5643.09,2021_08_06-03_32_20_PM
+16328,Phelps and Sons qeN_1459,Movies and TV,MediumSlateBlue,1498.87,1782.54,2021_08_06-03_32_20_PM
+3739,Phillips PLC AfE_8728,Home and Kitchen,RosyBrown,3401.21,4347.17,2021_08_06-03_32_20_PM
+9827,Kim-Thompson BOS_4620,Movies and TV,Olive,2641.99,3394.1,2021_08_06-03_32_20_PM
+25840,"Villanueva, Wilkins and Robertson zWO_0021",Instant Video,MistyRose,111.74,126.53,2021_08_06-03_32_20_PM
+22116,Anderson-Lopez bIW_9335,Instant Video,DeepPink,1353.08,1524.55,2021_08_06-03_32_20_PM
+7926,Jackson Inc JXe_0261,Books,Brown,4679.69,5163.87,2021_08_06-03_32_20_PM
+8452,Aguilar Inc XAy_3918,Cell Phones and Accessories,RoyalBlue,2439.56,2915.51,2021_08_06-03_32_20_PM
+12907,"Acosta, Kirby and Dennis VmF_4118",Digital Music,SandyBrown,2612.55,3281.34,2021_08_06-03_32_20_PM
+22308,Chan-Huffman sJY_5074,Office Products,WhiteSmoke,1637.82,1904.71,2021_08_06-03_32_20_PM
+7429,"Olsen, Griffin and Thomas DSa_5216",Office Products,LightSalmon,4915.28,6269.46,2021_08_06-03_32_20_PM
+516,Sanders Inc aGx_2878,Movies and TV,Beige,746.07,826.19,2021_08_06-03_32_20_PM
+10886,Molina Inc nbJ_1980,Movies and TV,MediumOrchid,4807.93,5653.38,2021_08_06-03_32_20_PM
+30038,Gordon-Griffin HYH_2605,Office Products,SteelBlue,1932.92,2398.27,2021_08_06-03_32_20_PM
+21043,Moore-Cox XaU_7662,Books,Black,4804.1,5364.81,2021_08_06-03_32_20_PM
+16675,Casey LLC jLg_7904,Musical Instruments,Turquoise,1312.28,1519.69,2021_08_06-03_32_20_PM
+13073,Moody-Jefferson CmH_9780,Video Games,LightBlue,4970.67,6200.37,2021_08_06-03_32_20_PM
+13043,Thompson PLC IlF_0872,Cell Phones and Accessories,PaleGoldenRod,2018.48,2438.51,2021_08_06-03_32_20_PM
+21124,Morris-Hess WDX_0021,Grocery and Gourmet Food,Aquamarine,1077.94,1207.07,2021_08_06-03_32_20_PM
+11962,"Rich, Walls and Boyd Ieu_5314",Cell Phones and Accessories,Chocolate,3724.47,4691.46,2021_08_06-03_32_20_PM
+28586,Anderson LLC OqU_7057,Office Products,SpringGreen,4995.38,6236.33,2021_08_06-03_32_20_PM
+826,Henson-Perez yzB_3069,Movies and TV,RoyalBlue,3449.07,3825.58,2021_08_06-03_32_20_PM
+24339,Mccall Ltd aFU_0206,Cell Phones and Accessories,LightCoral,4196.42,4873.74,2021_08_06-03_32_20_PM
+3932,"Marshall, Guerrero and Gilbert YFB_5278",Home and Kitchen,Navy,2828.59,3273.55,2021_08_06-03_32_20_PM
+8258,"Schroeder, York and Peterson tPd_7664",Automotive,Snow,1458.48,1766.22,2021_08_06-03_32_20_PM
+25260,Robinson PLC rgM_9976,Pet Supplies,SandyBrown,975.15,1098.92,2021_08_06-03_32_20_PM
+3963,"Randolph, Munoz and Turner dQP_9108","Clothing, Shoes and Jewelry",OliveDrab,3915.81,4692.73,2021_08_06-03_32_20_PM
+30092,"Nielsen, Lambert and Hernandez zFg_1393",Office Products,DarkTurquoise,4243.71,4883.45,2021_08_06-03_32_20_PM
+8765,"Diaz, Reyes and Lane LOo_2320",Sports and Outdoors,Chocolate,1765.49,2290.63,2021_08_06-03_32_20_PM
+9095,Garcia-Hill CUi_9684,Video Games,DarkSalmon,198.27,249.89,2021_08_06-03_32_20_PM
+22698,Turner LLC bxq_3742,Instant Video,Sienna,662.51,808.59,2021_08_06-03_32_20_PM
+26423,"Reid, Rivera and Turner EcG_7157",Books,MediumAquaMarine,3922.39,5087.44,2021_08_06-03_32_20_PM
+15135,Sawyer-Gould MlJ_7106,Tools and Home Improvement,Beige,4947.32,5561.11,2021_08_06-03_32_20_PM
+26318,"Wood, Jones and Stanton PqN_3895",Electronics,SkyBlue,702.75,890.0,2021_08_06-03_32_20_PM
+3634,"Robinson, Gilbert and Shannon NKF_4156",Office Products,Red,3659.11,4654.34,2021_08_06-03_32_20_PM
+9181,Hill-Cruz Dfn_5327,Apps for Android,Blue,3551.21,4084.36,2021_08_06-03_32_20_PM
+9747,Brown-Howell GLf_6890,Pet Supplies,DeepPink,3574.25,4368.18,2021_08_06-03_32_20_PM
+20364,"Watts, Reid and Russell HkA_5801",Movies and TV,Chartreuse,2067.9,2671.49,2021_08_06-03_32_20_PM
+24070,Martinez-Phillips wjf_1630,Health and Personal Care,DarkCyan,3762.39,4548.9,2021_08_06-03_32_20_PM
+2001,James-Jones tfz_5625,"Clothing, Shoes and Jewelry",Coral,3752.05,4713.41,2021_08_06-03_32_20_PM
+4260,Davis-Bowen Yxu_9509,Cell Phones and Accessories,Chartreuse,1427.33,1724.56,2021_08_06-03_32_20_PM
+15897,"Barrett, Rodriguez and Hill xvD_5029",Musical Instruments,SeaGreen,4084.81,4538.07,2021_08_06-03_32_20_PM
+17222,"Thomas, Watkins and Lambert Mcx_7807",Baby,FloralWhite,2742.94,3034.81,2021_08_06-03_32_20_PM
+1908,Johnson LLC MOO_8022,Office Products,LightCoral,472.95,591.79,2021_08_06-03_32_20_PM
+11583,"Mendoza, Chavez and Lopez WPH_5721",Toys and Games,Navy,2381.42,2623.56,2021_08_06-03_32_20_PM
+7861,Gomez-Stevens Yvv_6783,Kindle Store,IndianRed,3202.8,4057.01,2021_08_06-03_32_20_PM
+922,"Hernandez, Oconnell and King IOo_1756",Home and Kitchen,DodgerBlue,264.55,336.51,2021_08_06-03_32_20_PM
+21730,Evans LLC nJo_4873,Musical Instruments,Pink,2793.44,3162.5,2021_08_06-03_32_20_PM
+3108,"Delgado, Key and Brown cbc_9624",Toys and Games,Snow,528.62,621.28,2021_08_06-03_32_20_PM
+7935,"Mcmillan, Farley and Jones Axo_9042",Cell Phones and Accessories,RoyalBlue,3408.55,4288.48,2021_08_06-03_32_20_PM
+23806,"Chung, Fields and Porter GXV_3077",Automotive,Beige,2984.9,3668.08,2021_08_06-03_32_20_PM
+10870,"Marquez, Ho and Osborne Isp_7017",Toys and Games,SaddleBrown,2456.4,2761.11,2021_08_06-03_32_20_PM
+16280,"Johnson, Jenkins and Conley jQF_2700",Cell Phones and Accessories,Purple,1767.73,2199.86,2021_08_06-03_32_20_PM
+13879,"Johnson, Holden and Sutton AbR_4377",Books,Blue,4160.41,4909.98,2021_08_06-03_32_20_PM
+27155,Baker and Sons IVR_6699,Automotive,Navy,4017.19,4714.76,2021_08_06-03_32_20_PM
+14687,Gray Inc FnX_9304,"Patio, Lawn and Garden",OldLace,4017.46,4473.42,2021_08_06-03_32_20_PM
+8830,Singh-Mason AAc_0338,Home and Kitchen,Aqua,3132.58,3936.77,2021_08_06-03_32_20_PM
+17301,"Hanna, Mcmahon and Miller BOS_5508",Kindle Store,OldLace,901.49,1161.85,2021_08_06-03_32_20_PM
+24618,Williams Ltd Caz_3003,"Patio, Lawn and Garden",Tomato,3444.8,4337.1,2021_08_06-03_32_20_PM
+12806,Anderson-Nichols oNq_5759,Automotive,PeachPuff,3494.2,3918.16,2021_08_06-03_32_20_PM
+202,Potts and Sons WXI_5887,Grocery and Gourmet Food,MediumSpringGreen,1681.37,1870.73,2021_08_06-03_32_20_PM
+7886,Barker PLC YiK_2566,"Patio, Lawn and Garden",BlueViolet,1880.34,2350.95,2021_08_06-03_32_20_PM
+17483,"Sims, Lowe and Taylor jQj_1123",Apps for Android,LightGoldenRodYellow,1236.37,1528.39,2021_08_06-03_32_20_PM
+23092,"Jones, Chen and Gross NNQ_9777",Books,Gainsboro,4159.02,5011.79,2021_08_06-03_32_20_PM
+15054,Olson and Sons Bfx_3358,Baby,BlueViolet,1213.28,1462.69,2021_08_06-03_32_20_PM
+19098,"Smith, Miller and Tucker ARv_7392",CDs and Vinyl,DarkSeaGreen,1024.19,1157.41,2021_08_06-03_32_20_PM
+28310,Phelps Group bGj_1567,Pet Supplies,NavajoWhite,4528.07,5371.48,2021_08_06-03_32_20_PM
+15858,Moss-Williams BrM_6608,Apps for Android,LawnGreen,2755.61,3578.53,2021_08_06-03_32_20_PM
+25038,Carter LLC biW_5303,Apps for Android,DarkKhaki,4357.45,5513.99,2021_08_06-03_32_20_PM
+30052,"Case, Carter and Butler dNi_1479",Digital Music,LightGray,2806.57,3496.69,2021_08_06-03_32_20_PM
+5943,"Cabrera, Rose and Cruz Rea_5420",Video Games,Thistle,3887.3,4411.28,2021_08_06-03_32_20_PM
+16842,Ochoa LLC trO_4200,Baby,Yellow,4404.43,5359.33,2021_08_06-03_32_20_PM
+2197,"Patrick, Thomas and Walsh iIa_6014",Cell Phones and Accessories,Purple,2406.4,2912.4,2021_08_06-03_32_20_PM
+19120,Watkins Group fgc_0370,Instant Video,SandyBrown,1349.25,1486.05,2021_08_06-03_32_20_PM
+29523,"Ford, Johnson and Kim Ylq_1517",Health and Personal Care,Maroon,4019.8,4506.46,2021_08_06-03_32_20_PM
+25886,"Calderon, Johnson and Ball fCc_3826",Home and Kitchen,SeaShell,3749.53,4684.85,2021_08_06-03_32_20_PM
+20536,"Lee, Evans and Mccarthy cup_4235",Electronics,Bisque,2218.97,2742.32,2021_08_06-03_32_20_PM
+3163,Kent-Galloway grD_9102,Health and Personal Care,DarkBlue,3771.64,4288.42,2021_08_06-03_32_20_PM
+25966,Miller-Fisher ZgG_9891,Pet Supplies,Blue,2071.88,2338.41,2021_08_06-03_32_20_PM
+4030,Bass Inc lMD_8466,Home and Kitchen,LightGreen,2431.03,2855.97,2021_08_06-03_32_20_PM
+1545,Brown Group qfs_1501,Kindle Store,LightSalmon,109.56,129.73,2021_08_06-03_32_20_PM
+10510,Long and Sons NfT_2346,Books,MediumAquaMarine,2810.08,3604.81,2021_08_06-03_32_20_PM
+12837,"Cochran, Moore and Rice uIF_1370",Baby,Sienna,4844.96,5970.15,2021_08_06-03_32_20_PM
+4121,"Benjamin, Harris and Mitchell moA_4312","Clothing, Shoes and Jewelry",DimGray,3837.23,4266.62,2021_08_06-03_32_20_PM
+22234,Hansen-Gonzalez dGU_0915,Books,Gray,2836.07,3365.73,2021_08_06-03_32_20_PM
+803,"Gonzalez, Sanchez and Webb eyz_2619",Pet Supplies,Linen,2192.0,2640.16,2021_08_06-03_32_20_PM
+16433,Garza PLC CUE_8065,Musical Instruments,MediumSlateBlue,562.88,709.36,2021_08_06-03_32_20_PM
+4655,Mcclure-Roth lHV_9910,Automotive,PaleTurquoise,1859.35,2045.74,2021_08_06-03_32_20_PM
+44,Hudson LLC yWZ_9103,Automotive,MintCream,1246.81,1553.6,2021_08_06-03_32_20_PM
+4172,Hanna-Costa BbZ_1732,Automotive,SeaGreen,4987.46,6115.84,2021_08_06-03_32_20_PM
+29762,Lopez-Morton nbM_5801,Apps for Android,DeepSkyBlue,1656.81,2087.76,2021_08_06-03_32_20_PM
+17576,"Norris, Pennington and Hicks wSB_0511",Books,ForestGreen,1172.57,1499.77,2021_08_06-03_32_20_PM
+17572,Kline and Sons toU_7646,Beauty,LavenderBlush,4296.63,5445.07,2021_08_06-03_32_20_PM
+24894,Stephenson-Winters rRV_2852,Health and Personal Care,DarkTurquoise,2864.04,3541.91,2021_08_06-03_32_20_PM
+1272,Duke-Shelton Anj_8561,Kindle Store,Maroon,4815.18,5328.64,2021_08_06-03_32_20_PM
+17632,Marshall-Moore OwK_8221,Toys and Games,MintCream,3375.91,3858.69,2021_08_06-03_32_20_PM
+869,Ramirez Inc wZW_5820,Home and Kitchen,DarkKhaki,395.51,489.21,2021_08_06-03_32_20_PM
+16188,Lewis Ltd ZvU_9843,Sports and Outdoors,DarkSlateBlue,3311.3,4064.47,2021_08_06-03_32_20_PM
+17091,"Martin, Ortiz and Jacobs pYM_1693",Digital Music,DarkOrange,4960.29,5756.4,2021_08_06-03_32_20_PM
+19693,"Li, Smith and Atkinson WRg_1082",Tools and Home Improvement,Violet,2768.45,3434.62,2021_08_06-03_32_20_PM
+12000,Hanson-Gordon FoW_5455,"Patio, Lawn and Garden",DarkGoldenRod,2328.11,2923.61,2021_08_06-03_32_20_PM
+6709,Nunez Group ZRV_5197,Kindle Store,DarkMagenta,2738.26,3413.15,2021_08_06-03_32_20_PM
+12310,"Medina, Davis and Ruiz Ozi_4634",Cell Phones and Accessories,Beige,3126.0,3616.65,2021_08_06-03_32_20_PM
+11437,Hernandez and Sons BuU_8130,"Patio, Lawn and Garden",OldLace,2196.95,2610.36,2021_08_06-03_32_20_PM
+6758,Mayo PLC gPt_8439,Books,MediumOrchid,878.52,1078.23,2021_08_06-03_32_20_PM
+23588,"Moreno, Schroeder and Gray DzD_5007",Sports and Outdoors,DodgerBlue,213.92,260.78,2021_08_06-03_32_20_PM
+27467,Duncan-Morrison edq_0309,"Clothing, Shoes and Jewelry",DarkBlue,1066.73,1363.54,2021_08_06-03_32_20_PM
+18939,"Jones, Bradshaw and Black LDc_4044",Grocery and Gourmet Food,LightCyan,3060.34,3525.72,2021_08_06-03_32_20_PM
+17711,Anderson-Little pfP_4708,CDs and Vinyl,DeepSkyBlue,2379.03,2635.23,2021_08_06-03_32_20_PM
+6833,Martin-Duffy KGG_1288,Sports and Outdoors,DarkGreen,4811.86,5988.8,2021_08_06-03_32_20_PM
+25288,Sawyer-Coleman jGP_2337,CDs and Vinyl,PapayaWhip,4509.49,5598.46,2021_08_06-03_32_20_PM
+23862,"Sanchez, Davis and Johnson lXu_5755","Clothing, Shoes and Jewelry",MistyRose,1145.12,1421.5,2021_08_06-03_32_20_PM
+3202,"Phillips, Lee and Hobbs MnF_3518",Apps for Android,LavenderBlush,420.32,510.93,2021_08_06-03_32_20_PM
+29623,Hamilton-Jones fdt_7815,"Clothing, Shoes and Jewelry",Teal,1787.34,2288.02,2021_08_06-03_32_20_PM
+28450,"Perez, Bailey and Salas soS_6516",Office Products,CadetBlue,1740.21,1980.85,2021_08_06-03_32_20_PM
+13010,"Bauer, Holmes and Collins gJI_3706","Clothing, Shoes and Jewelry",Blue,2986.13,3455.84,2021_08_06-03_32_20_PM
+4710,Estrada-Ramos HoD_4740,Health and Personal Care,DodgerBlue,2776.82,3273.51,2021_08_06-03_32_20_PM
+22615,Martinez PLC elK_6406,Books,FireBrick,1646.56,2037.36,2021_08_06-03_32_20_PM
+16727,"Baker, Gomez and Moore VCu_1148",Video Games,Violet,2397.17,2812.04,2021_08_06-03_32_20_PM
+27560,"Perez, Grant and Parker dzI_6723",Beauty,DarkCyan,2095.29,2446.16,2021_08_06-03_32_20_PM
+16958,"Crane, Hernandez and Lucas add_8553",Sports and Outdoors,Chocolate,3664.15,4247.38,2021_08_06-03_32_20_PM
+29085,"Jordan, Johnson and Best tiH_8848",Electronics,Chartreuse,3965.94,5092.09,2021_08_06-03_32_20_PM
+21382,Baker Ltd WVV_9418,Tools and Home Improvement,NavajoWhite,4883.47,5761.1,2021_08_06-03_32_20_PM
+3014,Frazier-George kJb_0634,CDs and Vinyl,Aqua,3289.56,4150.44,2021_08_06-03_32_20_PM
+21040,Collins-Hamilton yBL_6297,Grocery and Gourmet Food,SlateBlue,2945.76,3456.61,2021_08_06-03_32_20_PM
+28284,"Gardner, Lutz and Hampton qTE_4872",Books,DimGray,4116.7,5231.4,2021_08_06-03_32_20_PM
+13044,Watson-Trujillo aEp_0651,Beauty,Peru,4236.95,4717.31,2021_08_06-03_32_20_PM
+14077,"Adkins, Garcia and Thomas urj_2350",Office Products,LightBlue,3906.16,5052.29,2021_08_06-03_32_20_PM
+20417,Gonzalez-Curry elL_8648,Books,MediumAquaMarine,832.5,1071.27,2021_08_06-03_32_20_PM
+3355,Donovan and Sons ZtM_9892,Automotive,Lime,136.07,165.47,2021_08_06-03_32_20_PM
+11417,"Young, Nelson and Griffith Olz_9820",Office Products,Aqua,2237.67,2870.64,2021_08_06-03_32_20_PM
+21652,Price-Tucker whD_4169,Automotive,SeaGreen,2856.44,3227.19,2021_08_06-03_32_20_PM
+15796,Harris and Sons qFy_7251,Electronics,LightSeaGreen,547.58,698.54,2021_08_06-03_32_20_PM
+26369,Henderson Group gnd_7998,"Clothing, Shoes and Jewelry",SteelBlue,1856.87,2050.1,2021_08_06-03_32_20_PM
+10361,"Boyd, Garcia and Brock qXR_0931",Cell Phones and Accessories,Teal,4136.97,5228.21,2021_08_06-03_32_20_PM
+15112,Clay PLC rQy_1295,Cell Phones and Accessories,Chocolate,4367.78,5583.64,2021_08_06-03_32_20_PM
+222,Pacheco-Hall ShF_0627,Office Products,Aqua,4331.6,5172.57,2021_08_06-03_32_20_PM
+30201,"Garcia, White and Coleman FrQ_7906",Office Products,PaleGreen,3888.48,4388.42,2021_08_06-03_32_20_PM
+571,Rogers-Russell yOn_5628,Beauty,RosyBrown,2802.8,3343.44,2021_08_06-03_32_20_PM
+23175,Mitchell-Webster zgT_5309,Tools and Home Improvement,Brown,4723.98,6070.3,2021_08_06-03_32_20_PM
+4305,Matthews-Mora OCq_8366,Beauty,Aqua,756.08,873.93,2021_08_06-03_32_20_PM
+10583,Garcia-Johnson Cxy_8439,Digital Music,Gainsboro,4529.71,5122.44,2021_08_06-03_32_20_PM
+4220,"Gibson, Hill and Anderson FKz_5915",CDs and Vinyl,MediumTurquoise,1981.09,2351.4,2021_08_06-03_32_20_PM
+12792,"Booker, Butler and Butler PGv_1708",Instant Video,Turquoise,4396.49,4858.64,2021_08_06-03_32_20_PM
+7011,Flowers LLC Wpf_8602,Electronics,PeachPuff,1767.68,1948.89,2021_08_06-03_32_20_PM
+29787,"Cervantes, Haney and Wright vvk_3329",CDs and Vinyl,MediumSeaGreen,3619.57,4423.16,2021_08_06-03_32_20_PM
+9813,Davis-Merritt mSs_4974,Pet Supplies,AntiqueWhite,460.07,565.4,2021_08_06-03_32_20_PM
+17768,Morrow PLC DYo_8584,Home and Kitchen,MediumAquaMarine,3266.49,4040.14,2021_08_06-03_32_20_PM
+29476,Reyes-Lee Ubc_2847,Health and Personal Care,RosyBrown,4539.79,5864.7,2021_08_06-03_32_20_PM
+27876,"Powell, Cummings and Martin kaK_1484",Baby,DeepSkyBlue,2552.17,3211.12,2021_08_06-03_32_20_PM
+25068,Morales-Clark upm_8391,Books,NavajoWhite,105.85,132.24,2021_08_06-03_32_20_PM
+26677,Cox-Roberts QWw_0079,Office Products,Lime,4327.27,5354.54,2021_08_06-03_32_20_PM
+2129,Freeman-Gonzalez kiY_1395,Grocery and Gourmet Food,DarkTurquoise,3225.69,3747.24,2021_08_06-03_32_20_PM
+10471,"Wilson, Jackson and Brown WMP_0104",Home and Kitchen,Black,2865.33,3683.59,2021_08_06-03_32_20_PM
+11627,"Johnson, Jackson and Hill pyB_0587",Beauty,SlateBlue,4547.21,5444.84,2021_08_06-03_32_20_PM
+27206,Lynch LLC DRh_1043,Cell Phones and Accessories,Silver,2934.39,3329.94,2021_08_06-03_32_20_PM
+25605,"Garner, Sexton and Rubio CYC_5274",Movies and TV,LightGreen,3774.82,4738.16,2021_08_06-03_32_20_PM
+3353,"Gross, Nguyen and Chase jvC_0533",Sports and Outdoors,SpringGreen,4466.43,5425.13,2021_08_06-03_32_20_PM
+2046,Cole-Harrison QIJ_1353,Cell Phones and Accessories,Tan,3921.66,4477.21,2021_08_06-03_32_20_PM
+4751,Wright Inc jiu_6713,Automotive,SlateBlue,4978.31,6470.58,2021_08_06-03_32_20_PM
+13688,Alexander PLC HEB_7183,Health and Personal Care,Gray,1962.78,2185.04,2021_08_06-03_32_20_PM
+22789,Edwards-White qRz_4954,Tools and Home Improvement,MistyRose,4203.69,5459.16,2021_08_06-03_32_20_PM
+6394,Miller PLC Uog_1336,Baby,SlateBlue,154.83,177.17,2021_08_06-03_32_20_PM
+15966,"Peterson, Robinson and Lane kkC_6966",Electronics,GhostWhite,1959.54,2334.83,2021_08_06-03_32_20_PM
+18717,Avery Ltd ZqP_7094,Digital Music,LightGreen,4816.58,5984.52,2021_08_06-03_32_20_PM
+8711,Rodriguez-Tucker AMu_9940,"Clothing, Shoes and Jewelry",Aquamarine,2383.78,3040.41,2021_08_06-03_32_20_PM
+28279,Barnes-Walker uUB_1243,Digital Music,YellowGreen,1583.63,2050.27,2021_08_06-03_32_20_PM
+26960,"Snyder, Vargas and Michael EUD_8105",Electronics,Ivory,2349.28,2613.19,2021_08_06-03_32_20_PM
+12599,Robinson Ltd DCL_9442,Digital Music,Black,4100.86,4579.41,2021_08_06-03_32_20_PM
+23497,Vazquez-Huynh joL_2314,Sports and Outdoors,LightCyan,1967.08,2322.15,2021_08_06-03_32_20_PM
+15179,Mullen PLC mVI_5312,Digital Music,DodgerBlue,1477.12,1719.71,2021_08_06-03_32_20_PM
+11805,Cabrera-Anderson mqP_4860,"Patio, Lawn and Garden",Gainsboro,4802.74,5695.79,2021_08_06-03_32_20_PM
+16880,Duncan-Parker Ayk_6890,Health and Personal Care,Aqua,2823.06,3288.12,2021_08_06-03_32_20_PM
+6432,Bryan-Hogan aCS_8426,Automotive,RosyBrown,2155.46,2462.49,2021_08_06-03_32_20_PM
+19468,"Moyer, Anderson and Baker QCz_8939",Musical Instruments,Turquoise,2147.96,2401.84,2021_08_06-03_32_20_PM
+25666,Mendez-Thompson bRK_0866,CDs and Vinyl,Thistle,2955.72,3632.79,2021_08_06-03_32_20_PM
+23692,"Aguilar, Manning and Parker lDj_8293",Tools and Home Improvement,LimeGreen,4149.25,5194.04,2021_08_06-03_32_20_PM
+24471,Stevens Ltd xxm_0245,Pet Supplies,DarkOrange,120.68,156.77,2021_08_06-03_32_20_PM
+28696,"Carlson, Hicks and Reed YkN_9488",Digital Music,DodgerBlue,4977.61,5875.59,2021_08_06-03_32_20_PM
+15788,Miller-Brewer kEX_9689,Apps for Android,Orchid,2297.59,2617.18,2021_08_06-03_32_20_PM
+24203,Ray Group TGR_9310,Office Products,SaddleBrown,3434.15,3847.08,2021_08_06-03_32_20_PM
+8818,Mcknight-Wilson mUI_7278,Cell Phones and Accessories,LightSkyBlue,432.4,550.61,2021_08_06-03_32_20_PM
+18658,Maxwell-Tapia EyG_1459,Toys and Games,OliveDrab,215.47,273.64,2021_08_06-03_32_20_PM
+22268,Graves-Brown YJf_0334,Digital Music,MediumSeaGreen,2976.23,3382.3,2021_08_06-03_32_20_PM
+28284,Higgins Ltd zot_5470,"Clothing, Shoes and Jewelry",Orange,480.65,545.47,2021_08_06-03_32_20_PM
+23502,"Waller, Taylor and Tucker xXn_1884","Clothing, Shoes and Jewelry",NavajoWhite,4207.05,5421.28,2021_08_06-03_32_20_PM
+1269,Stanley Inc SXA_2082,Automotive,Orchid,4446.6,5396.34,2021_08_06-03_32_20_PM
+26271,Gonzalez Group Cbe_8037,Instant Video,BlueViolet,2613.62,3198.94,2021_08_06-03_32_20_PM
+26504,"Vasquez, Flores and Huber cBB_7875",Books,DarkBlue,4905.66,6264.45,2021_08_06-03_32_20_PM
+20074,"Flores, Hill and Williams PDz_0827",Apps for Android,DeepSkyBlue,2195.62,2522.34,2021_08_06-03_32_20_PM
+7403,Klein and Sons hHh_0106,Health and Personal Care,DarkOliveGreen,2868.03,3639.11,2021_08_06-03_32_20_PM
+17096,Castro Inc JWC_2338,Cell Phones and Accessories,BurlyWood,2245.31,2806.72,2021_08_06-03_32_20_PM
+23602,King-Wilson Ybc_2154,Video Games,HotPink,2360.16,2666.95,2021_08_06-03_32_20_PM
+3482,Rivers-Ramsey IAb_7329,Health and Personal Care,SeaGreen,3975.01,4432.11,2021_08_06-03_32_20_PM
+13080,"Keller, Schultz and Campbell XZF_6437",Health and Personal Care,LightSkyBlue,4530.23,5687.5,2021_08_06-03_32_20_PM
+19300,Garcia-Chandler ZUt_6026,Health and Personal Care,MediumTurquoise,4166.98,4682.32,2021_08_06-03_32_20_PM
+14114,Wilson Group DWX_2708,Home and Kitchen,BlueViolet,525.84,603.67,2021_08_06-03_32_20_PM
+30210,Williams PLC sfA_9155,Kindle Store,Black,2240.0,2474.2,2021_08_06-03_32_20_PM
+29665,Barton-Crawford PHF_8997,Instant Video,FloralWhite,835.24,1013.39,2021_08_06-03_32_20_PM
+25125,Miller-Ramos XrM_7684,Sports and Outdoors,LavenderBlush,1402.36,1614.07,2021_08_06-03_32_20_PM
+9707,Ross Inc YEM_9739,Office Products,YellowGreen,3183.4,3607.32,2021_08_06-03_32_20_PM
+11878,"Simpson, Cooley and Flynn VOO_4176","Patio, Lawn and Garden",DarkBlue,4834.35,5648.03,2021_08_06-03_32_20_PM
+14577,Haynes-Whitney MzN_7664,Video Games,LightSkyBlue,2422.2,3057.3,2021_08_06-03_32_20_PM
+11169,"Johnson, Fields and Davila BJs_9778",CDs and Vinyl,SaddleBrown,4232.05,4902.78,2021_08_06-03_32_20_PM
+5945,Coleman PLC GDn_2384,Home and Kitchen,WhiteSmoke,4859.95,5495.5,2021_08_06-03_32_20_PM
+27095,"Dillon, Stephenson and Davis lga_0562",Baby,DarkSlateGray,2632.47,2937.71,2021_08_06-03_32_20_PM
+26935,Taylor-Moore Gvj_1780,Digital Music,MediumSeaGreen,2864.04,3380.25,2021_08_06-03_32_20_PM
+3733,"Santana, Daniel and Johnson tsN_6857",Health and Personal Care,SlateGray,3325.68,3685.97,2021_08_06-03_32_20_PM
+24715,Garcia-Gregory XKZ_8399,Pet Supplies,GhostWhite,1451.3,1659.93,2021_08_06-03_32_20_PM
+17092,"Rodgers, Woods and Jones zro_8493",Electronics,Purple,3063.95,3692.34,2021_08_06-03_32_20_PM
+4402,Johnson and Sons sPA_0568,Office Products,FireBrick,548.81,658.36,2021_08_06-03_32_20_PM
+17041,"Alexander, Pena and Flores HPK_7363",Electronics,MidnightBlue,4837.97,5989.38,2021_08_06-03_32_20_PM
+23668,"Ayala, Baker and Murphy FNC_1972",Video Games,Navy,4798.9,5860.67,2021_08_06-03_32_20_PM
+24412,Gonzales PLC FNO_4910,Electronics,Aqua,4447.14,5156.37,2021_08_06-03_32_20_PM
+11120,"Brewer, Mcintosh and Little oVM_9551",Cell Phones and Accessories,Peru,3292.03,4189.4,2021_08_06-03_32_20_PM
+5211,Gillespie-Hill wxR_3864,Electronics,LightSteelBlue,892.88,1133.92,2021_08_06-03_32_20_PM
+3365,"Thompson, Stephens and Bartlett VWa_9254",Toys and Games,CornflowerBlue,1892.33,2325.33,2021_08_06-03_32_20_PM
+22184,Taylor Group ygG_2230,Grocery and Gourmet Food,Yellow,3915.21,4962.93,2021_08_06-03_32_20_PM
+12260,Avery-Morgan Bkq_1922,Movies and TV,LightSteelBlue,1563.72,1964.4,2021_08_06-03_32_20_PM
+10195,Butler-Alvarado JvY_1338,Books,SeaGreen,3737.74,4495.89,2021_08_06-03_32_20_PM
+7968,"Byrd, Baker and Crawford JKU_4132","Clothing, Shoes and Jewelry",Purple,2403.57,2705.18,2021_08_06-03_32_20_PM
+15571,Hall Ltd CZc_3881,Tools and Home Improvement,Pink,3119.65,3805.33,2021_08_06-03_32_20_PM
+3161,Villarreal and Sons zGf_2827,Baby,MediumVioletRed,1771.2,2008.4,2021_08_06-03_32_20_PM
+7587,Elliott-Pugh Ave_1826,Toys and Games,LightCoral,3073.86,3780.63,2021_08_06-03_32_20_PM
+11485,Mays-French Ovu_7858,Automotive,Brown,4151.75,5389.35,2021_08_06-03_32_20_PM
+6843,Reynolds Inc Yqr_6732,Movies and TV,HoneyDew,2558.91,3063.52,2021_08_06-03_32_20_PM
+7219,Carter-Jefferson veB_7884,Instant Video,MistyRose,4420.78,5474.42,2021_08_06-03_32_20_PM
+6039,Miller and Sons weK_4238,Baby,MintCream,2579.51,3162.84,2021_08_06-03_32_20_PM
+8221,Williams and Sons ity_3421,Musical Instruments,MistyRose,4535.45,5574.26,2021_08_06-03_32_20_PM
+24257,Watts-Lawson fCy_3385,Tools and Home Improvement,PaleVioletRed,2177.83,2680.31,2021_08_06-03_32_20_PM
+14169,Hurley-Pham bBH_2320,"Clothing, Shoes and Jewelry",ForestGreen,1708.31,2162.52,2021_08_06-03_32_20_PM
+1025,"Mcdowell, Campbell and Wallace oKr_9232",Pet Supplies,Beige,706.31,846.73,2021_08_06-03_32_20_PM
+8857,"English, Skinner and Thomas BqV_9064",Beauty,AliceBlue,520.32,584.65,2021_08_06-03_32_20_PM
+24773,Allen Group oYa_4933,Apps for Android,AliceBlue,3296.49,4285.35,2021_08_06-03_32_20_PM
+24230,Long-Hamilton FiS_9758,Beauty,MediumVioletRed,709.49,910.67,2021_08_06-03_32_20_PM
+2173,Johnson Ltd Ahs_7632,Musical Instruments,SaddleBrown,1946.24,2393.98,2021_08_06-03_32_20_PM
+10470,"Chang, French and Harvey guP_5543",Baby,DarkGray,3011.88,3745.34,2021_08_06-03_32_20_PM
+1176,Griffin-Tate loB_5710,Instant Video,Olive,4896.93,5961.61,2021_08_06-03_32_20_PM
+19369,Arnold Group avk_3192,Sports and Outdoors,DarkSeaGreen,2675.84,3041.74,2021_08_06-03_32_20_PM
+13887,Reeves Inc vfn_5407,"Clothing, Shoes and Jewelry",LightGoldenRodYellow,2394.8,2782.33,2021_08_06-03_32_20_PM
+6320,"Hamilton, Weaver and Sanchez EOh_5415",Musical Instruments,LightGray,4777.95,5422.24,2021_08_06-03_32_20_PM
+9456,"Parker, Randolph and Butler jBO_4424",Tools and Home Improvement,MediumSlateBlue,705.98,908.47,2021_08_06-03_32_20_PM
+4073,Hanna-Gilbert aPl_1759,Books,Beige,1684.94,1949.53,2021_08_06-03_32_20_PM
+16162,"Brown, Anthony and Winters CjL_2320",Books,MediumPurple,365.13,448.67,2021_08_06-03_32_20_PM
+5782,Fuentes and Sons VBX_0754,CDs and Vinyl,Salmon,3336.34,3909.59,2021_08_06-03_32_20_PM
+18351,"Andrews, Young and Potter lXP_9847",Electronics,SaddleBrown,1061.27,1334.09,2021_08_06-03_32_20_PM
+20124,Hernandez-Maxwell ozH_7337,Pet Supplies,DarkSalmon,1823.41,2201.22,2021_08_06-03_32_20_PM
+22290,Dickson LLC HVd_6373,"Clothing, Shoes and Jewelry",Sienna,556.97,689.08,2021_08_06-03_32_20_PM
+22849,Bennett-Trujillo HrH_7304,"Clothing, Shoes and Jewelry",BlanchedAlmond,2376.28,2975.56,2021_08_06-03_32_20_PM
+939,Collins-Smith vsM_6868,Instant Video,LemonChiffon,4761.7,6064.45,2021_08_06-03_32_20_PM
+10552,Johnson LLC EXz_7700,"Patio, Lawn and Garden",Khaki,4877.54,6041.12,2021_08_06-03_32_20_PM
+16894,"Kelly, Strickland and Price gQq_0938",Apps for Android,Indigo,4664.88,5469.74,2021_08_06-03_32_20_PM
+11039,Wheeler LLC cPo_4778,Beauty,DarkSlateGray,880.22,1117.05,2021_08_06-03_32_20_PM
+978,Hoffman Group xBJ_9926,Baby,Thistle,3897.36,4431.36,2021_08_06-03_32_20_PM
+17234,Johnson Ltd rDW_1255,Electronics,DarkTurquoise,193.91,217.26,2021_08_06-03_32_20_PM
+25561,"Thompson, Williams and Parsons ltr_5535",Kindle Store,ForestGreen,2892.04,3672.99,2021_08_06-03_32_20_PM
+27326,Bryan-Austin ZMc_1596,Instant Video,ForestGreen,2376.11,2702.01,2021_08_06-03_32_20_PM
+23632,"Mills, Wells and Lyons nyX_6109",Cell Phones and Accessories,MediumAquaMarine,3390.94,3906.59,2021_08_06-03_32_20_PM
+1095,"Sims, Pitts and Washington qPs_6271",Electronics,FloralWhite,4692.34,5830.32,2021_08_06-03_32_20_PM
+29373,"Carpenter, Moore and Owen bmS_8881","Clothing, Shoes and Jewelry",Salmon,971.75,1132.88,2021_08_06-03_32_20_PM
+8631,"Conway, Cobb and Garcia JCL_8620",Automotive,AntiqueWhite,293.79,337.09,2021_08_06-03_32_20_PM
+7401,Webster PLC dHC_8016,Digital Music,OliveDrab,853.52,1093.15,2021_08_06-03_32_20_PM
+26266,Cain PLC NaY_5532,Apps for Android,MediumPurple,3618.39,4067.94,2021_08_06-03_32_20_PM
+27000,Greene-Mayo Wrd_0192,Electronics,Chocolate,1571.36,1994.12,2021_08_06-03_32_20_PM
+22972,"Wang, Mcdaniel and Cobb Zux_7720",Tools and Home Improvement,PapayaWhip,3567.28,3978.54,2021_08_06-03_32_20_PM
+12621,"Taylor, Gibson and Rodriguez dQi_6963",Beauty,MediumVioletRed,4159.83,5289.27,2021_08_06-03_32_20_PM
+16327,Blair-Moore rgU_9962,Automotive,Teal,1872.37,2352.57,2021_08_06-03_32_20_PM
+8236,Schultz Ltd WpB_8528,Baby,LightGray,2411.1,2838.0,2021_08_06-03_32_20_PM
+17544,Martin LLC LzT_8071,Health and Personal Care,Ivory,4717.4,5341.88,2021_08_06-03_32_20_PM
+5523,Clark Inc uMx_3284,Baby,Peru,2523.28,3215.63,2021_08_06-03_32_20_PM
+13325,"Dean, Johnson and Thompson GBw_2878",Health and Personal Care,IndianRed,4381.01,5542.61,2021_08_06-03_32_20_PM
+14331,Wheeler-Mahoney bXM_3522,Video Games,LightSeaGreen,203.88,237.59,2021_08_06-03_32_20_PM
+29501,"Avery, Griffith and Scott lPH_9054",Apps for Android,IndianRed,767.55,878.62,2021_08_06-03_32_20_PM
+9598,"Hogan, Mcintosh and Sweeney svt_3071",Pet Supplies,PapayaWhip,3320.8,3853.22,2021_08_06-03_32_20_PM
+20465,"Martinez, Boyd and Kirby AaO_8922",CDs and Vinyl,DarkGray,2122.9,2573.53,2021_08_06-03_32_20_PM
+10019,Smith-Sanchez JUI_0648,Kindle Store,DimGray,1431.11,1819.59,2021_08_06-03_32_20_PM
+9982,Adkins PLC rgh_4732,Office Products,MediumVioletRed,711.43,912.41,2021_08_06-03_32_20_PM
+8799,Colon and Sons xwp_2909,"Patio, Lawn and Garden",DarkMagenta,2536.38,3231.3,2021_08_06-03_32_20_PM
+20648,"Haney, Hunt and Soto IOM_1696",Grocery and Gourmet Food,RoyalBlue,4113.0,4570.51,2021_08_06-03_32_20_PM
+18675,Dunn-Farmer aGt_9934,Pet Supplies,RosyBrown,512.93,662.69,2021_08_06-03_32_20_PM
+16262,Jimenez-Becker ngV_6861,Home and Kitchen,RosyBrown,3597.72,4032.15,2021_08_06-03_32_20_PM
+14966,"Williams, Watkins and Watson giH_4686",Apps for Android,DarkMagenta,1569.16,2024.9,2021_08_06-03_32_20_PM
+8321,Tucker Ltd WBe_5834,Video Games,CadetBlue,2593.78,3184.5,2021_08_06-03_32_20_PM
+25038,"Smith, Adams and Martinez WCN_6145","Patio, Lawn and Garden",HotPink,978.2,1089.19,2021_08_06-03_32_20_PM
+14715,"Morrison, Coleman and Norman OcX_7877","Clothing, Shoes and Jewelry",ForestGreen,1790.72,2288.43,2021_08_06-03_32_20_PM
+25870,Quinn-Marshall UNE_1047,Beauty,SpringGreen,1389.28,1769.28,2021_08_06-03_32_20_PM
