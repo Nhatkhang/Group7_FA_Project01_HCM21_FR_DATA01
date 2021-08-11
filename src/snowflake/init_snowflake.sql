@@ -1,4 +1,6 @@
 -- Set up Warehouse
+create warehouse FA_Project01_CloudDW;
+
 -- Set up Database
 CREATE DATABASE FA_Project01_DB;
 CREATE SCHEMA AdsBI;
@@ -10,9 +12,9 @@ CREATE TABLE AdsBI.AdsHeaderDetails (
     AdsName nvarchar(30) NOT NULL ,
     AdsCategory nvarchar(100) NOT NULL,
     AdsPlatform nvarchar(100) NOT NULL,
-    StandardCost float NOT NULL,
+    StandardCost number NOT NULL,
     Cost_Per_Click float NOT NULL,
-    ValidFlag binary NOT NULL,
+    ValidFlag boolean NOT NULL,
     CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsID)
 );
 CREATE TABLE AdsBI.CustomerDetails (
@@ -26,7 +28,7 @@ CREATE TABLE AdsBI.CustomerDetails (
     City nvarchar(50) NOT NULL,
     Region nvarchar(100) NOT NULL,
     RegisteredDate date NOT NULL,
-    ValidFlag Binary,
+    ValidFlag boolean,
     CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
 );
 CREATE TABLE AdsBI.ProductDetails (
@@ -34,9 +36,9 @@ CREATE TABLE AdsBI.ProductDetails (
     ProductName nvarchar(200) NOT NULL,
     ProductCategory nvarchar(200) NOT NULL,
     ProductColor nvarchar(100) NOT NULL,
-    Cost float NOT NULL,
-    Price float NOT NULL,
-    ValidFlag Binary,
+    Cost number NOT NULL,
+    Price number NOT NULL,
+    ValidFlag boolean,
     CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
 CREATE TABLE AdsBI.AdsTransactionDetails(
