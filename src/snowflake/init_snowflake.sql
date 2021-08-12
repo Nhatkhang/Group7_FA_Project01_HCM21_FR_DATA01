@@ -113,4 +113,14 @@ AS
 ;
 
 
--- Task
+-- Create users
+CREATE USER trainers
+PASSWORD = 'Thisisapassw0rd'
+DEFAULT_ROLE = "ACCOUNTADMIN"
+MUST_CHANGE_PASSWORD = TRUE;
+
+CREATE USER nkang
+PASSWORD = 'Thisisapassw0rdne'
+DEFAULT_ROLE = "ACCOUNTADMIN"
+MUST_CHANGE_PASSWORD = TRUE;
+
