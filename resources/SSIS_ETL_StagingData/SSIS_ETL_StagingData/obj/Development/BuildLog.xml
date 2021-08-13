@@ -2,13 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS_ETL_StagingData</Name>
-    <LastWriteTime>2021-08-10T07:15:52.6454027Z</LastWriteTime>
+    <LastWriteTime>2021-08-13T02:38:54.6250291Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>AdsBI.dtsx</Name>
-      <LastWriteTime>2021-08-10T10:35:41.6489533Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T02:58:35.8606073Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PushToSnow.dtsx</Name>
+      <LastWriteTime>2021-08-12T17:24:19.8522368Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadSplitAds.dtsx</Name>
+      <LastWriteTime>2021-08-13T01:38:20.9474928Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadSplitProduct.dtsx</Name>
+      <LastWriteTime>2021-08-13T02:50:00.7776082Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadSplitCustomer.dtsx</Name>
+      <LastWriteTime>2021-08-13T02:54:56.4973807Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadTransaction.dtsx</Name>
+      <LastWriteTime>2021-08-13T01:37:53.4843401Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

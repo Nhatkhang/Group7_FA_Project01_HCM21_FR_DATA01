@@ -46,7 +46,7 @@ CREATE TABLE [AdsBI].[ProductDetails] (
 	CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
 CREATE TABLE [AdsBI].[AdsTransactionDetails](
-	[Date] [datetime] NOT NULL,
+	[Date] [date] NOT NULL,
 	[CustomerID] [int] NOT NULL,
 	[ProductID] [int] NOT NULL,
 	[AdsID] [int] NOT NULL,

@@ -28,14 +28,14 @@ Data is generated based on Python sript. The database (.csv flat files) will inc
 4. AdsDetailData.csv
 
     This file contains trasaction information with the components:
-        - Date: Indicates the date of record.
-        - Customer_ID: this is ramdomly select from the customer ID list saved aboved to ensure that the data exist in      CustomerData.
-        - Product_ID: this is ramdomly select from the product ID list saved aboved to ensure that the data exist in        ProductData.
-        - Time_Spent_On_Ads: Average time user/customer spent on a specific Ads for a specific product, unit is minute.
-        - Ads_ID: this is ramdomly select from the Advertisement ID list saved aboved to ensure that the data exist in      AdsHeaderData.
-        - Daily_Internet_Usage: Average time user/customer spent for the Internet, unit is hour.
-        - Number_ClicksAds: Total of clicks user/customer clicked on the Ad.
-        - Number_ProductBought: Total number of product user/customer actually bought from the Ad.
+    - Date: Indicates the date of record.
+    - Customer_ID: this is ramdomly select from the customer ID list saved aboved to ensure that the data exist in      CustomerData.
+    - Product_ID: this is ramdomly select from the product ID list saved aboved to ensure that the data exist in        ProductData.
+    - Time_Spent_On_Ads: Average time user/customer spent on a specific Ads for a specific product, unit isminute.
+    - Ads_ID: this is ramdomly select from the Advertisement ID list saved aboved to ensure that the data exist in      AdsHeaderData.
+    - Daily_Internet_Usage: Average time user/customer spent for the Internet, unit is hour.
+    - Number_ClicksAds: Total of clicks user/customer clicked on the Ad.
+    - Number_ProductBought: Total number of product user/customer actually bought from the Ad.
 
 **Each of the csv file includes *Modified_Date* to indicate the date Data is created.**
 
