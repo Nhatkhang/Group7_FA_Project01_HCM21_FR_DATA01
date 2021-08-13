@@ -2,38 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS_ETL_StagingData</Name>
-    <LastWriteTime>2021-08-13T02:38:54.6250291Z</LastWriteTime>
+    <LastWriteTime>2021-08-13T06:56:41.9175161Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>AdsBI.dtsx</Name>
-      <LastWriteTime>2021-08-13T02:58:35.8606073Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T07:22:20.9766338Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>PushToSnow.dtsx</Name>
-      <LastWriteTime>2021-08-12T17:24:19.8522368Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T05:10:54.4141719Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadSplitAds.dtsx</Name>
-      <LastWriteTime>2021-08-13T01:38:20.9474928Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T05:09:03.6294806Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadSplitProduct.dtsx</Name>
-      <LastWriteTime>2021-08-13T02:50:00.7776082Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T07:24:29.7795873Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadSplitCustomer.dtsx</Name>
-      <LastWriteTime>2021-08-13T02:54:56.4973807Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T05:06:52.0129002Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadTransaction.dtsx</Name>
-      <LastWriteTime>2021-08-13T01:37:53.4843401Z</LastWriteTime>
+      <LastWriteTime>2021-08-13T05:12:12.9857165Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

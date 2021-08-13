@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="106"
-  DTS:VersionGUID="{9B28F4B3-7F52-46F9-B566-28B1BADBAF43}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{1DCE88D9-CF0E-4691-879B-192FFDD54B2F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -680,6 +680,19 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LogEvent]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2376AA4A-2C0B-44D3-8286-DCB380BEFD6C}"
+      DTS:ObjectName="LogEvent">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::ErrorLogFolderPath]+"\\LogEvent.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\resources\SSIS_ETL_StagingData\LogEvent.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ProductCSV]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{50EBFB14-A9C6-449C-A3BE-294ED4BE8F6B}"
@@ -865,6 +878,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="LogEvent"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{D59BA6E9-C631-4D4A-A999-F3D731F9A576}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -913,6 +938,14 @@
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{D59BA6E9-C631-4D4A-A999-F3D731F9A576}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Load DimensionData In Parallel"
@@ -923,6 +956,9 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load DimensionData In Parallel">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load DimensionData In Parallel\ETL AdsHeader"
@@ -934,6 +970,9 @@
           DTS:ObjectName="ETL AdsHeader"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -3158,6 +3197,9 @@
           DTS:ObjectName="ETL Customer"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -6316,6 +6358,9 @@
           DTS:ObjectName="ETL Product"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -8541,6 +8586,9 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="LoadTransactionData">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\LoadTransactionData\AddFK"
@@ -8553,6 +8601,9 @@
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{D0BD9D57-94AB-4B1C-8B1A-609FCEA61F6B}"
@@ -8570,6 +8621,9 @@
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{D0BD9D57-94AB-4B1C-8B1A-609FCEA61F6B}"
@@ -8586,6 +8640,9 @@
           DTS:ObjectName="ETL TransactionAds"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -9963,6 +10020,9 @@
       DTS:ObjectName="Run package Push SQL2SF"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
@@ -9995,6 +10055,67 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Scripting task">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="EventFilter">3,7,OnError,13,OnInformation,10,OnProgress</DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnError"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnInformation"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnProgress"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+      </DTS:LoggingOptions>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Scripting task\Create ErrorLog tmpCSV Folder"
@@ -10006,6 +10127,9 @@
           DTS:ObjectName="Create ErrorLog tmpCSV Folder"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <ScriptProject
               Name="ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f"
@@ -10654,6 +10778,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ObjectName="Create sql files and bat file"
           DTS:ThreadHint="1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <ScriptProject
               Name="ST_5e3f3f91adcd4313bd94d9fa377c296b"
@@ -10978,7 +11105,7 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba
             string fileaddsql = snowflakefolder + "\\AddFK.sql";
             string fileputsql = snowflakefolder + "\\PutSSIS.sql";
             string filebat = snowflakefolder + "\\Push2snow.bat";
-            string option = "FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = \'UFT-8\') ON_ERROR = SKIP_FILE;";
+            string option = "FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = \'UTF-8\') ON_ERROR = SKIP_FILE;";
 
             // Create Drop sql 
             if (!File.Exists(filedropsql))
@@ -11076,7 +11203,7 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba
     <msb:CodeName>ST_5e3f3f91adcd4313bd94d9fa377c296b</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_5e3f3f91adcd4313bd94d9fa377c296b</msb:DisplayName>
-    <msb:ProjectId>{A2E56C3D-C77A-4D82-AD0E-8234DEA656E0}</msb:ProjectId>
+    <msb:ProjectId>{C17E5232-F00D-48E5-B91A-484143AD8A05}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_5e3f3f91adcd4313bd94d9fa377c296b.csproj" />
@@ -11218,7 +11345,7 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba.Properties {
               <BinaryItem
                 Name="ST_5e3f3f91adcd4313bd94d9fa377c296b.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMvfFWEAAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAAnkEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKbgFWEAAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAAnkEA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAExBAABPAAAAAGAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -11262,7 +11389,7 @@ BBAAYQCSBBAAaQCSBAYAiQCSBAYAsQCSBBUAwQCSBAYAcQCDBS8AyQBkBTQA0QDyAzkA2QApAz8A
 BAYAAQHDAFUAAQHJBV4AmQCSBGQAuQCSBAYACAAUAH4ACAAYAIMAKQBzAOsALgALAMMALgATAMwA
 LgAbAOsALgAjAPQALgArAB0BLgAzAB0BLgA7AB0BLgBDAPQALgBLACMBLgBTAB0BLgBbADoBQwBj
 AIMASQBzAOsAYQB7AIMAYwBrAIMAGwADAAEABAADAAAAagS0AAAAMQG5AAAAsgW+AAIABAADAAIA
-BQAFAAEABgAFAAIABwAHAASAAAABAAAA1x4dRgAAAAAAAF8AAAAEAAAAAAAAAAAAAABsAIMAAAAA
+BQAFAAEABgAFAAIABwAHAASAAAABAAAA1x6LRgAAAAAAAF8AAAAEAAAAAAAAAAAAAABsAIMAAAAA
 AA8AAAAAAAAAAAAAAHUAWgMAAAAABAAAAAAAAAAAAAAAbAD7AwAAAAAPAAAAAAAAAAAAAAB1ABQA
 AAAAAAAAAAABAAAA4wQAAAUAAgAAAAAAADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3Fs
 U2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBTVF82MDI5ZDI1Mzg4Yjg0YjZlYTRlMWU1ZTc2NTky
@@ -11301,7 +11428,7 @@ AEsALQBUAHIAdQBuAGMAYQB0AGUARABhAHQAYQAuAHMAcQBsAAEVXABBAGQAZABGAEsALgBzAHEA
 bAAAGVwAUAB1AHQAUwBTAEkAUwAuAHMAcQBsAAAdXABQAHUAcwBoADIAcwBuAG8AdwAuAGIAYQB0
 AACAvUYASQBMAEUAXwBGAE8AUgBNAEEAVAAgAD0AIAAoAFQAWQBQAEUAIAA9ACAAQwBTAFYAIABG
 AEkARQBMAEQAXwBEAEUATABJAE0ASQBUAEUAUgAgAD0AIAAnAHwAJwAgAEIASQBOAEEAUgBZAF8A
-RgBPAFIATQBBAFQAIAA9ACAAJwBVAEYAVAAtADgAJwApACAATwBOAF8ARQBSAFIATwBSACAAPQAg
+RgBPAFIATQBBAFQAIAA9ACAAJwBVAFQARgAtADgAJwApACAATwBOAF8ARQBSAFIATwBSACAAPQAg
 AFMASwBJAFAAXwBGAEkATABFADsAATtVAFMARQAgAEQAQQBUAEEAQgBBAFMARQAgAEYAQQBfAFAA
 UgBPAEoARQBDAFQAMAAxAF8ARABCADsAAE1UAFIAVQBOAEMAQQBUAEUAIABUAEEAQgBMAEUAIABB
 AEQAUwBCAEkALgBBAGQAcwBIAGUAYQBkAGUAcgBEAGUAdABhAGkAbABzADsAAEtUAFIAVQBOAEMA
@@ -11364,7 +11491,7 @@ VABIACUAIgAgAC0ALQBjAG8AbgBmAGkAZwAgACUAUwBOAE8AVwBTAFEATAAtAEMATwBOAEYASQBH
 AC0AUABBAFQASAAlACAALQBmACAAJQBTAEMAUgBJAFAAVAAtAFAAQQBUAEgAJQBcAEEAZABkAEYA
 SwAuAHMAcQBsAAFxUwBUAF8ANgAwADIAOQBkADIANQAzADgAOABiADgANABiADYAZQBhADQAZQAx
 AGUANQBlADcANgA1ADkAMgBiAGYAYgBhAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8A
-dQByAGMAZQBzAAAALAiAbEvnQECnczC3ZRmmzwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVRMH
+dQByAGMAZQBzAAAA6BOqg/pm6EqD0FSlcPRrPQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVRMH
 DQ4ODg4ODg4ODhI9Ej0SPRI9BCAAEmUEIAASaQUgARJtHAMgABwFAAIODg4GAAMODg4OBAABAg4I
 AAESgIERgIUFIAASgIkHIAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJNAwYS
 UQMGEhACBggDBhEUBAAAEk0EAAASUQUAAQESUQQAABIQAwAAAQQIABJNBAgAElEECAASEAgBAAgA
@@ -11380,14 +11507,14 @@ ACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
 AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
 ABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
-AAABAAAAAQAdRtceAAABAB1G1x4/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AAABAAAAAQCLRtceAAABAItG1x4/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
 AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
 sAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAwADAANABi
 ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
 bQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
 ADYAMAAyADkAZAAyADUAMwA4ADgAYgA4ADQAYgA2AGUAYQA0AGUAMQBlADUAZQA3ADYANQA5ADIA
 YgBmAGIAYQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA3ADgAOQA1
-AC4AMQA3ADkANAA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfADUA
+AC4AMQA4ADAANQA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfADUA
 ZQAzAGYAMwBmADkAMQBhAGQAYwBkADQAMwAxADMAYgBkADkANABkADkAZgBhADMANwA3AGMAMgA5
 ADYAYgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAA
 eQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAxAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBt
@@ -11396,8 +11523,8 @@ UwBUAF8ANQBlADMAZgAzAGYAOQAxAGEAZABjAGQANAAzADEAMwBiAGQAOQA0AGQAOQBmAGEAMwA3
 ADcAYwAyADkANgBiAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMA
 VABfADYAMAAyADkAZAAyADUAMwA4ADgAYgA4ADQAYgA2AGUAYQA0AGUAMQBlADUAZQA3ADYANQA5
 ADIAYgBmAGIAYQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4A
-NwA4ADkANQAuADEANwA5ADQAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
-AG8AbgAAADEALgAwAC4ANwA4ADkANQAuADEANwA5ADQAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+NwA4ADkANQAuADEAOAAwADUAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
+AG8AbgAAADEALgAwAC4ANwA4ADkANQAuADEAOAAwADUAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -11466,7 +11593,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
       </DTS:Variables>
-      <DTS:Executables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insert into EventLog SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{128064D9-1573-4E24-B04E-D40076524E99}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into EventLog SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D0BD9D57-94AB-4B1C-8B1A-609FCEA61F6B}"
+              SQLTask:SqlStatementSource="INSERT INTO AdsBI.EventLog(Package, Task, EventDescription, Timelog) &#xA;VALUE(?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="NewParameterName"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="NewParameterName"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="NewParameterName"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="NewParameterName"
+                SQLTask:DtsVariableName="System::CreationDate"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -11651,6 +11820,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="197,42"
+          Id="Package.EventHandlers[OnError]\Insert into EventLog SQL"
+          TopLeft="537,96" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Load DimensionData In Parallel\ETL AdsHeader">
     <LayoutInfo>
