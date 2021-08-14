@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="113"
-  DTS:VersionGUID="{1DCE88D9-CF0E-4691-879B-192FFDD54B2F}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="129"
+  DTS:VersionGUID="{489FF333-241D-4398-BC5D-0956F507E784}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,7 +23,7 @@
       DTS:DTSID="{D0C7359E-0E4A-47BF-AE30-DDD7195E63B8}"
       DTS:ObjectName="AdsDetailDataETL_Error">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::ErrorLogFolderPath]+"\\ErrorLog\\AdsDetailDataConvert_Error.txt"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::ErrorLogFolderPath]+"\\ErrorLog\\AdsDetailDataConvert_Error.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -140,7 +141,7 @@
       DTS:DTSID="{543AF4F3-A241-4651-8193-CEA4506B34AE}"
       DTS:ObjectName="AdsDetailsCSV">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::WorkingFolderPath]+"\\AdsDetailsData.csv"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::WorkingFolderPath]+"\\AdsDetailsData.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -243,7 +244,7 @@
       DTS:DTSID="{C01CF964-7DD4-4F0E-BB07-DF94C2D10390}"
       DTS:ObjectName="AdsHeaderCSV">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::WorkingFolderPath] +"\\AdsHeaderData.csv"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::WorkingFolderPath] +"\\AdsHeaderData.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -328,7 +329,7 @@
       DTS:DTSID="{B542294C-407D-4619-93DB-F178110B2420}"
       DTS:ObjectName="AdsHeaderDataETL_Error">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::ErrorLogFolderPath] +"\\ErrorLog\\AdsHeaderDataConvert_Error.txt"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::ErrorLogFolderPath] +"\\ErrorLog\\AdsHeaderDataConvert_Error.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -428,7 +429,7 @@
       DTS:DTSID="{54FE8ED8-3707-411B-B90F-E62CC195D244}"
       DTS:ObjectName="CustomerCSV">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::WorkingFolderPath] +"\\CustomerData.csv"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::WorkingFolderPath] +"\\CustomerData.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -549,7 +550,7 @@
       DTS:DTSID="{3600DAD0-0DE6-417A-AADE-818A419459A3}"
       DTS:ObjectName="CustomerDataETL_Error">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::ErrorLogFolderPath] + "\\ErrorLog\\CustomerDataConvert_Error.txt"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::ErrorLogFolderPath] + "\\ErrorLog\\CustomerDataConvert_Error.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -685,7 +686,7 @@
       DTS:DTSID="{2376AA4A-2C0B-44D3-8286-DCB380BEFD6C}"
       DTS:ObjectName="LogEvent">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::ErrorLogFolderPath]+"\\LogEvent.txt"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::ErrorLogFolderPath]+"\\LogEvent.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:FileUsageType="1"
@@ -698,7 +699,7 @@
       DTS:DTSID="{50EBFB14-A9C6-449C-A3BE-294ED4BE8F6B}"
       DTS:ObjectName="ProductCSV">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::WorkingFolderPath] +"\\ProductData.csv"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::WorkingFolderPath] +"\\ProductData.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -783,7 +784,7 @@
       DTS:DTSID="{935E5948-40BE-4C4A-9921-CEDFAC470BDA}"
       DTS:ObjectName="ProductDataETL_Error">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::ErrorLogFolderPath] + "\\ErrorLog\\ProductDataConvert_Error.txt"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::ErrorLogFolderPath] + "\\ErrorLog\\ProductDataConvert_Error.txt"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -890,53 +891,6 @@
       </DTS:ObjectData>
     </DTS:LogProvider>
   </DTS:LogProviders>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{91A5DACE-8091-4651-9B70-AB83E08ACD81}"
-      DTS:ObjectName="ConfigsnowsqlPath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\Users\KhangNHN\.snowsql</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{8DA5792F-2397-493E-B327-82DC3EFEEB0B}"
-      DTS:ObjectName="ErrorLogFolderPath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\resources\SSIS_ETL_StagingData</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{5A4CF186-2473-4935-B143-46E6F21BD931}"
-      DTS:ObjectName="SnowflakePath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\src\snowflake</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{CACAA593-9D54-4250-BEB1-0D97AED45304}"
-      DTS:ObjectName="SnowsqlPath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\Program Files\Snowflake SnowSQL</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{EE581053-A7ED-4C01-87BE-1D4EEC16B826}"
-      DTS:ObjectName="WorkingFolderPath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\resources\Working-Folder</DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables />
   <DTS:LoggingOptions
     DTS:FilterKind="0"
@@ -8729,27 +8683,27 @@
                           refId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].Columns[Copy of Date]"
                           cachedDataType="date"
                           cachedName="Copy of Date"
-                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Date]" />
                         <inputColumn
                           refId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].Columns[Copy of Customer_ID]"
                           cachedDataType="i4"
                           cachedName="Copy of Customer_ID"
-                          cachedSortKeyPosition="2"
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Customer_ID]" />
                         <inputColumn
                           refId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].Columns[Copy of Product_ID]"
                           cachedDataType="i4"
                           cachedName="Copy of Product_ID"
-                          cachedSortKeyPosition="3"
+                          cachedSortKeyPosition="2"
                           externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Product_ID]" />
                         <inputColumn
                           refId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].Columns[Copy of Ads_ID]"
                           cachedDataType="i4"
                           cachedName="Copy of Ads_ID"
+                          cachedSortKeyPosition="3"
                           externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Inputs[OLE DB Destination Input].ExternalColumns[AdsID]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Ads_ID]" />
                         <inputColumn
@@ -9490,12 +9444,12 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading"
+                  refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK"
                   componentClassID="Microsoft.FlatFileDestination"
                   contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Destination"
                   localeId="1033"
-                  name="Error Loading"
+                  name="Do not load data with same PK"
                   version="1">
                   <properties>
                     <property
@@ -9514,143 +9468,143 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Connections[FlatFileConnection]"
+                      refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[AdsDetailDataETL_Error]"
                       connectionManagerRefId="Package.ConnectionManagers[AdsDetailDataETL_Error]"
                       name="FlatFileConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input]"
+                      refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input]"
                       hasSideEffects="true"
                       name="Flat File Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                           cachedDataType="i4"
                           cachedName="ErrorCode"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                           cachedDataType="i4"
                           cachedName="ErrorColumn"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Date]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Date]"
                           cachedDataType="date"
                           cachedName="Copy of Date"
-                          cachedSortKeyPosition="1"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Date]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Date]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Date]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Customer_ID]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Customer_ID]"
                           cachedDataType="i4"
                           cachedName="Copy of Customer_ID"
-                          cachedSortKeyPosition="2"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Customer_ID]"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Customer_ID]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Customer_ID]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Product_ID]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Product_ID]"
                           cachedDataType="i4"
                           cachedName="Copy of Product_ID"
-                          cachedSortKeyPosition="3"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Product_ID]"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Product_ID]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Product_ID]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Time_Spent_On_Ads]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Time_Spent_On_Ads]"
                           cachedDataType="i4"
                           cachedName="Copy of Time_Spent_On_Ads"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Time_Spent_On_Ads]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Time_Spent_On_Ads]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Time_Spent_On_Ads]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Ads_ID]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Ads_ID]"
                           cachedDataType="i4"
                           cachedName="Copy of Ads_ID"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Ads_ID]"
+                          cachedSortKeyPosition="3"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Ads_ID]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Ads_ID]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Daily_Internet_Usage]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Daily_Internet_Usage]"
                           cachedDataType="r4"
                           cachedName="Copy of Daily_Internet_Usage"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Daily_Internet_Usage]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Daily_Internet_Usage]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Daily_Internet_Usage]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Number_ClicksAds]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Number_ClicksAds]"
                           cachedDataType="i4"
                           cachedName="Copy of Number_ClicksAds"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Number_ClicksAds]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Number_ClicksAds]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Number_ClicksAds]" />
                         <inputColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].Columns[Copy of Number_ProductBought]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].Columns[Copy of Number_ProductBought]"
                           cachedDataType="i4"
                           cachedName="Copy of Number_ProductBought"
-                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Number_ProductBought]"
+                          externalMetadataColumnId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Number_ProductBought]"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Number_ProductBought]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Date]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Date]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Date" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Customer_ID]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Customer_ID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Customer_ID" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Product_ID]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Product_ID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Product_ID" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Time_Spent_On_Ads]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Time_Spent_On_Ads]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Time_Spent_On_Ads" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Ads_ID]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Ads_ID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Ads_ID" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Daily_Internet_Usage]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Daily_Internet_Usage]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Daily_Internet_Usage" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Number_ClicksAds]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Number_ClicksAds]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Number_ClicksAds" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Number_ProductBought]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Number_ProductBought]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Number_ProductBought" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[Modified_Date]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[Modified_Date]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Modified_Date" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                           dataType="i4"
                           name="ErrorCode" />
                         <externalMetadataColumn
-                          refId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                           dataType="i4"
                           name="ErrorColumn" />
                       </externalMetadataColumns>
@@ -9693,7 +9647,7 @@
                             <property
                               dataType="System.Int32"
                               description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -9709,7 +9663,7 @@
                             <property
                               dataType="System.Int32"
                               description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">2</property>
+                              name="NewSortKeyPosition">1</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -9725,7 +9679,7 @@
                             <property
                               dataType="System.Int32"
                               description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">3</property>
+                              name="NewSortKeyPosition">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -9757,7 +9711,7 @@
                             <property
                               dataType="System.Int32"
                               description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
+                              name="NewSortKeyPosition">3</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -9824,6 +9778,114 @@
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Inputs[Sort Input].Columns[Customer_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Customer_ID"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Customer_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Inputs[Sort Input].Columns[Product_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Product_ID"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Product_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Inputs[Sort Input].Columns[Ads_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Ads_ID"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Ads_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Inputs[Sort Input].Columns[Daily_Internet_Usage]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Daily_Internet_Usage"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Daily_Internet_Usage]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Inputs[Sort Input].Columns[Number_ClicksAds]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Number_ClicksAds"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Number_ClicksAds]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Inputs[Sort Input].Columns[Number_ProductBought]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Number_ProductBought"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Number_ProductBought]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -9838,8 +9900,7 @@
                           refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Date]"
                           dataType="date"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Date]"
-                          name="Copy of Date"
-                          sortKeyPosition="1">
+                          name="Copy of Date">
                           <properties>
                             <property
                               containsID="true"
@@ -9853,7 +9914,7 @@
                           dataType="i4"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Customer_ID]"
                           name="Copy of Customer_ID"
-                          sortKeyPosition="2">
+                          sortKeyPosition="1">
                           <properties>
                             <property
                               containsID="true"
@@ -9867,7 +9928,7 @@
                           dataType="i4"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Product_ID]"
                           name="Copy of Product_ID"
-                          sortKeyPosition="3">
+                          sortKeyPosition="2">
                           <properties>
                             <property
                               containsID="true"
@@ -9893,7 +9954,8 @@
                           refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Ads_ID]"
                           dataType="i4"
                           lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Copy of Ads_ID]"
-                          name="Copy of Ads_ID">
+                          name="Copy of Ads_ID"
+                          sortKeyPosition="3">
                           <properties>
                             <property
                               containsID="true"
@@ -9954,6 +10016,96 @@
                               name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\Derived Column.Outputs[Derived Column Output].Columns[PurchaseRate]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Customer_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Customer_ID]"
+                          name="Customer_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Customer_ID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Product_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Product_ID]"
+                          name="Product_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Product_ID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Ads_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Ads_ID]"
+                          name="Ads_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Ads_ID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Daily_Internet_Usage]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Daily_Internet_Usage]"
+                          name="Daily_Internet_Usage">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Daily_Internet_Usage]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Number_ClicksAds]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Number_ClicksAds]"
+                          name="Number_ClicksAds">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Number_ClicksAds]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Number_ProductBought]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate.Outputs[Sort Output].Columns[Number_ProductBought]"
+                          name="Number_ProductBought">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output].Columns[Number_ProductBought]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -9978,7 +10130,7 @@
                   startId="Package\LoadTransactionData\ETL TransactionAds\CSV Load.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\LoadTransactionData\ETL TransactionAds.Paths[OLE DB Destination Error Output]"
-                  endId="Package\LoadTransactionData\ETL TransactionAds\Error Loading.Inputs[Flat File Destination Input]"
+                  endId="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK.Inputs[Flat File Destination Input]"
                   name="OLE DB Destination Error Output"
                   startId="Package\LoadTransactionData\ETL TransactionAds\AdsTransactionData.Outputs[OLE DB Destination Error Output]" />
                 <path
@@ -10027,22 +10179,6 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>PushToSnow.dtsx</PackageName>
-          <ParameterAssignment>
-            <ParameterName>tempCSVpath</ParameterName>
-            <BindedVariableOrParameterName>$Package::WorkingFolderPath</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>configsnowsql</ParameterName>
-            <BindedVariableOrParameterName>$Package::ConfigsnowsqlPath</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>snowflakepath</ParameterName>
-            <BindedVariableOrParameterName>$Package::SnowflakePath</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>snowsqlpath</ParameterName>
-            <BindedVariableOrParameterName>$Package::SnowsqlPath</BindedVariableOrParameterName>
-          </ParameterAssignment>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -10136,7 +10272,7 @@
               VSTAMajorVersion="15"
               VSTAMinorVersion="0"
               Language="CSharp"
-              ReadWriteVariables="$Package::ErrorLogFolderPath,$Package::WorkingFolderPath">
+              ReadOnlyVariables="$Project::WorkingFolderPath,$Project::ErrorLogFolderPath">
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -10448,8 +10584,8 @@ namespace ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f
 		{
             // TODO: Add your code here
             // load variables
-            string ErrorFolder = (string)Dts.Variables["$Package::ErrorLogFolderPath"].Value+"\\ErrorLog";
-            string tmpCSVFolder = (string)Dts.Variables["$Package::WorkingFolderPath"].Value+"\\tmpCSV";
+            string ErrorFolder = (string)Dts.Variables["$Project::ErrorLogFolderPath"].Value+"\\ErrorLog";
+            string tmpCSVFolder = (string)Dts.Variables["$Project::WorkingFolderPath"].Value+"\\tmpCSV";
             string splitCSVFolder1 = tmpCSVFolder + "\\AdsHeaderSplit";
             string splitCSVFolder2 = tmpCSVFolder + "\\AdsTransactionSplit";
             string splitCSVFolder3 = tmpCSVFolder + "\\ProductSplit";
@@ -10508,7 +10644,7 @@ namespace ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f
     <msb:CodeName>ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f</msb:DisplayName>
-    <msb:ProjectId>{69744CA9-87E4-473E-A540-2B2F184C7011}</msb:ProjectId>
+    <msb:ProjectId>{BCB0FFD5-836D-461E-96B7-7A5397AFCD20}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f.csproj" />
@@ -10650,7 +10786,7 @@ namespace ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f.Properties {
               <BinaryItem
                 Name="ST_0a0ddb37c94549a69ed8e4eb2c7ccc9f.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDACgmFWEAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAxi8A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHSIFmEAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAxi8A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHQvAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -10682,7 +10818,7 @@ BBAAYQBCBBAAaQBCBAYAgQBCBAYAqQBCBBUAuQBCBAYAcQAzBSMAwQAUBSgAyQCsAy0A0QC/AjMA
 BFsAsQBCBAYACAAUAHUACAAYAHoAKQBzAOIALgALALoALgATAMMALgAbAOIALgAjAOsALgArABQB
 LgAzABQBLgA7ABQBLgBDAOsALgBLABoBLgBTABQBLgBbADEBQwBjAHoASQBzAOIAYQB7AHoAYwBr
 AHoAGwADAAEABAADAAAAMgSrAAAAzgCwAAAAYgW1AAIABAADAAIABQAFAAEABgAFAAIABwAHAASA
-AAABAAAA1h4MkgAAAAAAAM8CAAAEAAAAAAAAAAAAAABjADsAAAAAAA8AAAAAAAAAAAAAAGwAFAMA
+AAABAAAA1x5ymgAAAAAAAM8CAAAEAAAAAAAAAAAAAABjADsAAAAAAA8AAAAAAAAAAAAAAGwAFAMA
 AAAABAAAAAAAAAAAAAAAYwC1AwAAAAAPAAAAAAAAAAAAAABsABQAAAAAAAAAAAABAAAAkwQAAAUA
 AgAAAAA8TW9kdWxlPgBTeXN0ZW0uSU8ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZh
 bHVlX18AbXNjb3JsaWIAZGVmYXVsdEluc3RhbmNlAFZhcmlhYmxlAFJ1bnRpbWVUeXBlSGFuZGxl
@@ -10709,14 +10845,14 @@ OGU0ZWIyYzdjY2M5Zi5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9k
 ZXMAU1RfMGEwZGRiMzdjOTQ1NDlhNjllZDhlNGViMmM3Y2NjOWYuUHJvcGVydGllcwBnZXRfVmFy
 aWFibGVzAFNldHRpbmdzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAEV4aXN0cwBDb25j
 YXQAT2JqZWN0AGdldF9EZWZhdWx0AHNldF9UYXNrUmVzdWx0AGdldF9Bc3NlbWJseQBDcmVhdGVE
-aXJlY3RvcnkAAAAAOSQAUABhAGMAawBhAGcAZQA6ADoARQByAHIAbwByAEwAbwBnAEYAbwBsAGQA
-ZQByAFAAYQB0AGgAABNcAEUAcgByAG8AcgBMAG8AZwAANyQAUABhAGMAawBhAGcAZQA6ADoAVwBv
+aXJlY3RvcnkAAAAAOSQAUAByAG8AagBlAGMAdAA6ADoARQByAHIAbwByAEwAbwBnAEYAbwBsAGQA
+ZQByAFAAYQB0AGgAABNcAEUAcgByAG8AcgBMAG8AZwAANyQAUAByAG8AagBlAGMAdAA6ADoAVwBv
 AHIAawBpAG4AZwBGAG8AbABkAGUAcgBQAGEAdABoAAAPXAB0AG0AcABDAFMAVgAAH1wAQQBkAHMA
 SABlAGEAZABlAHIAUwBwAGwAaQB0AAApXABBAGQAcwBUAHIAYQBuAHMAYQBjAHQAaQBvAG4AUwBw
 AGwAaQB0AAAbXABQAHIAbwBkAHUAYwB0AFMAcABsAGkAdAAAHVwAQwB1AHMAdABvAG0AZQByAFMA
 cABsAGkAdAAAcVMAVABfADAAYQAwAGQAZABiADMANwBjADkANAA1ADQAOQBhADYAOQBlAGQAOABl
 ADQAZQBiADIAYwA3AGMAYwBjADkAZgAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUA
-cgBjAGUAcwAAAAAA8T/se5ZABUO0cmbcQNK9BwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQcH
+cgBjAGUAcwAAAAAABfgZf/PYs0W+O+M0VIl0YAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQcH
 BQ4ODg4OBCAAEmEEIAASZQUgARJpHAMgABwFAAIODg4EAAECDgUAARJ1DgUAAgEOAgYAARJ5EX0F
 IAASgIEHIAIBDhKAgQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJJAwYSTQMGEhACBggD
 BhEUBAAAEkkEAAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgAAAAAAB4BAAEA
@@ -10731,14 +10867,14 @@ AAAAAACoLwAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQAMktYeAAABAAyS1h4/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQBymtceAAABAHKa1x4/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADAAYQAwAGQAZABiADMANwBjADkANAA1ADQAOQBhADYAOQBlAGQAOABlADQAZQBi
 ADIAYwA3AGMAYwBjADkAZgAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA3ADgAOQA0AC4AMwA3ADMAOAA4AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA3ADgAOQA1AC4AMwA5ADUAMwA4AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADAAYQAwAGQAZABiADMANwBjADkANAA1ADQAOQBhADYAOQBlAGQAOABlADQAZQBiADIA
 YwA3AGMAYwBjADkAZgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAxAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -10747,8 +10883,8 @@ AGEAbQBlAAAAUwBUAF8AMABhADAAZABkAGIAMwA3AGMAOQA0ADUANAA5AGEANgA5AGUAZAA4AGUA
 NABlAGIAMgBjADcAYwBjAGMAOQBmAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADAAYQAwAGQAZABiADMANwBjADkANAA1ADQAOQBhADYAOQBlAGQAOABlADQA
 ZQBiADIAYwA3AGMAYwBjADkAZgAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4ANwA4ADkANAAuADMANwAzADgAOAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANwA4ADkANAAuADMANwAzADgAOAAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4ANwA4ADkANQAuADMAOQA1ADMAOAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANwA4ADkANQAuADMAOQA1ADMAOAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -10776,7 +10912,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create sql files and bat file"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -10787,7 +10923,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               VSTAMajorVersion="15"
               VSTAMinorVersion="0"
               Language="CSharp"
-              ReadOnlyVariables="$Package::ConfigsnowsqlPath,$Package::SnowflakePath,$Package::SnowsqlPath,$Package::WorkingFolderPath">
+              ReadOnlyVariables="$Project::SnowflakePath,$Project::WorkingFolderPath,$Project::ConfigsnowsqlPath,$Project::ErrorLogFolderPath">
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -11097,15 +11233,16 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba
 		public void Main()
 		{
             // TODO: Add your code here 
-            string snowflakefolder = (string)Dts.Variables["$Package::SnowflakePath"].Value;
-            string tmpCSVfolder = (string)Dts.Variables["$Package::WorkingFolderPath"].Value+"\\tmpCSV";
-            string snowsql = "SET SNOWSQL-PATH=" + (string)Dts.Variables["$Package::SnowsqlPath"].Value + "\\snowsql.exe";
-            string configsnowsql = "SET SNOWSQL-CONFIG-PATH=" + (string)Dts.Variables["$Package::ConfigsnowsqlPath"].Value +"\\config";
+            string snowflakefolder = (string)Dts.Variables["$Project::SnowflakePath"].Value;
+            string tmpCSVfolder = (string)Dts.Variables["$Project::WorkingFolderPath"].Value+"\\tmpCSV";
+            string logfile = (string)Dts.Variables["$Project::ErrorLogFolderPath"].Value + "\\ErrorLog\\LogSnowPipe.log";
+            string configsnowsql = (string)Dts.Variables["$Project::ConfigsnowsqlPath"].Value +"\\config";
             string filedropsql = snowflakefolder + "\\DropFK-TruncateData.sql";
             string fileaddsql = snowflakefolder + "\\AddFK.sql";
             string fileputsql = snowflakefolder + "\\PutSSIS.sql";
-            string filebat = snowflakefolder + "\\Push2snow.bat";
+            string filepython = snowflakefolder + "\\Push2snow.py";
             string option = "FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = \'UTF-8\') ON_ERROR = SKIP_FILE;";
+
 
             // Create Drop sql 
             if (!File.Exists(filedropsql))
@@ -11160,18 +11297,50 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba
                 }
             }
 
-            // Create bat file
-            if (!File.Exists(filebat))
+            // Create python file
+            if (!File.Exists(filepython))
             { // Create a file to write to   
-                using (StreamWriter sw = new StreamWriter(filebat))
+                using (StreamWriter sw = new StreamWriter(filepython))
                 {
-                    sw.WriteLine("@echo off");
-                    sw.WriteLine(snowsql);
-                    sw.WriteLine("SET SCRIPT-PATH=" + snowflakefolder);
-                    sw.WriteLine(configsnowsql);
-                    sw.WriteLine(" \"%SNOWSQL-PATH%\" --config %SNOWSQL-CONFIG-PATH% -f %SCRIPT-PATH%\\DropFK-TruncateData.sql");
-                    sw.WriteLine(" \"%SNOWSQL-PATH%\" --config %SNOWSQL-CONFIG-PATH% -f %SCRIPT-PATH%\\PutSSIS.sql");
-                    sw.WriteLine(" \"%SNOWSQL-PATH%\" --config %SNOWSQL-CONFIG-PATH% -f %SCRIPT-PATH%\\AddFK.sql");
+                    sw.WriteLine("import os");
+                    sw.WriteLine("import snowflake.connector");
+                    sw.WriteLine("import configparser ");
+                    sw.WriteLine("configf = (r\'" + configsnowsql + "\')");
+                    sw.WriteLine("parser = configparser.ConfigParser()");
+                    sw.WriteLine("parser.read(configf)");
+                    sw.WriteLine("User = parser.get(\"connections\", \"username\")");
+                    sw.WriteLine("Account = parser.get(\"connections\", \"accountname\")");
+                    sw.WriteLine("Password = parser.get(\"connections\", \"password\")");
+                    sw.WriteLine("Role = parser.get(\"connections\", \"rolename\")");
+                    sw.WriteLine("w = open( \'LogSnowPipe.log\',\'w\')");
+                    sw.WriteLine("cnn = snowflake.connector.connect(user = User, password = Password, account = Account, rolename = Role)");
+                    sw.WriteLine("cs = cnn.cursor()");
+                    sw.WriteLine("dropfile = r\'" + filedropsql + "\'");
+                    sw.WriteLine("addfile = r\'" + fileaddsql+ "\'");
+                    sw.WriteLine("putfile = r'" + fileputsql + "\'");
+                    sw.WriteLine("n_err = 0");
+                    sw.WriteLine("def executesnowsql(sqlfile, logfile, cursor, n_err):");
+                    sw.WriteLine("    logfile.write(\'File sql process: \'+sqlfile +\'\\" + "n\')");
+                    sw.WriteLine("    f= open(sqlfile, \'r\', encoding=\'utf-8\')");
+                    sw.WriteLine("    lines = f.readlines()");
+                    sw.WriteLine("    f.close()");
+                    sw.WriteLine("    for line in lines:");
+                    sw.WriteLine("        try:");
+                    sw.WriteLine("            cursor.execute(line)");
+                    sw.WriteLine("        except snowflake.connector.errors.ProgrammingError as e:");
+                    sw.WriteLine("            logfile.write('Error {0}  ({1}): {2}  ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))");
+                    sw.WriteLine("            n_err = n_err + 1");
+                    sw.WriteLine("    return n_err");
+                    sw.WriteLine("if __name__ == \'__main__\':");
+                    sw.WriteLine("    print(\'Loading data to snowflake\')");
+                    sw.WriteLine("    n_err = executesnowsql(dropfile, w, cs, n_err)");
+                    sw.WriteLine("    n_err = executesnowsql(putfile, w, cs, n_err)");
+                    sw.WriteLine("    n_err = executesnowsql(addfile, w, cs, n_err)");
+                    sw.WriteLine("    cs.close()");
+                    sw.WriteLine("    cnn.close()");
+                    sw.WriteLine("    w.write(\'Finish loading Data to SnowFlake with {0} Error\'.format(str(n_err)))");
+                    sw.WriteLine("    w.close()");
+                    sw.WriteLine("    print(\'Finish loading Data to SnowFlake with {0} Error\'.format(str(n_err)))");
                     sw.Close();
                 }
             }
@@ -11203,7 +11372,7 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba
     <msb:CodeName>ST_5e3f3f91adcd4313bd94d9fa377c296b</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_5e3f3f91adcd4313bd94d9fa377c296b</msb:DisplayName>
-    <msb:ProjectId>{C17E5232-F00D-48E5-B91A-484143AD8A05}</msb:ProjectId>
+    <msb:ProjectId>{216D774C-412D-45F8-B419-02F12847A3F0}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_5e3f3f91adcd4313bd94d9fa377c296b.csproj" />
@@ -11345,193 +11514,247 @@ namespace ST_6029d25388b84b6ea4e1e5e76592bfba.Properties {
               <BinaryItem
                 Name="ST_5e3f3f91adcd4313bd94d9fa377c296b.dll">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
-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
+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
-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
+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
-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
-AAAjR1VJRAAAALQaAACEAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoBMwAWAAABAAAAIgAA
-AAUAAAAGAAAACQAAAAEAAAAhAAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAAAQAAAAQAAAABAAAA
-AQAAAAAAygMBAAAAAAAGAHwCsgQGAAsDsgQGAMgBnwQPACYFAAAGAPUBSAQGAF8CSAQGAEACSAQG
-APICSAQGAJwCSAQGALUCSAQGAAwCSAQGACcCOQMKANACeQMKADkBeQMGAHoECgAGAAIE+wMGAKsB
-nwQGAKcF+wMGAGoE0gQGAFoEMwQOAHsBtAMOANwBtAMOAFUBHgQGAJABsgQKAKIDeQMSAGgF2gAS
-AJwA2gAGAFMD+wMGANUACgAGAIcECgAGAKUA+wMGAAQB+wMGALEA+wMGAM0FSAQAAAAAAQAAAAAA
-AQABAAEAEAATBDsAOQABAAEAAAAQANkENQVJAAEAAwAAARAAcgU1BV0AAwAHAAMBAACLBQAAQQAE
-AAoAEQAHBIgAEQApAYwAEQCMAJAABgYzAJQAVoB7BZcAVoAJAZcAUCAAAAAAhgAZBAYAAQD0IwAA
-AACGGJIEBgABAPwjAAAAAIMYkgQGAAEABCQAAAAAkwhmBJsAAQAwJAAAAACTCBEBoAABADckAAAA
-AJMIHQGlAAEAPyQAAAAAlgiuBasAAgBGJAAAAACGGJIEBgACAE4kAAAAAJEYmASwAAIAAAABADMD
-CQCSBAEAEQCSBAYAGQCSBAoAKQCSBBAAMQCSBBAAOQCSBBAAQQCSBBAASQCSBBAAUQCSBBAAWQCS
-BBAAYQCSBBAAaQCSBAYAiQCSBAYAsQCSBBUAwQCSBAYAcQCDBS8AyQBkBTQA0QDyAzkA2QApAz8A
-4QCgBUMA4QCgBUkA6QCZBVAAeQCSBBAA8QD6ABAA8QBtAQYA+QBzAQYAyQC6BQEAcQCSBAYAkQCS
-BAYAAQHDAFUAAQHJBV4AmQCSBGQAuQCSBAYACAAUAH4ACAAYAIMAKQBzAOsALgALAMMALgATAMwA
-LgAbAOsALgAjAPQALgArAB0BLgAzAB0BLgA7AB0BLgBDAPQALgBLACMBLgBTAB0BLgBbADoBQwBj
-AIMASQBzAOsAYQB7AIMAYwBrAIMAGwADAAEABAADAAAAagS0AAAAMQG5AAAAsgW+AAIABAADAAIA
-BQAFAAEABgAFAAIABwAHAASAAAABAAAA1x6LRgAAAAAAAF8AAAAEAAAAAAAAAAAAAABsAIMAAAAA
-AA8AAAAAAAAAAAAAAHUAWgMAAAAABAAAAAAAAAAAAAAAbAD7AwAAAAAPAAAAAAAAAAAAAAB1ABQA
-AAAAAAAAAAABAAAA4wQAAAUAAgAAAAAAADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3Fs
-U2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBTVF82MDI5ZDI1Mzg4Yjg0YjZlYTRlMWU1ZTc2NTky
-YmZiYQBTVF81ZTNmM2Y5MWFkY2Q0MzEzYmQ5NGQ5ZmEzNzdjMjk2YgBtc2NvcmxpYgBkZWZhdWx0
-SW5zdGFuY2UAVmFyaWFibGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZy
-b21IYW5kbGUARmlsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAFdyaXRlTGluZQBU
-eXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFS
-VFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBDbG9zZQBEaXNw
-b3NlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVn
-Z2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2Fi
-bGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJp
-YnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmli
-dXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0
-dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1
-dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJp
-YnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFsdWUAdmFsdWUAU3lzdGVt
-LlJ1bnRpbWUuVmVyc2lvbmluZwBTdHJpbmcATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNr
-AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9k
-ZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNUXzVlM2YzZjkxYWRjZDQzMTNiZDk0ZDlmYTM3N2My
-OTZiLmRsbABnZXRfSXRlbQBTeXN0ZW0ARW51bQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3Rl
-bS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEN1
-bHR1cmVJbmZvAGdldF9SZXNvdXJjZU1hbmFnZXIAU3RyZWFtV3JpdGVyAFRleHRXcml0ZXIALmN0
-b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZp
-Y2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfNjAyOWQyNTM4OGI4NGI2ZWE0ZTFlNWU3NjU5MmJmYmEu
-UHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUXzYwMjlkMjUz
-ODhiODRiNmVhNGUxZTVlNzY1OTJiZmJhLlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5n
-cwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBFeGlzdHMAQ29uY2F0AE9iamVjdABnZXRf
-RGVmYXVsdABzZXRfVGFza1Jlc3VsdABnZXRfQXNzZW1ibHkAAAAALyQAUABhAGMAawBhAGcAZQA6
-ADoAUwBuAG8AdwBmAGwAYQBrAGUAUABhAHQAaAAANyQAUABhAGMAawBhAGcAZQA6ADoAVwBvAHIA
-awBpAG4AZwBGAG8AbABkAGUAcgBQAGEAdABoAAAPXAB0AG0AcABDAFMAVgAAI1MARQBUACAAUwBO
-AE8AVwBTAFEATAAtAFAAQQBUAEgAPQABKyQAUABhAGMAawBhAGcAZQA6ADoAUwBuAG8AdwBzAHEA
-bABQAGEAdABoAAAZXABzAG4AbwB3AHMAcQBsAC4AZQB4AGUAADFTAEUAVAAgAFMATgBPAFcAUwBR
-AEwALQBDAE8ATgBGAEkARwAtAFAAQQBUAEgAPQABNyQAUABhAGMAawBhAGcAZQA6ADoAQwBvAG4A
-ZgBpAGcAcwBuAG8AdwBzAHEAbABQAGEAdABoAAAPXABjAG8AbgBmAGkAZwAAMVwARAByAG8AcABG
-AEsALQBUAHIAdQBuAGMAYQB0AGUARABhAHQAYQAuAHMAcQBsAAEVXABBAGQAZABGAEsALgBzAHEA
-bAAAGVwAUAB1AHQAUwBTAEkAUwAuAHMAcQBsAAAdXABQAHUAcwBoADIAcwBuAG8AdwAuAGIAYQB0
-AACAvUYASQBMAEUAXwBGAE8AUgBNAEEAVAAgAD0AIAAoAFQAWQBQAEUAIAA9ACAAQwBTAFYAIABG
-AEkARQBMAEQAXwBEAEUATABJAE0ASQBUAEUAUgAgAD0AIAAnAHwAJwAgAEIASQBOAEEAUgBZAF8A
-RgBPAFIATQBBAFQAIAA9ACAAJwBVAFQARgAtADgAJwApACAATwBOAF8ARQBSAFIATwBSACAAPQAg
-AFMASwBJAFAAXwBGAEkATABFADsAATtVAFMARQAgAEQAQQBUAEEAQgBBAFMARQAgAEYAQQBfAFAA
-UgBPAEoARQBDAFQAMAAxAF8ARABCADsAAE1UAFIAVQBOAEMAQQBUAEUAIABUAEEAQgBMAEUAIABB
-AEQAUwBCAEkALgBBAGQAcwBIAGUAYQBkAGUAcgBEAGUAdABhAGkAbABzADsAAEtUAFIAVQBOAEMA
-QQBUAEUAIABUAEEAQgBMAEUAIABBAEQAUwBCAEkALgBDAHUAcwB0AG8AbQBlAHIARABlAHQAYQBp
-AGwAcwA7AABJVABSAFUATgBDAEEAVABFACAAVABBAEIATABFACAAQQBEAFMAQgBJAC4AUAByAG8A
-ZAB1AGMAdABEAGUAdABhAGkAbABzADsAAFdUAFIAVQBOAEMAQQBUAEUAIABUAEEAQgBMAEUAIABB
-AEQAUwBCAEkALgBBAGQAcwBUAHIAYQBuAHMAYQBjAHQAaQBvAG4ARABlAHQAYQBpAGwAcwA7AACA
-iUEATABUAEUAUgAgAFQAQQBCAEwARQAgAEEARABTAEIASQAuAEEARABTAFQAUgBBAE4AUwBBAEMA
-VABJAE8ATgBEAEUAVABBAEkATABTACAARABSAE8AUAAgAEMATwBOAFMAVABSAEEASQBOAFQAIABG
-AEsAXwBDAHUAcwB0AG8AbQBlAHIAOwAAgIdBAEwAVABFAFIAIABUAEEAQgBMAEUAIABBAEQAUwBC
-AEkALgBBAEQAUwBUAFIAQQBOAFMAQQBDAFQASQBPAE4ARABFAFQAQQBJAEwAUwAgAEQAUgBPAFAA
-IABDAE8ATgBTAFQAUgBBAEkATgBUACAARgBLAF8AUAByAG8AZAB1AGMAdAA7AAB/QQBMAFQARQBS
-ACAAVABBAEIATABFACAAQQBEAFMAQgBJAC4AQQBEAFMAVABSAEEATgBTAEEAQwBUAEkATwBOAEQA
-RQBUAEEASQBMAFMAIABEAFIATwBQACAAQwBPAE4AUwBUAFIAQQBJAE4AVAAgAEYASwBfAEEAZABz
-ADsAAIETQQBMAFQARQBSACAAVABBAEIATABFACAAQQBEAFMAQgBJAC4AQQBEAFMAVABSAEEATgBT
-AEEAQwBUAEkATwBOAEQARQBUAEEASQBMAFMAIABBAEQARAAgAEMATwBOAFMAVABSAEEASQBOAFQA
-IABGAEsAXwBDAHUAcwB0AG8AbQBlAHIAIABGAE8AUgBFAEkARwBOACAASwBFAFkAIAAoAEMAdQBz
-AHQAbwBtAGUAcgBJAEQAKQAgAFIARQBGAEUAUgBFAE4AQwBFAFMAIABBAGQAcwBCAEkALgBDAHUA
-cwB0AG8AbQBlAHIARABlAHQAYQBpAGwAcwAoAEMAdQBzAHQAbwBtAGUAcgBJAEQAKQA7AACBDUEA
-TABUAEUAUgAgAFQAQQBCAEwARQAgAEEARABTAEIASQAuAEEARABTAFQAUgBBAE4AUwBBAEMAVABJ
-AE8ATgBEAEUAVABBAEkATABTACAAQQBEAEQAIABDAE8ATgBTAFQAUgBBAEkATgBUACAARgBLAF8A
-UAByAG8AZAB1AGMAdAAgAEYATwBSAEUASQBHAE4AIABLAEUAWQAgACgAQwB1AHMAdABvAG0AZQBy
-AEkARAApACAAUgBFAEYARQBSAEUATgBDAEUAUwAgAEEAZABzAEIASQAuAFAAcgBvAGQAdQBjAHQA
-RABlAHQAYQBpAGwAcwAoAFAAcgBvAGQAdQBjAHQASQBEACkAOwAAgQFBAEwAVABFAFIAIABUAEEA
-QgBMAEUAIABBAEQAUwBCAEkALgBBAEQAUwBUAFIAQQBOAFMAQQBDAFQASQBPAE4ARABFAFQAQQBJ
-AEwAUwAgAEEARABEACAAQwBPAE4AUwBUAFIAQQBJAE4AVAAgAEYASwBfAEEAZABzACAARgBPAFIA
-RQBJAEcATgAgAEsARQBZACAAKABDAHUAcwB0AG8AbQBlAHIASQBEACkAIABSAEUARgBFAFIARQBO
-AEMARQBTACAAQQBkAHMAQgBJAC4AQQBkAHMASABlAGEAZABlAHIARABlAHQAYQBpAGwAcwAoAEEA
-ZABzAEkARAApADsAAEd1AHMAZQAgAHcAYQByAGUAaABvAHUAcwBlACAARgBBAF8AUABSAE8ASgBF
-AEMAVAAwADEAXwBDAEwATwBVAEQARABXADsAABdwAHUAdAAgAGYAaQBsAGUAOgAvAC8AAF9cAEEA
-ZABzAEgAZQBhAGQAZQByAFMAcABsAGkAdABcACoALgBjAHMAdgAgAEAAQQBEAFMAQgBJAC4AJQBB
-AGQAcwBIAGUAYQBkAGUAcgBEAGUAdABhAGkAbABzADsAAFdcAFAAcgBvAGQAdQBjAHQAUwBwAGwA
-aQB0AFwAKgAuAGMAcwB2ACAAQABBAEQAUwBCAEkALgAlAFAAcgBvAGQAdQBjAHQARABlAHQAYQBp
-AGwAcwA7AABbXABDAHUAcwB0AG8AbQBlAHIAUwBwAGwAaQB0AFwAKgAuAGMAcwB2ACAAQABBAEQA
-UwBCAEkALgAlAEMAdQBzAHQAbwBtAGUAcgBEAGUAdABhAGkAbABzADsAAHNcAEEAZABzAFQAcgBh
-AG4AcwBhAGMAdABpAG8AbgBTAHAAbABpAHQAXAAqAC4AYwBzAHYAIABAAEEARABTAEIASQAuACUA
-QQBkAHMAVAByAGEAbgBzAGEAYwB0AGkAbwBuAEQAZQB0AGEAaQBsAHMAOwAAf2MAbwBwAHkAIABp
-AG4AdABvACAAQQBkAHMAQgBJAC4AQQBkAHMASABlAGEAZABlAHIARABlAHQAYQBpAGwAcwAgAGYA
-cgBvAG0AIABAAEEARABTAEIASQAuACUAQQBkAHMASABlAGEAZABlAHIARABlAHQAYQBpAGwAcwAg
-AAB3YwBvAHAAeQAgAGkAbgB0AG8AIABBAGQAcwBCAEkALgBQAHIAbwBkAHUAYwB0AEQAZQB0AGEA
-aQBsAHMAIABmAHIAbwBtACAAQABBAEQAUwBCAEkALgAlAFAAcgBvAGQAdQBjAHQARABlAHQAYQBp
-AGwAcwAgAAB7YwBvAHAAeQAgAGkAbgB0AG8AIABBAGQAcwBCAEkALgBDAHUAcwB0AG8AbQBlAHIA
-RABlAHQAYQBpAGwAcwAgAGYAcgBvAG0AIABAAEEARABTAEIASQAuACUAQwB1AHMAdABvAG0AZQBy
-AEQAZQB0AGEAaQBsAHMAIAAAgJNjAG8AcAB5ACAAaQBuAHQAbwAgAEEAZABzAEIASQAuAEEAZABz
-AFQAcgBhAG4AcwBhAGMAdABpAG8AbgBEAGUAdABhAGkAbABzACAAZgByAG8AbQAgAEAAQQBEAFMA
-QgBJAC4AJQBBAGQAcwBUAHIAYQBuAHMAYQBjAHQAaQBvAG4ARABlAHQAYQBpAGwAcwAgAABBcgBl
-AG0AbwB2AGUAIABAAEEARABTAEIASQAuACUAQQBkAHMASABlAGEAZABlAHIARABlAHQAYQBpAGwA
-cwA7AAA9cgBlAG0AbwB2AGUAIABAAEEARABTAEIASQAuACUAUAByAG8AZAB1AGMAdABEAGUAdABh
-AGkAbABzADsAAD9yAGUAbQBvAHYAZQAgAEAAQQBEAFMAQgBJAC4AJQBDAHUAcwB0AG8AbQBlAHIA
-RABlAHQAYQBpAGwAcwA7AABLcgBlAG0AbwB2AGUAIABAAEEARABTAEIASQAuACUAQQBkAHMAVABy
-AGEAbgBzAGEAYwB0AGkAbwBuAEQAZQB0AGEAaQBsAHMAOwAAE0AAZQBjAGgAbwAgAG8AZgBmAAAh
-UwBFAFQAIABTAEMAUgBJAFAAVAAtAFAAQQBUAEgAPQABgLMgACIAJQBTAE4ATwBXAFMAUQBMAC0A
-UABBAFQASAAlACIAIAAtAC0AYwBvAG4AZgBpAGcAIAAlAFMATgBPAFcAUwBRAEwALQBDAE8ATgBG
-AEkARwAtAFAAQQBUAEgAJQAgAC0AZgAgACUAUwBDAFIASQBQAFQALQBQAEEAVABIACUAXABEAHIA
-bwBwAEYASwAtAFQAcgB1AG4AYwBhAHQAZQBEAGEAdABhAC4AcwBxAGwAAYCbIAAiACUAUwBOAE8A
-VwBTAFEATAAtAFAAQQBUAEgAJQAiACAALQAtAGMAbwBuAGYAaQBnACAAJQBTAE4ATwBXAFMAUQBM
-AC0AQwBPAE4ARgBJAEcALQBQAEEAVABIACUAIAAtAGYAIAAlAFMAQwBSAEkAUABUAC0AUABBAFQA
-SAAlAFwAUAB1AHQAUwBTAEkAUwAuAHMAcQBsAAGAlyAAIgAlAFMATgBPAFcAUwBRAEwALQBQAEEA
-VABIACUAIgAgAC0ALQBjAG8AbgBmAGkAZwAgACUAUwBOAE8AVwBTAFEATAAtAEMATwBOAEYASQBH
-AC0AUABBAFQASAAlACAALQBmACAAJQBTAEMAUgBJAFAAVAAtAFAAQQBUAEgAJQBcAEEAZABkAEYA
-SwAuAHMAcQBsAAFxUwBUAF8ANgAwADIAOQBkADIANQAzADgAOABiADgANABiADYAZQBhADQAZQAx
-AGUANQBlADcANgA1ADkAMgBiAGYAYgBhAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8A
-dQByAGMAZQBzAAAA6BOqg/pm6EqD0FSlcPRrPQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVRMH
-DQ4ODg4ODg4ODhI9Ej0SPRI9BCAAEmUEIAASaQUgARJtHAMgABwFAAIODg4GAAMODg4OBAABAg4I
-AAESgIERgIUFIAASgIkHIAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJNAwYS
-UQMGEhACBggDBhEUBAAAEk0EAAASUQUAAQESUQQAABIQAwAAAQQIABJNBAgAElEECAASEAgBAAgA
-AAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfNjAyOWQy
-NTM4OGI4NGI2ZWE0ZTFlNWU3NjU5MmJmYmEAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMQAA
-SQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIu
-TkVUIEZyYW1ld29yayA0Lje0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3Vy
-Y2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
-bGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNv
-dXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAdEEAAAAAAAAAAAAAjkEAAAAgAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAIBBAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8l
-ACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
-AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
-ABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
-AAABAAAAAQCLRtceAAABAItG1x4/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
-AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
-sAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAwADAANABi
-ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
-bQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
-ADYAMAAyADkAZAAyADUAMwA4ADgAYgA4ADQAYgA2AGUAYQA0AGUAMQBlADUAZQA3ADYANQA5ADIA
-YgBmAGIAYQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA3ADgAOQA1
-AC4AMQA4ADAANQA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfADUA
-ZQAzAGYAMwBmADkAMQBhAGQAYwBkADQAMwAxADMAYgBkADkANABkADkAZgBhADMANwA3AGMAMgA5
-ADYAYgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAA
-eQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAxAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBt
-AGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAA
-UwBUAF8ANQBlADMAZgAzAGYAOQAxAGEAZABjAGQANAAzADEAMwBiAGQAOQA0AGQAOQBmAGEAMwA3
-ADcAYwAyADkANgBiAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMA
-VABfADYAMAAyADkAZAAyADUAMwA4ADgAYgA4ADQAYgA2AGUAYQA0AGUAMQBlADUAZQA3ADYANQA5
-ADIAYgBmAGIAYQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4A
-NwA4ADkANQAuADEAOAAwADUAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
-AG8AbgAAADEALgAwAC4ANwA4ADkANQAuADEAOAAwADUAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAUCwAAAAgAAAALgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAYAAAAAYAAAAwAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAANgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAs
+TAAAAAAAAEgAAAACAAUALCYAABQlAAABAAAAAAAAAEBLAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBAABBQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKdBwAAAECKBAAAApvEQAACnIxAABwbxIAAApvEwAACnQcAAABcmkAAHAoFAAACgoCKBAAAApv
+EQAACnJ5AABwbxIAAApvEwAACnQcAAABcrMAAHAoFAAACiYCKBAAAApvEQAACnLnAABwbxIAAApv
+EwAACnQcAAABch8BAHAoFAAACgslci8BAHAoFAAACgwlcmEBAHAoFAAACg0lcncBAHAoFAAAChME
+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
+BgABAMQlAAAAAIYYkgQGAAEAzCUAAAAAgxiSBAYAAQDUJQAAAACTCGYEmQABAAAmAAAAAJMIEQGe
+AAEAByYAAAAAkwgdAaMAAQAPJgAAAACWCK4FqQACABYmAAAAAIYYkgQGAAIAHiYAAAAAkRiYBK4A
+AgAAAAEAMwMJAJIEAQARAJIEBgAZAJIECgApAJIEEAAxAJIEEAA5AJIEEABBAJIEEABJAJIEEABR
+AJIEEABZAJIEEABhAJIEEABpAJIEBgCJAJIEBgCxAJIEFQDBAJIEBgBxAIMFLQDJAGQFMgDRAPID
+NwDZACkDPQDhAKAFQQDpAJkFRwB5AJIEEADxAPoAEADxAG0BBgD5AHMBBgDhAKAFTADJALoFAQBx
+AJIEBgCRAJIEBgABAcMAUwABAckFXACZAJIEYgC5AJIEBgAIABQAfAAIABgAgQApAHMA6QAuAAsA
+wQAuABMAygAuABsA6QAuACMA8gAuACsAGwEuADMAGwEuADsAGwEuAEMA8gAuAEsAIQEuAFMAGwEu
+AFsAOAFDAGMAgQBJAHMA6QBhAHsAgQBjAGsAgQAbAAMAAQAEAAMAAABqBLIAAAAxAbcAAACyBbwA
+AgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAADYHo+AAAAAAAAAXwAAAAQAAAAAAAAAAAAA
+AGoAgwAAAAAADwAAAAAAAAAAAAAAcwBaAwAAAAAEAAAAAAAAAAAAAABqAPsDAAAAAA8AAAAAAAAA
+AAAAAHMAFAAAAAAAAAAAAAEAAADjBAAABQACAAAAAAAAPE1vZHVsZT4AU3lzdGVtLklPAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAFNUXzYwMjlkMjUzODhiODRiNmVhNGUx
+ZTVlNzY1OTJiZmJhAFNUXzVlM2YzZjkxYWRjZDQzMTNiZDk0ZDlmYTM3N2MyOTZiAG1zY29ybGli
+AGRlZmF1bHRJbnN0YW5jZQBWYXJpYWJsZQBJRGlzcG9zYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBH
+ZXRUeXBlRnJvbUhhbmRsZQBGaWxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAV3Jp
+dGVMaW5lAFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1
+cmUAVlNUQVJUU2NyaXB0T2JqZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAENs
+b3NlAERpc3Bvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1
+dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRv
+ckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRp
+b25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4
+YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdo
+dEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21w
+YW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAGdldF9WYWx1ZQB2YWx1
+ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFN0cmluZwBNaWNyb3NvZnQuU3FsU2VydmVyLlNj
+cmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBTY3JpcHRP
+YmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfNWUzZjNmOTFhZGNkNDMxM2JkOTRk
+OWZhMzc3YzI5NmIuZGxsAGdldF9JdGVtAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAFNjcmlwdE1h
+aW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxl
+Y3Rpb24AQ3VsdHVyZUluZm8AZ2V0X1Jlc291cmNlTWFuYWdlcgBTdHJlYW1Xcml0ZXIAVGV4dFdy
+aXRlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBp
+bGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF82MDI5ZDI1Mzg4Yjg0YjZlYTRlMWU1ZTc2
+NTkyYmZiYS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1Rf
+NjAyOWQyNTM4OGI4NGI2ZWE0ZTFlNWU3NjU5MmJmYmEuUHJvcGVydGllcwBnZXRfVmFyaWFibGVz
+AFNldHRpbmdzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAEV4aXN0cwBDb25jYXQAT2Jq
+ZWN0AGdldF9EZWZhdWx0AHNldF9UYXNrUmVzdWx0AGdldF9Bc3NlbWJseQAAAAAvJABQAHIAbwBq
+AGUAYwB0ADoAOgBTAG4AbwB3AGYAbABhAGsAZQBQAGEAdABoAAA3JABQAHIAbwBqAGUAYwB0ADoA
+OgBXAG8AcgBrAGkAbgBnAEYAbwBsAGQAZQByAFAAYQB0AGgAAA9cAHQAbQBwAEMAUwBWAAA5JABQ
+AHIAbwBqAGUAYwB0ADoAOgBFAHIAcgBvAHIATABvAGcARgBvAGwAZABlAHIAUABhAHQAaAAAM1wA
+RQByAHIAbwByAEwAbwBnAFwATABvAGcAUwBuAG8AdwBQAGkAcABlAC4AbABvAGcAADckAFAAcgBv
+AGoAZQBjAHQAOgA6AEMAbwBuAGYAaQBnAHMAbgBvAHcAcwBxAGwAUABhAHQAaAAAD1wAYwBvAG4A
+ZgBpAGcAADFcAEQAcgBvAHAARgBLAC0AVAByAHUAbgBjAGEAdABlAEQAYQB0AGEALgBzAHEAbAAB
+FVwAQQBkAGQARgBLAC4AcwBxAGwAABlcAFAAdQB0AFMAUwBJAFMALgBzAHEAbAAAG1wAUAB1AHMA
+aAAyAHMAbgBvAHcALgBwAHkAAIC9RgBJAEwARQBfAEYATwBSAE0AQQBUACAAPQAgACgAVABZAFAA
+RQAgAD0AIABDAFMAVgAgAEYASQBFAEwARABfAEQARQBMAEkATQBJAFQARQBSACAAPQAgACcAfAAn
+ACAAQgBJAE4AQQBSAFkAXwBGAE8AUgBNAEEAVAAgAD0AIAAnAFUAVABGAC0AOAAnACkAIABPAE4A
+XwBFAFIAUgBPAFIAIAA9ACAAUwBLAEkAUABfAEYASQBMAEUAOwABO1UAUwBFACAARABBAFQAQQBC
+AEEAUwBFACAARgBBAF8AUABSAE8ASgBFAEMAVAAwADEAXwBEAEIAOwAATVQAUgBVAE4AQwBBAFQA
+RQAgAFQAQQBCAEwARQAgAEEARABTAEIASQAuAEEAZABzAEgAZQBhAGQAZQByAEQAZQB0AGEAaQBs
+AHMAOwAAS1QAUgBVAE4AQwBBAFQARQAgAFQAQQBCAEwARQAgAEEARABTAEIASQAuAEMAdQBzAHQA
+bwBtAGUAcgBEAGUAdABhAGkAbABzADsAAElUAFIAVQBOAEMAQQBUAEUAIABUAEEAQgBMAEUAIABB
+AEQAUwBCAEkALgBQAHIAbwBkAHUAYwB0AEQAZQB0AGEAaQBsAHMAOwAAV1QAUgBVAE4AQwBBAFQA
+RQAgAFQAQQBCAEwARQAgAEEARABTAEIASQAuAEEAZABzAFQAcgBhAG4AcwBhAGMAdABpAG8AbgBE
+AGUAdABhAGkAbABzADsAAICJQQBMAFQARQBSACAAVABBAEIATABFACAAQQBEAFMAQgBJAC4AQQBE
+AFMAVABSAEEATgBTAEEAQwBUAEkATwBOAEQARQBUAEEASQBMAFMAIABEAFIATwBQACAAQwBPAE4A
+UwBUAFIAQQBJAE4AVAAgAEYASwBfAEMAdQBzAHQAbwBtAGUAcgA7AACAh0EATABUAEUAUgAgAFQA
+QQBCAEwARQAgAEEARABTAEIASQAuAEEARABTAFQAUgBBAE4AUwBBAEMAVABJAE8ATgBEAEUAVABB
+AEkATABTACAARABSAE8AUAAgAEMATwBOAFMAVABSAEEASQBOAFQAIABGAEsAXwBQAHIAbwBkAHUA
+YwB0ADsAAH9BAEwAVABFAFIAIABUAEEAQgBMAEUAIABBAEQAUwBCAEkALgBBAEQAUwBUAFIAQQBO
+AFMAQQBDAFQASQBPAE4ARABFAFQAQQBJAEwAUwAgAEQAUgBPAFAAIABDAE8ATgBTAFQAUgBBAEkA
+TgBUACAARgBLAF8AQQBkAHMAOwAAgRNBAEwAVABFAFIAIABUAEEAQgBMAEUAIABBAEQAUwBCAEkA
+LgBBAEQAUwBUAFIAQQBOAFMAQQBDAFQASQBPAE4ARABFAFQAQQBJAEwAUwAgAEEARABEACAAQwBP
+AE4AUwBUAFIAQQBJAE4AVAAgAEYASwBfAEMAdQBzAHQAbwBtAGUAcgAgAEYATwBSAEUASQBHAE4A
+IABLAEUAWQAgACgAQwB1AHMAdABvAG0AZQByAEkARAApACAAUgBFAEYARQBSAEUATgBDAEUAUwAg
+AEEAZABzAEIASQAuAEMAdQBzAHQAbwBtAGUAcgBEAGUAdABhAGkAbABzACgAQwB1AHMAdABvAG0A
+ZQByAEkARAApADsAAIENQQBMAFQARQBSACAAVABBAEIATABFACAAQQBEAFMAQgBJAC4AQQBEAFMA
+VABSAEEATgBTAEEAQwBUAEkATwBOAEQARQBUAEEASQBMAFMAIABBAEQARAAgAEMATwBOAFMAVABS
+AEEASQBOAFQAIABGAEsAXwBQAHIAbwBkAHUAYwB0ACAARgBPAFIARQBJAEcATgAgAEsARQBZACAA
+KABDAHUAcwB0AG8AbQBlAHIASQBEACkAIABSAEUARgBFAFIARQBOAEMARQBTACAAQQBkAHMAQgBJ
+AC4AUAByAG8AZAB1AGMAdABEAGUAdABhAGkAbABzACgAUAByAG8AZAB1AGMAdABJAEQAKQA7AACB
+AUEATABUAEUAUgAgAFQAQQBCAEwARQAgAEEARABTAEIASQAuAEEARABTAFQAUgBBAE4AUwBBAEMA
+VABJAE8ATgBEAEUAVABBAEkATABTACAAQQBEAEQAIABDAE8ATgBTAFQAUgBBAEkATgBUACAARgBL
+AF8AQQBkAHMAIABGAE8AUgBFAEkARwBOACAASwBFAFkAIAAoAEMAdQBzAHQAbwBtAGUAcgBJAEQA
+KQAgAFIARQBGAEUAUgBFAE4AQwBFAFMAIABBAGQAcwBCAEkALgBBAGQAcwBIAGUAYQBkAGUAcgBE
+AGUAdABhAGkAbABzACgAQQBkAHMASQBEACkAOwAAR3UAcwBlACAAdwBhAHIAZQBoAG8AdQBzAGUA
+IABGAEEAXwBQAFIATwBKAEUAQwBUADAAMQBfAEMATABPAFUARABEAFcAOwAAF3AAdQB0ACAAZgBp
+AGwAZQA6AC8ALwAAX1wAQQBkAHMASABlAGEAZABlAHIAUwBwAGwAaQB0AFwAKgAuAGMAcwB2ACAA
+QABBAEQAUwBCAEkALgAlAEEAZABzAEgAZQBhAGQAZQByAEQAZQB0AGEAaQBsAHMAOwAAV1wAUABy
+AG8AZAB1AGMAdABTAHAAbABpAHQAXAAqAC4AYwBzAHYAIABAAEEARABTAEIASQAuACUAUAByAG8A
+ZAB1AGMAdABEAGUAdABhAGkAbABzADsAAFtcAEMAdQBzAHQAbwBtAGUAcgBTAHAAbABpAHQAXAAq
+AC4AYwBzAHYAIABAAEEARABTAEIASQAuACUAQwB1AHMAdABvAG0AZQByAEQAZQB0AGEAaQBsAHMA
+OwAAc1wAQQBkAHMAVAByAGEAbgBzAGEAYwB0AGkAbwBuAFMAcABsAGkAdABcACoALgBjAHMAdgAg
+AEAAQQBEAFMAQgBJAC4AJQBBAGQAcwBUAHIAYQBuAHMAYQBjAHQAaQBvAG4ARABlAHQAYQBpAGwA
+cwA7AAB/YwBvAHAAeQAgAGkAbgB0AG8AIABBAGQAcwBCAEkALgBBAGQAcwBIAGUAYQBkAGUAcgBE
+AGUAdABhAGkAbABzACAAZgByAG8AbQAgAEAAQQBEAFMAQgBJAC4AJQBBAGQAcwBIAGUAYQBkAGUA
+cgBEAGUAdABhAGkAbABzACAAAHdjAG8AcAB5ACAAaQBuAHQAbwAgAEEAZABzAEIASQAuAFAAcgBv
+AGQAdQBjAHQARABlAHQAYQBpAGwAcwAgAGYAcgBvAG0AIABAAEEARABTAEIASQAuACUAUAByAG8A
+ZAB1AGMAdABEAGUAdABhAGkAbABzACAAAHtjAG8AcAB5ACAAaQBuAHQAbwAgAEEAZABzAEIASQAu
+AEMAdQBzAHQAbwBtAGUAcgBEAGUAdABhAGkAbABzACAAZgByAG8AbQAgAEAAQQBEAFMAQgBJAC4A
+JQBDAHUAcwB0AG8AbQBlAHIARABlAHQAYQBpAGwAcwAgAACAk2MAbwBwAHkAIABpAG4AdABvACAA
+QQBkAHMAQgBJAC4AQQBkAHMAVAByAGEAbgBzAGEAYwB0AGkAbwBuAEQAZQB0AGEAaQBsAHMAIABm
+AHIAbwBtACAAQABBAEQAUwBCAEkALgAlAEEAZABzAFQAcgBhAG4AcwBhAGMAdABpAG8AbgBEAGUA
+dABhAGkAbABzACAAAEFyAGUAbQBvAHYAZQAgAEAAQQBEAFMAQgBJAC4AJQBBAGQAcwBIAGUAYQBk
+AGUAcgBEAGUAdABhAGkAbABzADsAAD1yAGUAbQBvAHYAZQAgAEAAQQBEAFMAQgBJAC4AJQBQAHIA
+bwBkAHUAYwB0AEQAZQB0AGEAaQBsAHMAOwAAP3IAZQBtAG8AdgBlACAAQABBAEQAUwBCAEkALgAl
+AEMAdQBzAHQAbwBtAGUAcgBEAGUAdABhAGkAbABzADsAAEtyAGUAbQBvAHYAZQAgAEAAQQBEAFMA
+QgBJAC4AJQBBAGQAcwBUAHIAYQBuAHMAYQBjAHQAaQBvAG4ARABlAHQAYQBpAGwAcwA7AAATaQBt
+AHAAbwByAHQAIABvAHMAADVpAG0AcABvAHIAdAAgAHMAbgBvAHcAZgBsAGEAawBlAC4AYwBvAG4A
+bgBlAGMAdABvAHIAAClpAG0AcABvAHIAdAAgAGMAbwBuAGYAaQBnAHAAYQByAHMAZQByACAAABtj
+AG8AbgBmAGkAZwBmACAAPQAgACgAcgAnAAEFJwApAAFJcABhAHIAcwBlAHIAIAA9ACAAYwBvAG4A
+ZgBpAGcAcABhAHIAcwBlAHIALgBDAG8AbgBmAGkAZwBQAGEAcgBzAGUAcgAoACkAAClwAGEAcgBz
+AGUAcgAuAHIAZQBhAGQAKABjAG8AbgBmAGkAZwBmACkAAFlVAHMAZQByACAAPQAgAHAAYQByAHMA
+ZQByAC4AZwBlAHQAKAAiAGMAbwBuAG4AZQBjAHQAaQBvAG4AcwAiACwAIAAiAHUAcwBlAHIAbgBh
+AG0AZQAiACkAAGVBAGMAYwBvAHUAbgB0ACAAPQAgAHAAYQByAHMAZQByAC4AZwBlAHQAKAAiAGMA
+bwBuAG4AZQBjAHQAaQBvAG4AcwAiACwAIAAiAGEAYwBjAG8AdQBuAHQAbgBhAG0AZQAiACkAAGFQ
+AGEAcwBzAHcAbwByAGQAIAA9ACAAcABhAHIAcwBlAHIALgBnAGUAdAAoACIAYwBvAG4AbgBlAGMA
+dABpAG8AbgBzACIALAAgACIAcABhAHMAcwB3AG8AcgBkACIAKQAAWVIAbwBsAGUAIAA9ACAAcABh
+AHIAcwBlAHIALgBnAGUAdAAoACIAYwBvAG4AbgBlAGMAdABpAG8AbgBzACIALAAgACIAcgBvAGwA
+ZQBuAGEAbQBlACIAKQAAQXcAIAA9ACAAbwBwAGUAbgAoACAAJwBMAG8AZwBTAG4AbwB3AFAAaQBw
+AGUALgBsAG8AZwAnACwAJwB3ACcAKQABgM9jAG4AbgAgAD0AIABzAG4AbwB3AGYAbABhAGsAZQAu
+AGMAbwBuAG4AZQBjAHQAbwByAC4AYwBvAG4AbgBlAGMAdAAoAHUAcwBlAHIAIAA9ACAAVQBzAGUA
+cgAsACAAcABhAHMAcwB3AG8AcgBkACAAPQAgAFAAYQBzAHMAdwBvAHIAZAAsACAAYQBjAGMAbwB1
+AG4AdAAgAD0AIABBAGMAYwBvAHUAbgB0ACwAIAByAG8AbABlAG4AYQBtAGUAIAA9ACAAUgBvAGwA
+ZQApAAAjYwBzACAAPQAgAGMAbgBuAC4AYwB1AHIAcwBvAHIAKAApAAAbZAByAG8AcABmAGkAbABl
+ACAAPQAgAHIAJwABAycAARlhAGQAZABmAGkAbABlACAAPQAgAHIAJwABGXAAdQB0AGYAaQBsAGUA
+IAA9ACAAcgAnAAETbgBfAGUAcgByACAAPQAgADAAAGlkAGUAZgAgAGUAeABlAGMAdQB0AGUAcwBu
+AG8AdwBzAHEAbAAoAHMAcQBsAGYAaQBsAGUALAAgAGwAbwBnAGYAaQBsAGUALAAgAGMAdQByAHMA
+bwByACwAIABuAF8AZQByAHIAKQA6AABrIAAgACAAIABsAG8AZwBmAGkAbABlAC4AdwByAGkAdABl
+ACgAJwBGAGkAbABlACAAcwBxAGwAIABwAHIAbwBjAGUAcwBzADoAIAAnACsAcwBxAGwAZgBpAGwA
+ZQAgACsAJwBcAG4AJwApAAFXIAAgACAAIABmAD0AIABvAHAAZQBuACgAcwBxAGwAZgBpAGwAZQAs
+ACAAJwByACcALAAgAGUAbgBjAG8AZABpAG4AZwA9ACcAdQB0AGYALQA4ACcAKQABMyAAIAAgACAA
+bABpAG4AZQBzACAAPQAgAGYALgByAGUAYQBkAGwAaQBuAGUAcwAoACkAABsgACAAIAAgAGYALgBj
+AGwAbwBzAGUAKAApAAAtIAAgACAAIABmAG8AcgAgAGwAaQBuAGUAIABpAG4AIABsAGkAbgBlAHMA
+OgAAGSAAIAAgACAAIAAgACAAIAB0AHIAeQA6AABBIAAgACAAIAAgACAAIAAgACAAIAAgACAAYwB1
+AHIAcwBvAHIALgBlAHgAZQBjAHUAdABlACgAbABpAG4AZQApAACAgSAAIAAgACAAIAAgACAAIABl
+AHgAYwBlAHAAdAAgAHMAbgBvAHcAZgBsAGEAawBlAC4AYwBvAG4AbgBlAGMAdABvAHIALgBlAHIA
+cgBvAHIAcwAuAFAAcgBvAGcAcgBhAG0AbQBpAG4AZwBFAHIAcgBvAHIAIABhAHMAIABlADoAAIDL
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAbABvAGcAZgBpAGwAZQAuAHcAcgBpAHQAZQAoACcARQBy
+AHIAbwByACAAewAwAH0AIAAgACgAewAxAH0AKQA6ACAAewAyAH0AIAAgACgAewAzAH0AKQAnAC4A
+ZgBvAHIAbQBhAHQAKABlAC4AZQByAHIAbgBvACwAIABlAC4AcwBxAGwAcwB0AGEAdABlACwAIABl
+AC4AbQBzAGcALAAgAGUALgBzAGYAcQBpAGQAKQApAAE7IAAgACAAIAAgACAAIAAgACAAIAAgACAA
+bgBfAGUAcgByACAAPQAgAG4AXwBlAHIAcgAgACsAIAAxAAAhIAAgACAAIAByAGUAdAB1AHIAbgAg
+AG4AXwBlAHIAcgAANWkAZgAgAF8AXwBuAGEAbQBlAF8AXwAgAD0APQAgACcAXwBfAG0AYQBpAG4A
+XwBfACcAOgABTSAAIAAgACAAcAByAGkAbgB0ACgAJwBMAG8AYQBkAGkAbgBnACAAZABhAHQAYQAg
+AHQAbwAgAHMAbgBvAHcAZgBsAGEAawBlACcAKQABZSAAIAAgACAAbgBfAGUAcgByACAAPQAgAGUA
+eABlAGMAdQB0AGUAcwBuAG8AdwBzAHEAbAAoAGQAcgBvAHAAZgBpAGwAZQAsACAAdwAsACAAYwBz
+ACwAIABuAF8AZQByAHIAKQAAYyAAIAAgACAAbgBfAGUAcgByACAAPQAgAGUAeABlAGMAdQB0AGUA
+cwBuAG8AdwBzAHEAbAAoAHAAdQB0AGYAaQBsAGUALAAgAHcALAAgAGMAcwAsACAAbgBfAGUAcgBy
+ACkAAGMgACAAIAAgAG4AXwBlAHIAcgAgAD0AIABlAHgAZQBjAHUAdABlAHMAbgBvAHcAcwBxAGwA
+KABhAGQAZABmAGkAbABlACwAIAB3ACwAIABjAHMALAAgAG4AXwBlAHIAcgApAAAdIAAgACAAIABj
+AHMALgBjAGwAbwBzAGUAKAApAAAfIAAgACAAIABjAG4AbgAuAGMAbABvAHMAZQAoACkAAICjIAAg
+ACAAIAB3AC4AdwByAGkAdABlACgAJwBGAGkAbgBpAHMAaAAgAGwAbwBhAGQAaQBuAGcAIABEAGEA
+dABhACAAdABvACAAUwBuAG8AdwBGAGwAYQBrAGUAIAB3AGkAdABoACAAewAwAH0AIABFAHIAcgBv
+AHIAJwAuAGYAbwByAG0AYQB0ACgAcwB0AHIAKABuAF8AZQByAHIAKQApACkAARsgACAAIAAgAHcA
+LgBjAGwAbwBzAGUAKAApAACAnyAAIAAgACAAcAByAGkAbgB0ACgAJwBGAGkAbgBpAHMAaAAgAGwA
+bwBhAGQAaQBuAGcAIABEAGEAdABhACAAdABvACAAUwBuAG8AdwBGAGwAYQBrAGUAIAB3AGkAdABo
+ACAAewAwAH0AIABFAHIAcgBvAHIAJwAuAGYAbwByAG0AYQB0ACgAcwB0AHIAKABuAF8AZQByAHIA
+KQApACkAAXFTAFQAXwA2ADAAMgA5AGQAMgA1ADMAOAA4AGIAOAA0AGIANgBlAGEANABlADEAZQA1
+AGUANwA2ADUAOQAyAGIAZgBiAGEALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIA
+YwBlAHMAAAAMEWt7+6eWRKujLx9PpOQfAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFVEQcLDg4O
+Dg4ODhI9Ej0SPRI9BCAAEmUEIAASaQUgARJtHAMgABwFAAIODg4EAAECDgYAAw4ODg4IAAESgIER
+gIUFIAASgIkHIAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJNAwYSUQMGEhAC
+BggDBhEUBAAAEk0EAAASUQUAAQESUQQAABIQAwAAAQQIABJNBAgAElEECAASEAgBAAgAAAAAAB4B
+AAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfNjAyOWQyNTM4OGI4
+NGI2ZWE0ZTFlNWU3NjU5MmJmYmEAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMQAASQEAGi5O
+RVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZy
+YW1ld29yayA0LjcAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJl
+YWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNL
+ZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNl
+U2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAAgTAAAAAAAAAAAAAA6TAAAACAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAALEwAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQ
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAACgMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAYAACA
+AAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAAABoEAAAA
+AAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+AAABAAAA
+AQCPgNgeAAABAI+A2B4/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBhAHIARgBp
+AGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAAsAR6AwAA
+AQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAwADAANABiADAAAAAa
+AAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAA
+AAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABfADYAMAAy
+ADkAZAAyADUAMwA4ADgAYgA4ADQAYgA2AGUAYQA0AGUAMQBlADUAZQA3ADYANQA5ADIAYgBmAGIA
+YQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA3ADgAOQA2AC4AMwAy
+ADkAMQAxAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfADUAZQAzAGYA
+MwBmADkAMQBhAGQAYwBkADQAMwAxADMAYgBkADkANABkADkAZgBhADMANwA3AGMAMgA5ADYAYgAu
+AGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkA
+ZwBoAHQAIABAACAAIAAyADAAMgAxAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBr
+AHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8A
+NQBlADMAZgAzAGYAOQAxAGEAZABjAGQANAAzADEAMwBiAGQAOQA0AGQAOQBmAGEAMwA3ADcAYwAy
+ADkANgBiAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfADYA
+MAAyADkAZAAyADUAMwA4ADgAYgA4ADQAYgA2AGUAYQA0AGUAMQBlADUAZQA3ADYANQA5ADIAYgBm
+AGIAYQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANwA4ADkA
+NgAuADMAMgA5ADEAMQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4ANwA4ADkANgAuADMAMgA5ADEAMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAABMPAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -11540,11 +11763,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </ScriptProject>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Scripting task.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{3B9FE802-A1C8-4AF6-A6F2-3C2F846C14C7}"
+          DTS:From="Package\Scripting task\Create ErrorLog tmpCSV Folder"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Scripting task\Create sql files and bat file" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -11604,35 +11837,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ObjectName="Insert into EventLog SQL"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"INSERT INTO AdsBI.EventLog values('"+ @[System::PackageName] +"','"+ @[System::SourceName] +"','"+ @[System::ErrorDescription] +"',getdate())"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{D0BD9D57-94AB-4B1C-8B1A-609FCEA61F6B}"
-              SQLTask:SqlStatementSource="INSERT INTO AdsBI.EventLog(Package, Task, EventDescription, Timelog) &#xA;VALUE(?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="NewParameterName"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="NewParameterName"
-                SQLTask:DtsVariableName="System::SourceName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="NewParameterName"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="NewParameterName"
-                SQLTask:DtsVariableName="System::CreationDate"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
+              SQLTask:SqlStatementSource="INSERT INTO AdsBI.EventLog values('Package','','',getdate())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -11668,7 +11878,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="564,102"
           Size="564,145"
           Id="Package\Load DimensionData In Parallel"
-          TopLeft="5.50000000000006,211.5" />
+          TopLeft="5.50000000000006,313.5" />
         <NodeLayout
           Size="109,42"
           Id="Package\LoadTransactionData\AddFK"
@@ -11731,14 +11941,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="183,306"
           Size="183,350"
           Id="Package\LoadTransactionData"
-          TopLeft="196,416.5" />
+          TopLeft="196,518.5" />
         <NodeLayout
           Size="205,42"
           Id="Package\Run package Push SQL2SF"
-          TopLeft="185,826.5" />
+          TopLeft="185,928.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="287.5,356.5">
+          TopLeft="287.5,458.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11760,7 +11970,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="287.5,766.5">
+          TopLeft="287.5,868.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11783,21 +11993,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="204,42"
           Id="Package\Scripting task\Create sql files and bat file"
-          TopLeft="5.5,5.5" />
+          TopLeft="16.5,107.5" />
         <NodeLayout
           Size="226,42"
           Id="Package\Scripting task\Create ErrorLog tmpCSV Folder"
-          TopLeft="270.5,5.5" />
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package\Scripting task.PrecedenceConstraints[Constraint]"
+          TopLeft="118.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="502,102"
-          Size="502,146"
+          PanelSize="237,204"
+          Size="237,248"
           Id="Package\Scripting task"
-          TopLeft="36.5,5.5" />
+          TopLeft="169,5.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="287.5,151.5">
+          TopLeft="287.5,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -13014,8 +13246,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\LoadTransactionData\ETL TransactionAds\Remove Duplicate"
           TopLeft="423,312.5" />
         <NodeLayout
-          Size="143,42"
-          Id="Package\LoadTransactionData\ETL TransactionAds\Error Loading"
+          Size="225,42"
+          Id="Package\LoadTransactionData\ETL TransactionAds\Do not load data with same PK"
           TopLeft="753,414" />
         <NodeLayout
           Size="124,42"

@@ -11,52 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{EF59166F-42B0-4B92-BCA3-B7D30C742B23}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{16438664-9C51-40CF-ABB0-4CD584041350}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{CEB480BE-8B8C-429B-9AF6-13C23CF56520}"
-      DTS:ObjectName="configsnowsql">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue"
-        xml:space="preserve"></DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{32F1C8EE-7196-4592-9656-5B48BFC3A451}"
-      DTS:ObjectName="snowflakepath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue"
-        xml:space="preserve"></DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{983DC3D4-2F03-450B-97E0-0EF665D1C5DA}"
-      DTS:ObjectName="snowsqlpath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue"
-        xml:space="preserve"></DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{A6AB8010-59CC-4F60-BA34-D0AE03F620EC}"
-      DTS:ObjectName="tempCSVpath">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue"
-        xml:space="preserve"></DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -83,10 +42,6 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>LoadSplitAds.dtsx</PackageName>
-              <ParameterAssignment>
-                <ParameterName>tmpCSV</ParameterName>
-                <BindedVariableOrParameterName>$Package::tempCSVpath</BindedVariableOrParameterName>
-              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -104,10 +59,6 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>LoadSplitCustomer.dtsx</PackageName>
-              <ParameterAssignment>
-                <ParameterName>tmpCSV</ParameterName>
-                <BindedVariableOrParameterName>$Package::tempCSVpath</BindedVariableOrParameterName>
-              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -125,10 +76,6 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>LoadSplitProduct.dtsx</PackageName>
-              <ParameterAssignment>
-                <ParameterName>tmpCSV</ParameterName>
-                <BindedVariableOrParameterName>$Package::tempCSVpath</BindedVariableOrParameterName>
-              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -146,10 +93,6 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>LoadTransaction.dtsx</PackageName>
-              <ParameterAssignment>
-                <ParameterName>tmpCSV</ParameterName>
-                <BindedVariableOrParameterName>$Package::tempCSVpath</BindedVariableOrParameterName>
-              </ParameterAssignment>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -166,11 +109,20 @@
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:LoggingMode="2" />
       <DTS:PropertyExpression
-        DTS:Name="Executable">@[$Package::snowflakepath]+"\\Push2snow.bat"</DTS:PropertyExpression>
+        DTS:Name="Arguments">"Push2snow.py"</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[$Project::PythonPath]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath]+"\\"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="\Push2snow.bat" />
+          Executable="C:\Users\KhangNHN\AppData\Local\Microsoft\WindowsApps\python.exe"
+          RequireFullFileName="False"
+          Arguments="Push2snow.py"
+          WorkingDirectory="E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\src\snowflake\" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
