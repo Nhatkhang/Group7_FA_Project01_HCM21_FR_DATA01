@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{16438664-9C51-40CF-ABB0-4CD584041350}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{F59290FB-E173-4C74-A3E3-92FBEB69F0BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -99,28 +99,25 @@
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Run Bat file"
+      DTS:refId="Package\RunScript"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
-      DTS:DTSID="{B6D88CDD-EBF7-4EAB-A4B4-D9802EBD3F05}"
+      DTS:DTSID="{C4B67897-6A16-4AB5-A629-5DA520E73550}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Run Bat file"
+      DTS:ObjectName="RunScript"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:LoggingOptions
-        DTS:LoggingMode="2" />
       <DTS:PropertyExpression
         DTS:Name="Arguments">"Push2snow.py"</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="Executable">@[$Project::PythonPath]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath]+"\\"</DTS:PropertyExpression>
+        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath] +"\\"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="C:\Users\KhangNHN\AppData\Local\Microsoft\WindowsApps\python.exe"
-          RequireFullFileName="False"
+          Executable="C:\Windows\py.exe"
           Arguments="Push2snow.py"
           WorkingDirectory="E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\src\snowflake\" />
       </DTS:ObjectData>
@@ -128,13 +125,13 @@
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{07B4FC65-2059-4F6E-A13F-1FF1CC86315B}"
+      DTS:DTSID="{A9F89982-1D44-4C46-AABF-A8E89A793543}"
       DTS:From="Package\Parallel Load SQL to CSV and split"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Run Bat file" />
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\RunScript" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -153,13 +150,13 @@
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitAds"
           TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="180,42"
-          Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitProduct"
-          TopLeft="227,5.5" />
-        <NodeLayout
           Size="189,42"
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitCustomer"
           TopLeft="467.5,5.49999999999989" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitProduct"
+          TopLeft="227,5.5" />
         <NodeLayout
           Size="198,42"
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitTransaction"
@@ -167,28 +164,40 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="920,102"
+          PanelSize="920,103"
           Size="920,146"
           Id="Package\Parallel Load SQL to CSV and split"
           TopLeft="5.50000000000006,5.49999999999989" />
         <NodeLayout
-          Size="134,42"
-          Id="Package\Run Bat file"
-          TopLeft="398.5,211.5" />
+          Size="124,42"
+          Id="Package\RunScript"
+          TopLeft="415,200" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
+          Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="465.5,151.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="11.4999999999999,48.5000000000001"
               Start="0,0"
-              End="0,52.5">
+              End="11.4999999999999,41.0000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,20.2500000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2500000000001"
+                    Point2="0,24.2500000000001"
+                    Point3="4,24.2500000000001" />
+                  <mssgle:LineSegment
+                    End="7.49999999999994,24.2500000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.49999999999994,24.2500000000001"
+                    Point2="11.4999999999999,24.2500000000001"
+                    Point3="11.4999999999999,28.2500000000001" />
+                  <mssgle:LineSegment
+                    End="11.4999999999999,41.0000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

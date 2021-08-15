@@ -1,5 +1,4 @@
 -- Set up Warehouse
-Alter session set date_input_format='yyyy-mm-dd';
 CREATE WAREHOUSE FA_Project01_CloudDW WITH 
 	WAREHOUSE_SIZE = 'XSMALL' 
 	WAREHOUSE_TYPE = 'STANDARD' 
@@ -66,10 +65,17 @@ CREATE TABLE AdsBI.AdsTransactionDetails(
 	CONSTRAINT FK_Product FOREIGN KEY (ProductID) REFERENCES AdsBI.ProductDetails(ProductID),
 	CONSTRAINT FK_Ads FOREIGN KEY (AdsID) REFERENCES AdsBI.AdsHeaderDetails(AdsID)
 );
--- set up table
 
 -- Create Trigger
 
 -- Set up Snowpipe
-
+-- create pipe and change accessibility
+create pipe AdsBI.AdsPipe if not exists as copy into AdsBI.AdsHeaderDetails from @AdsBI.%AdsHeaderDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
+create pipe AdsBI.ProductPipe if not exists as copy into AdsBI.ProductDetails from @AdsBI.%ProductDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
+create pipe AdsBI.CustomerPipe if not exists as copy into AdsBI.CustomerDetails from @AdsBI.%CustomerDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
+create pipe AdsBI.TransactionPipe if not exists as copy into AdsBI.AdsTransactionDetails from @AdsBI.%AdsTransactionDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
+grant ownership on pipe AdsBI.AdsPipe to role accountadmin;
+grant ownership on pipe AdsBI.ProductPipe to role accountadmin;
+grant ownership on pipe AdsBI.CustomerPipe to role accountadmin;
+grant ownership on pipe AdsBI.TransactionPipe to role accountadmin;
 -- Task
