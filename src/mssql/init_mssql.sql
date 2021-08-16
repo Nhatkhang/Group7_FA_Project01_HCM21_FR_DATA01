@@ -19,7 +19,6 @@ CREATE TABLE [AdsBI].[AdsHeaderDetails] (
 	[AdsPlatform] [nvarchar](100) NOT NULL,
 	[StandardCost] [money] NOT NULL,
 	[Cost_Per_Click] [money] NOT NULL,
-	[ValidFlag] [Bit],
 	CONSTRAINT PK_AdsDIM PRIMARY KEY ([AdsID])
 );
 CREATE TABLE [AdsBI].[CustomerDetails] (
@@ -33,7 +32,6 @@ CREATE TABLE [AdsBI].[CustomerDetails] (
 	[City] [nvarchar](50) NOT NULL,
 	[Region] [nvarchar](100) NOT NULL,
 	[RegisteredDate] [date] NOT NULL,
-	[ValidFlag] [Bit],
 	CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
 );
 CREATE TABLE [AdsBI].[ProductDetails] (
@@ -43,7 +41,6 @@ CREATE TABLE [AdsBI].[ProductDetails] (
 	[ProductColor] [nvarchar](100) NOT NULL,
 	[Cost] [money] NOT NULL,
 	[Price] [money] NOT NULL,
-	[ValidFlag] [Bit],
 	CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
 CREATE TABLE [AdsBI].[AdsTransactionDetails](

@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{2D50F79E-7264-4508-B331-3A1157053776}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{717EB4BF-8D37-498C-BF9A-8AE9B95D09FE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,7 +40,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsID"
-              DTS:DTSID="{45CE3929-D758-4E45-8878-7CF60AC9F844}"
+              DTS:DTSID="{6FE08DE9-26BB-4E04-B11A-D1460BDAD447}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsName"
-              DTS:DTSID="{278DAC6B-AF8D-4CD7-BA5E-2BA83BC12B52}"
+              DTS:DTSID="{D17CB4E9-FF48-4949-96DB-4B1669343C99}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsCategory"
-              DTS:DTSID="{EE240017-21A5-4E69-8720-02E4FC22DAD0}"
+              DTS:DTSID="{0908B3C5-D94D-438E-B26A-50E77B59A40D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsPlatform"
-              DTS:DTSID="{E9AE2645-73E8-4B55-A037-82F81BB524C0}"
+              DTS:DTSID="{E632DF52-2E78-4A2B-99B5-1745A92F0A7C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,23 +75,15 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="StandardCost"
-              DTS:DTSID="{10B8C25C-7156-4F55-9648-EE8531E36B39}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="6"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Cost_Per_Click"
-              DTS:DTSID="{68031316-220E-431D-8BC4-707CBCC10A47}"
+              DTS:DTSID="{C0FB008E-7255-4395-8968-B28570CDF67F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="11"
+              DTS:DataType="6"
               DTS:TextQualified="True"
-              DTS:ObjectName="ValidFlag"
-              DTS:DTSID="{7BD37EB3-7FB3-4A15-9439-C0EB2A4690CF}"
+              DTS:ObjectName="Cost_Per_Click"
+              DTS:DTSID="{124B30B7-A4DE-4CF6-B4A0-957338A0EB38}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -120,7 +112,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsID"
-              DTS:DTSID="{E9BE62B6-3472-49C8-A137-F60E2E286ACA}"
+              DTS:DTSID="{6BF62C14-4B89-43FB-959F-46346678D811}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +121,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsName"
-              DTS:DTSID="{2C2FC2C1-8859-4187-86BD-C75557ED913F}"
+              DTS:DTSID="{8D0A6903-9594-4326-8202-462059B383B4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +130,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsCategory"
-              DTS:DTSID="{29611958-0274-4885-8A11-FEC9A91611CD}"
+              DTS:DTSID="{7DCCF821-C59A-4D99-88CF-5BCF07B41077}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +139,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsPlatform"
-              DTS:DTSID="{4A817811-4446-4912-990E-2098B6621FE7}"
+              DTS:DTSID="{55925022-CCC4-46ED-B4CC-D21F1DF22437}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -155,23 +147,15 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="StandardCost"
-              DTS:DTSID="{5481361C-F941-4F68-B049-D379C08547DB}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="6"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Cost_Per_Click"
-              DTS:DTSID="{85A69772-89FF-4335-9F35-C70D8FBBFA1C}"
+              DTS:DTSID="{FF021F44-16EC-435F-92BB-17104BB986C9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="11"
+              DTS:DataType="6"
               DTS:TextQualified="True"
-              DTS:ObjectName="ValidFlag"
-              DTS:DTSID="{933904B6-5F62-4876-BC9A-65014544C4C0}"
+              DTS:ObjectName="Cost_Per_Click"
+              DTS:DTSID="{EE9CB333-E5C4-41A2-AD7C-79884C3F0C7C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -380,15 +364,6 @@
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[Cost_Per_Click]"
                       name="Cost_Per_Click"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ValidFlag]"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]"
-                      name="ValidFlag"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -419,10 +394,6 @@
                       refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[Cost_Per_Click]"
                       dataType="cy"
                       name="Cost_Per_Click" />
-                    <externalMetadataColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ValidFlag]"
-                      dataType="bool"
-                      name="ValidFlag" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -463,11 +434,6 @@
                       dataType="cy"
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[Cost_Per_Click]"
                       name="Cost_Per_Click" />
-                    <outputColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ValidFlag]"
-                      dataType="bool"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ValidFlag]"
-                      name="ValidFlag" />
                     <outputColumn
                       refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -560,12 +526,6 @@
                       cachedName="Cost_Per_Click"
                       externalMetadataColumnId="Package\Load SQL to large CSV\tmp CSV file.Inputs[Flat File Destination Input].ExternalColumns[Cost_Per_Click]"
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[Cost_Per_Click]" />
-                    <inputColumn
-                      refId="Package\Load SQL to large CSV\tmp CSV file.Inputs[Flat File Destination Input].Columns[ValidFlag]"
-                      cachedDataType="bool"
-                      cachedName="ValidFlag"
-                      externalMetadataColumnId="Package\Load SQL to large CSV\tmp CSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -596,10 +556,6 @@
                       refId="Package\Load SQL to large CSV\tmp CSV file.Inputs[Flat File Destination Input].ExternalColumns[Cost_Per_Click]"
                       dataType="cy"
                       name="Cost_Per_Click" />
-                    <externalMetadataColumn
-                      refId="Package\Load SQL to large CSV\tmp CSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                      dataType="bool"
-                      name="ValidFlag" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -891,26 +847,6 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
-                        <outputColumn
-                          refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]"
-                          dataType="bool"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ValidFlag]"
-                          lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]"
-                          name="ValidFlag"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -941,10 +877,6 @@
                           refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[Cost_Per_Click]"
                           dataType="cy"
                           name="Cost_Per_Click" />
-                        <externalMetadataColumn
-                          refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ValidFlag]"
-                          dataType="bool"
-                          name="ValidFlag" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1051,12 +983,6 @@
                           cachedName="Cost_Per_Click"
                           externalMetadataColumnId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[Cost_Per_Click]"
                           lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[Cost_Per_Click]" />
-                        <inputColumn
-                          refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].Columns[ValidFlag]"
-                          cachedDataType="bool"
-                          cachedName="ValidFlag"
-                          externalMetadataColumnId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                          lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1087,10 +1013,6 @@
                           refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[Cost_Per_Click]"
                           dataType="cy"
                           name="Cost_Per_Click" />
-                        <externalMetadataColumn
-                          refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                          dataType="bool"
-                          name="ValidFlag" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2063,16 +1985,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Id="Package\Load SQL to large CSV\SQL table"
           TopLeft="16.5,5.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load SQL to large CSV\Row Count"
-          TopLeft="9.00000000000003,107.5" />
-        <NodeLayout
           Size="137,42"
           Id="Package\Load SQL to large CSV\tmp CSV file"
           TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load SQL to large CSV\Row Count"
+          TopLeft="9.00000000000003,107.5" />
         <EdgeLayout
-          Id="Package\Load SQL to large CSV.Paths[OLE DB Source Output]"
-          TopLeft="76.25,47.5">
+          Id="Package\Load SQL to large CSV.Paths[Row Count Output 1]"
+          TopLeft="74,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2095,8 +2017,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load SQL to large CSV.Paths[Row Count Output 1]"
-          TopLeft="74,149.5">
+          Id="Package\Load SQL to large CSV.Paths[OLE DB Source Output]"
+          TopLeft="76.25,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2144,13 +2066,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Id="Package\Split Loop\Split CSV\SplitCSV file"
           TopLeft="17.5,311.5" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Split Loop\Split CSV\Conditional Split"
-          TopLeft="7.50000000000003,209.5" />
-        <NodeLayout
           Size="159,42"
           Id="Package\Split Loop\Split CSV\Take rownumber"
           TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Split Loop\Split CSV\Conditional Split"
+          TopLeft="7.50000000000003,209.5" />
         <NodeLayout
           Size="115,42"
           Id="Package\Split Loop\Split CSV\CSV file"
