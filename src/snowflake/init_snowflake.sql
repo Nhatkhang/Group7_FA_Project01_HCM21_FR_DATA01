@@ -1,3 +1,4 @@
+----IMPORTANT: PLEASE HELP MODIFY THE FILE PATHS TO SAVE UNLOAD CSV FILES IN GET TASK.
 -- Set up Warehouse
 
 CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW WITH 
@@ -16,17 +17,16 @@ CREATE or REPLACE DATABASE FA_Project01_DB;
 CREATE SCHEMA AdsBI;
 /********************CREATE TABLES***************************/
 -- TABLES for Staging
-CREATE TABLE AdsBI.AdsHeaderDetails (
+CREATE or replace TABLE AdsBI.AdsHeaderDetails (
 	AdsID int NOT NULL,
 	AdsName nvarchar(30) NOT NULL,
 	AdsCategory nvarchar(100) NOT NULL,
 	AdsPlatform nvarchar(100) NOT NULL,
 	StandardCost float(2) NOT NULL,
 	Cost_Per_Click float(2) NOT NULL,
-	ValidFlag Binary,
 	CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsID)
 );
-CREATE TABLE AdsBI.CustomerDetails (
+CREATE or replace TABLE AdsBI.CustomerDetails (
 	CustomerID int NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
 	Gender nvarchar(10) NOT NULL,
@@ -37,20 +37,18 @@ CREATE TABLE AdsBI.CustomerDetails (
 	City nvarchar(50) NOT NULL,
 	Region nvarchar(100) NOT NULL,
 	RegisteredDate date NOT NULL,
-	ValidFlag Binary,
 	CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
 );
-CREATE TABLE AdsBI.ProductDetails (
+CREATE  or replace TABLE AdsBI.ProductDetails (
 	ProductID int NOT NULL,
 	ProductName nvarchar(200) NOT NULL,
 	ProductCategory nvarchar(200) NOT NULL,
 	ProductColor nvarchar(100) NOT NULL,
 	Cost float(2) NOT NULL,
 	Price float(2) NOT NULL,
-	ValidFlag Binary,
 	CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
-CREATE TABLE AdsBI.AdsTransactionDetails(
+CREATE OR REPLACE TABLE AdsBI.AdsTransactionDetails(
 	Date date NOT NULL,
 	CustomerID int NOT NULL,
 	ProductID int NOT NULL,
@@ -66,29 +64,15 @@ CREATE TABLE AdsBI.AdsTransactionDetails(
 	CONSTRAINT FK_Ads FOREIGN KEY (AdsID) REFERENCES AdsBI.AdsHeaderDetails(AdsID)
 );
 
--- Set up Snowpipe
--- create pipe and change accessibility
-ALTER PIPE AdsBI.AdsPipe  SET PIPE_EXECUTION_PAUSED=true;
-ALTER PIPE AdsBI.ProductPipe SET PIPE_EXECUTION_PAUSED=true;
-ALTER PIPE AdsBI.CustomerPipe SET PIPE_EXECUTION_PAUSED=true;
-ALTER PIPE AdsBI.TransactionPipe SET PIPE_EXECUTION_PAUSED=true;
 
-create pipe AdsBI.AdsPipe if not exists as copy into AdsBI.AdsHeaderDetails from @AdsBI.%AdsHeaderDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-create pipe AdsBI.ProductPipe if not exists as copy into AdsBI.ProductDetails from @AdsBI.%ProductDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-create pipe AdsBI.CustomerPipe if not exists as copy into AdsBI.CustomerDetails from @AdsBI.%CustomerDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-create pipe AdsBI.TransactionPipe if not exists as copy into AdsBI.AdsTransactionDetails from @AdsBI.%AdsTransactionDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-grant ownership on pipe AdsBI.AdsPipe to role accountadmin;
-grant ownership on pipe AdsBI.ProductPipe to role accountadmin;
-grant ownership on pipe AdsBI.CustomerPipe to role accountadmin;
-grant ownership on pipe AdsBI.TransactionPipe to role accountadmin;
---Create dim/fact tables in warehouse
+-- CREATE DIM/FACT TABLES
+
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
     (ProductKey int identity(1,1),
     ProductID int NOT NULL,
     ProductName nvarchar(200) NOT NULL,
     Cost number NOT NULL,
     Price number NOT NULL,
-    ValidFlag boolean NOT NULL,
     CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductKey));
    
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
@@ -99,9 +83,9 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
     AdsPlatform nvarchar(100) NOT NULL,
     StandardCost number NOT NULL,
     Cost_Per_Click float NOT NULL,
-    ValidFlag boolean NOT NULL,
     CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsKey)
 );
+
 
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
     CustomerKey int identity(1,1),
@@ -109,15 +93,12 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
     CustomerName nvarchar(100) NOT NULL,
     Gender nvarchar(10) NOT NULL,
     Age int NOT NULL,
-    Email nvarchar(100) NOT NULL,
-    Address nvarchar(100) NOT NULL,
     Income int NOT NULL,
     City nvarchar(50) NOT NULL,
     Region nvarchar(100) NOT NULL,
-    RegisteredDate date NOT NULL,
-    ValidFlag boolean,
-    CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
+    CONSTRAINT PK_CustomerDIM PRIMARY KEY (Customerkey)
 );
+
 
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_DATE" (
    DATEKEY        int NOT NULL
@@ -154,108 +135,143 @@ AS
     FROM CTE_MY_DATE;
     
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
-    DateKey char(8) NOT NULL,
+    DateKey int NOT NULL,
     CustomerKey int NOT NULL,
     ProductKey int NOT NULL,
     AdsKey int NOT NULL,
     TimeOnAdSite int NOT NULL,
-    DailySpentOnPlaftForm float  NOT NULL,
+    DailySpentOnPlatForm float  NOT NULL,
     ClickTimes tinyint NOT NULL,
     NumberOfBoughtProduct tinyint NOT NULL,
     IsBoughtFlag boolean NULL,
-    PRIMARY KEY (DateKey, CustomerKey, ProductKey, AdsKey),
-	CONSTRAINT FK_Customer FOREIGN KEY (CustomerKey) REFERENCES ADSBI.DIM_CUSTOMER(CustomerKey),
-	CONSTRAINT FK_Product FOREIGN KEY (ProductKey) REFERENCES ADSBI.DIM_PRODUCT(ProductKey),
-	CONSTRAINT FK_Ads FOREIGN KEY (AdsKey) REFERENCES ADSBI.DIM_ADS(AdsKey)
+    constraint pk_adsfact PRIMARY KEY (DateKey, CustomerKey, ProductKey, AdsKey),
+    CONSTRAINT FK_date FOREIGN KEY (dateKey) REFERENCES ADSBI.DIM_date(DAteKey),
+    CONSTRAINT FK_Customer FOREIGN KEY (CustomerKey) REFERENCES ADSBI.DIM_CUSTOMER(CustomerKey),
+    CONSTRAINT FK_Product FOREIGN KEY (ProductKey) REFERENCES ADSBI.DIM_PRODUCT(ProductKey),
+    CONSTRAINT FK_Ads FOREIGN KEY (AdsKey) REFERENCES ADSBI.DIM_ADS(AdsKey)
 );
 
----CREATE AUTO TASK TO LOAD DATA
-CREATE OR REPLACE STREAM load_stream
-ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS"
+
+---CREATE A STORED PROCEDURE
+
+CREATE OR REPLACE STREAM fact_ads_stream
+ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
 
 CREATE OR REPLACE PROCEDURE load_data_sp()
-  returns float not null
+  returns string
   language javascript
   as     
   $$  
+  var result;
+  var sqlcommand0 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_PRODUCT;`;
+  var sqlcommand1 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_ADS;`;
+  var sqlcommand2 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_CUSTOMER;`;
+  var sqlcommand3= `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.FACT_ADS;`;
+  var sqlcommand4 = `INSERT INTO ADSBI.DIM_ADS (AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click) 
+  SELECT AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click FROM Adsbi.AdsHeaderDetails;`;
+  var sqlcommand5 = `INSERT INTO ADSBI.DIM_CUSTOMER (CustomerID,CustomerName,Gender,Age,Income,City,Region) 
+  SELECT CustomerID,CustomerName,Gender,Age,Income,City,Region FROM AdsBi.CustomerDetails;`;
+  var sqlcommand6= ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,Cost,Price) 
+  SELECT ProductID, ProductName,Cost,Price FROM AdsBI.ProductDetails;`;
+  var sqlcommand7 = `INSERT INTO ADSBI.FACT_ADS(DateKey,CustomerKey,ProductKey,AdsKey, TimeOnAdSite, DailySpentOnPlaftForm,ClickTimes, NumberOfBoughtProduct, IsBoughtFlag) 
+  SELECT dimdate.DateKey, customer.Customerkey, product.productkey, ads.adskey, transact.TimeOnAdSite, transact.DailySpentOnPlaftForm,transact.ClickTimes, transact.NumberOfBoughtProduct,
+        CASE
+        WHEN transact.NumberOfBoughtProduct >0 THEN True
+        WHEN transact.NumberOfBoughtProduct <1 THEN False
+        END
+        AS IsBoughtFlag
+ FROM fact_ads_stream AS transact
+ JOIN adsbi.dim_ads AS ads ON (transact.adsid=ads.adsid)
+ JOIN adsbi.dim_product AS product ON (transact.productid=product.productid)
+ JOIN adsbi.dim_customer AS customer ON (transact.customerid=customer.customerid)
+ JOIN adsbi.dim_date AS dimdate ON (transact.date=dimdate.date)
+ WHERE transact.METADATA$ACTION = 'INSERT';`;
 
-  var sqlcommand = "
-TRUNCATE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT";
-TRUNCATE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS";
-TRUNCATE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER";
-TRUNCATE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS";
-
-INSERT INTO "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT" (ProductID,ProductName,Cost,Price,ValidFlag)
-SELECT ProductID,ProductName,Cost,Price,hex_decode_string(to_char(ValidFlag)) FROM "FA_PROJECT01_DB"."ADSBI"."PRODUCTDETAILS";
-INSERT INTO "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click,ValidFlag)
-SELECT AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click,hex_decode_string(to_char(ValidFlag))
-FROM "FA_PROJECT01_DB"."ADSBI"."ADSHEADERDETAILS";
-INSERT INTO "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (CustomerID,CustomerName,Gender,Age,Income,City,Region,ValidFlag)
-SELECT CustomerID,CustomerName,Gender,Age,Income,City,Region,hex_decode_string(to_char(ValidFlag))
-FROM "FA_PROJECT01_DB"."ADSBI"."CUSTOMERDETAILS";
-CREATE OR REPLACE TEMPORARY TABLE tmp_table AS SELECT TO_CHAR(DATE(DATE),'YYYYMMDD') AS DATEKEY,CUSTOMERID AS CUSTOMERKEY,PRODUCTID AS PRODUCTKEY,ADSID AS ADSKEY,TIMEONADSITE, DAILYSPENTONPLATFORM ,CLICKTIMES, NUMBEROFBOUGHTPRODUCT,
-IFF(NUMBEROFBOUGHTPRODUCT>0,TRUE,FALSE) AS ISBOUGHTFLAG FROM "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
-
-INSERT INTO "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(DATEKEY,CUSTOMERKEY,PRODUCTKEY,ADSKEY,DAILYSPENTONPLATFORM, TIMEONADSITE, CLICKTIMES, NUMBEROFBOUGHTPRODUCT,ISBOUGHTFLAG)
-SELECT DATEKEY,CUSTOMERKEY,PRODUCTKEY,ADSKEY,DAILYSPENTONPLATFORM,TIMEONADSITE,CLICKTIMES, NUMBEROFBOUGHTPRODUCT,ISBOUGHTFLAG FROM tmp_table;
- "
-  var smtmt = snowflake.createStatement(
-   {
-   sqlText: sql_command,
-   });
-   RETURN;
+ try {
+    snowflake.execute({sqlText: sqlcommand0 });        
+    snowflake.execute({sqlText: sqlcommand1 });
+    snowflake.execute({sqlText: sqlcommand2 });
+    snowflake.execute({sqlText: sqlcommand3 });
+    snowflake.execute({sqlText: sqlcommand4 });
+    snowflake.execute({sqlText: sqlcommand5 });
+    snowflake.execute({sqlText: sqlcommand6 });
+    snowflake.execute({sqlText: sqlcommand7 });
+    result = "Succeeded"
+ }
+ catch(err) {
+ result = "Failed" + err;
+ }
+ return result;
   $$
 ;
 
-CREATE OR REPLACE TASK load_data_task
-  warehouse = FA_Project01_CloudDW
-  schedule = '1 minute'
-  when SYSTEM$STREAM_HAS_DATA('load_stream')
-as
-  call load_data_sp();
-    alter task load_data_task resume
+CREATE OR REPLACE TASK ETL_To_WH
+WAREHOUSE = FA_PROJECT01_CLOUDDW
+SCHEDULE = '1 MINUTE'
+WHEN SYSTEM$STREAM_HAS_DATA('fact_ads_stream')
+AS
+call load_data_sp();
+ALTER TASK ETL_To_WH RESUME;
 
 
----UNLOAD DATA
+-----CREATE STORED PROCEDURE TO UNLOAD DATA
 
---please help input 4 seperate paths for 4 tables and input 
 
-CREATE OR REPLACE STREAM unload_stream
+CREATE OR REPLACE STREAM unload_dimads_stream
+ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS";
+CREATE OR REPLACE STREAM unload_product_stream
+ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT";
+CREATE OR REPLACE STREAM unload_customer_stream
+ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER";
+CREATE OR REPLACE STREAM unload_factads_stream
 ON TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS";
 
-CREATE OR REPLACE PROCEDURE unload_data_sp()
-  returns float not null
-  language javascript
-  as     
-  $$  
-  var sqlcommand = "
-	copy into @adsbi%dim_ads from ad_raw_stream file_format = (TYPE=CSV compression=none) header= true single=true max_file_size=4900000000;
-    get @C:\Users\admin\Downloads\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\src\snowflake\unload_data\table1\* @ADSBI.%AdsHeaderDetails overwrite=true;
-	
-	copy into @adsbi%dim_ads from ad_raw_stream file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true max_file_size=4900000000;
-    get @C:\Users\admin\Downloads\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\src\snowflake\unload_data\table2 @ADSBI.%AdsHeaderDetails overwrite=true;
-
-	copy into @adsbi%dim_ads from ad_raw_stream file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true max_file_size=4900000000;
-    get @C:\Users\admin\Downloads\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\src\snowflake\unload_data\table3 @ADSBI.%AdsHeaderDetails overwrite=true;
-	
-	copy into @adsbi%dim_ads from ad_raw_stream file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8'compression=none) header= true single=true max_file_size=4900000000;
-    get @C:\Users\admin\Downloads\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\Group8_FA_Project01_HCM21_FR_DATA01-khang-bulkload-SQL2SF\src\snowflake\unload_data\table4 @ADSBI.%AdsHeaderDetails overwrite=true;
-	
- "
-  var smtmt = snowflake.createStatement(
-   {
-   sqlText: sql_command,
-   });
-   RETURN;
+CREATE OR REPLACE PROCEDURE my_unload_sp()
+  RETURNS string 
+  LANGUAGE javascript
+  as
   $$
-;
+    var result;
+    var sql_command0 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_dimads AS SELECT ADSKEY,ADSID,ADSNAME,ADSCATEGORY,ADSPLATFORM,STANDARDCOST,COST_PER_CLICK FROM unload_dimads_stream WHERE metadata$action = 'INSERT';`;
+    var sql_command1 = `COPY INTO @adsbi.%dim_ads from tmp_table_dimads file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
+    var sql_command2 = `GET @adsbi.%dim_ads file://D:\unload\table2;`;
+    
+    var sql_command3 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_product AS SELECT PRODUCTKEY,PRODUCTID,PRODUCTNAME,COST,PRICE FROM unload_product_stream WHERE metadata$action = 'INSERT';`;
+    var sql_command4 = `COPY INTO @adsbi.%dim_product from tmp_table_product file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
+    var sql_command5 = `GET @adsbi.%dim_product file://D:\unload\table2`;
+    
+    var sql_command6 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_customer AS SELECT CUSTOMERKEY,CUSTOMERID,CUSTOMERNAME,GENDER,AGE,INCOME,CITY,REGION FROM unload_customer_stream WHERE metadata$action = 'INSERT';`;
+    var sql_command7 = `COPY INTO @adsbi.%dim_customer from tmp_table_customer file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
+    var sql_command8 = `GET @adsbi.%dim_customer file://D:\unload\table3`;
+    
+    var sql_command9 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_factads AS SELECT DATEKEY,CUSTOMERKEY,PRODUCTKEY,ADSKEY,TIMEONADSITE,DAILYSPENTONPLATFORM,CLICKTIMES,NUMBEROFBOUGHTPRODUCT,ISBOUGHTFLAG FROM unload_factads_stream WHERE metadata$action = 'INSERT';`;
+    var sql_command10 = `COPY INTO @adsbi.%fact_ads from tmp_table file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
+    var sql_command11 = `GET @adsbi.%fact_ads file://D:\unload\table4`;
+    
+    try {
+    snowflake.execute ({sqlText: sql_command0});
+    snowflake.execute ({sqlText: sql_command1});
+    snowflake.execute ({sqlText: sql_command2});
+    snowflake.execute ({sqlText: sql_command3});
+    snowflake.execute ({sqlText: sql_command4});
+    snowflake.execute ({sqlText: sql_command5});
+    snowflake.execute ({sqlText: sql_command6});
+    snowflake.execute ({sqlText: sql_command7});
+    snowflake.execute ({sqlText: sql_command8});
+    snowflake.execute ({sqlText: sql_command9});
+    snowflake.execute ({sqlText: sql_command10});
+     snowflake.execute ({sqlText: sql_command11});
+    result = "Succeeded";
+    }
+    catch (err) {
+    result = "Failed"+err;
+    }
+    return result;
+  $$;
 
-CREATE OR REPLACE TASK unload_data_task
-  warehouse = FA_Project01_CloudDW
-  schedule = '1 minute'
-  when SYSTEM$STREAM_HAS_DATA('unload_stream')
-as
-  call unload_data_sp();
-  alter task unload_data_task resume
-
-
+CREATE TASK unload_data_task
+  WAREHOUSE = FA_PROJECT01_CLOUDDW
+  SCHEDULE = '1 minute'
+  WHEN SYSTEM$STREAM_HAS_DATA('unload_dimads_stream')
+AS
+  CALL my_unload_sp();
