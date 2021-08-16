@@ -54,7 +54,7 @@ CREATE OR REPLACE TABLE AdsBI.AdsTransactionDetails(
 	ProductID int NOT NULL,
 	AdsID int NOT NULL,
 	TimeOnAdSite int NOT NULL,
-	DailySpentOnPlaftForm float (2) NOT NULL,
+	DailySpentOnPlatForm float (2) NOT NULL,
 	ClickTimes tinyint NOT NULL,
 	NumberOfBoughtProduct tinyint NOT NULL,
 	PurchaseRate float (2) NULL,
@@ -151,7 +151,6 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
     CONSTRAINT FK_Ads FOREIGN KEY (AdsKey) REFERENCES ADSBI.DIM_ADS(AdsKey)
 );
 
-
 ---CREATE A STORED PROCEDURE
 
 CREATE OR REPLACE STREAM fact_ads_stream
@@ -167,14 +166,15 @@ CREATE OR REPLACE PROCEDURE load_data_sp()
   var sqlcommand1 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_ADS;`;
   var sqlcommand2 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_CUSTOMER;`;
   var sqlcommand3= `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.FACT_ADS;`;
+
   var sqlcommand4 = `INSERT INTO ADSBI.DIM_ADS (AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click) 
   SELECT AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click FROM Adsbi.AdsHeaderDetails;`;
   var sqlcommand5 = `INSERT INTO ADSBI.DIM_CUSTOMER (CustomerID,CustomerName,Gender,Age,Income,City,Region) 
   SELECT CustomerID,CustomerName,Gender,Age,Income,City,Region FROM AdsBi.CustomerDetails;`;
   var sqlcommand6= ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,Cost,Price) 
   SELECT ProductID, ProductName,Cost,Price FROM AdsBI.ProductDetails;`;
-  var sqlcommand7 = `INSERT INTO ADSBI.FACT_ADS(DateKey,CustomerKey,ProductKey,AdsKey, TimeOnAdSite, DailySpentOnPlaftForm,ClickTimes, NumberOfBoughtProduct, IsBoughtFlag) 
-  SELECT dimdate.DateKey, customer.Customerkey, product.productkey, ads.adskey, transact.TimeOnAdSite, transact.DailySpentOnPlaftForm,transact.ClickTimes, transact.NumberOfBoughtProduct,
+  var sqlcommand7 = `INSERT INTO ADSBI.FACT_ADS(DateKey,CustomerKey,ProductKey,AdsKey, TimeOnAdSite, DailySpentOnPlatForm,ClickTimes, NumberOfBoughtProduct, IsBoughtFlag) 
+  SELECT dimdate.DateKey, customer.Customerkey, product.productkey, ads.adskey, transact.TimeOnAdSite, transact.DailySpentOnPlatForm,transact.ClickTimes, transact.NumberOfBoughtProduct,
         CASE
         WHEN transact.NumberOfBoughtProduct >0 THEN True
         WHEN transact.NumberOfBoughtProduct <1 THEN False
@@ -215,8 +215,6 @@ ALTER TASK ETL_To_WH RESUME;
 
 
 -----CREATE STORED PROCEDURE TO UNLOAD DATA
-
-
 CREATE OR REPLACE STREAM unload_dimads_stream
 ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS";
 CREATE OR REPLACE STREAM unload_product_stream
