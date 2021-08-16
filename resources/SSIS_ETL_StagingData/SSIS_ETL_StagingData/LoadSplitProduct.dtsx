@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{238A2BB3-6E53-4253-BF88-AA1B8489248D}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{B0B31A7F-5A97-4DFB-BEB6-752D4D57AFBC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,18 +37,10 @@
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="11"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ValidFlag"
-              DTS:DTSID="{6D36E75E-C909-4DD4-B833-5A97ED0B9EFA}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductID"
-              DTS:DTSID="{A1D136B9-F915-466B-B97C-4D50653C604E}"
+              DTS:DTSID="{C1AF9670-8B60-4578-82CA-0CDA0DD2D99A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductName"
-              DTS:DTSID="{EAAB9D9C-A93C-4B6E-8D32-BAB818C485C5}"
+              DTS:DTSID="{504BF2CF-B64A-427B-A608-8DBAC4E9D2AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductCategory"
-              DTS:DTSID="{1DFE006D-E243-4627-8193-C893C54B1893}"
+              DTS:DTSID="{51F92D5F-2A41-44EE-8A4E-0DF148CCA48F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductColor"
-              DTS:DTSID="{ED827244-E1B7-4338-AD5B-7BB20E8E741E}"
+              DTS:DTSID="{EDDF2DFA-BFFB-45C5-BCB9-5FC7C4968F0A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +75,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="Cost"
-              DTS:DTSID="{9FAA8852-8E92-430D-ACED-67FA10B4B38A}"
+              DTS:DTSID="{0164A88A-A614-49B2-AA0A-C283C143D820}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +83,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="Price"
-              DTS:DTSID="{CFC41141-6623-49B0-B101-43847A0DEDDA}"
+              DTS:DTSID="{6A4F9F6B-7CEC-4306-9E71-8A96C56A4337}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -120,7 +112,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductID"
-              DTS:DTSID="{2EA438D6-A54D-4F0C-A87B-5A22F551B651}"
+              DTS:DTSID="{784C2C1B-0C2D-4F3C-A1F0-213B913D8B50}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +121,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductName"
-              DTS:DTSID="{6269FCF3-1ADA-469A-A211-FBD924E47F46}"
+              DTS:DTSID="{1537FA2F-9838-4452-B8EB-7ACCAF36E681}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +130,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductCategory"
-              DTS:DTSID="{A611BA1A-CD94-4648-BF76-DBDD0E9DCF6B}"
+              DTS:DTSID="{61F5209D-FB6D-4388-94DC-0DD3192962DE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +139,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductColor"
-              DTS:DTSID="{34627A7B-23D0-4D0B-B348-938EC07FA47C}"
+              DTS:DTSID="{9D351A70-1382-4120-85E2-F24F81AF5127}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -155,23 +147,15 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="Cost"
-              DTS:DTSID="{317E0952-BF22-4DB9-A5C5-48BACF4B8984}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="6"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Price"
-              DTS:DTSID="{0A5589B5-9B0C-4241-8071-C42497D85081}"
+              DTS:DTSID="{C3BA98A6-3784-4BAD-8D64-1E6CB5C8BDA5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="11"
+              DTS:DataType="6"
               DTS:TextQualified="True"
-              DTS:ObjectName="ValidFlag"
-              DTS:DTSID="{4A902650-3E70-48F0-8F8A-42E5029BB27A}"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{7280B16E-FD1D-4607-A23E-5E2780E1D391}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -308,19 +292,9 @@
                       cachedName="Price"
                       externalMetadataColumnId="Package\Load SQL to large CSV\Large CSV file.Inputs[Flat File Destination Input].ExternalColumns[Price]"
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[Price]" />
-                    <inputColumn
-                      refId="Package\Load SQL to large CSV\Large CSV file.Inputs[Flat File Destination Input].Columns[ValidFlag]"
-                      cachedDataType="bool"
-                      cachedName="ValidFlag"
-                      externalMetadataColumnId="Package\Load SQL to large CSV\Large CSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load SQL to large CSV\Large CSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                      dataType="bool"
-                      name="ValidFlag" />
                     <externalMetadataColumn
                       refId="Package\Load SQL to large CSV\Large CSV file.Inputs[Flat File Destination Input].ExternalColumns[ProductID]"
                       dataType="i4"
@@ -499,22 +473,9 @@
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[Price]"
                       name="Price"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ValidFlag]"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]"
-                      name="ValidFlag"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ValidFlag]"
-                      dataType="bool"
-                      name="ValidFlag" />
                     <externalMetadataColumn
                       refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
                       dataType="i4"
@@ -594,11 +555,6 @@
                       dataType="cy"
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[Price]"
                       name="Price" />
-                    <outputColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ValidFlag]"
-                      dataType="bool"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ValidFlag]"
-                      name="ValidFlag" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -891,33 +847,9 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
-                        <outputColumn
-                          refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]"
-                          dataType="bool"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ValidFlag]"
-                          lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]"
-                          name="ValidFlag"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ValidFlag]"
-                          dataType="bool"
-                          name="ValidFlag" />
                         <externalMetadataColumn
                           refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ProductID]"
                           dataType="i4"
@@ -1051,19 +983,9 @@
                           cachedName="Price"
                           externalMetadataColumnId="Package\Split Loop\Split CSV\split CSV.Inputs[Flat File Destination Input].ExternalColumns[Price]"
                           lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[Price]" />
-                        <inputColumn
-                          refId="Package\Split Loop\Split CSV\split CSV.Inputs[Flat File Destination Input].Columns[ValidFlag]"
-                          cachedDataType="bool"
-                          cachedName="ValidFlag"
-                          externalMetadataColumnId="Package\Split Loop\Split CSV\split CSV.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                          lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Split Loop\Split CSV\split CSV.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                          dataType="bool"
-                          name="ValidFlag" />
                         <externalMetadataColumn
                           refId="Package\Split Loop\Split CSV\split CSV.Inputs[Flat File Destination Input].ExternalColumns[ProductID]"
                           dataType="i4"
@@ -2057,7 +1979,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\Load SQL to large CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42"
           Id="Package\Load SQL to large CSV\SQL table"
@@ -2089,9 +2011,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2113,9 +2033,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

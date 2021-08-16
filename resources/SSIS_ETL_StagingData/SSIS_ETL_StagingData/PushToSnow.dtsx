@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{F59290FB-E173-4C74-A3E3-92FBEB69F0BB}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{5649E7FA-3087-41A3-8450-13A46DBF10BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -117,7 +117,7 @@
         DTS:Name="WorkingDirectory">@[$Project::SnowflakePath] +"\\"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="C:\Python39\python.exe"
+          Executable="C:\Users\KhangNHN\AppData\Local\Programs\Python\Python39\python.exe"
           Arguments="Push2snow.py"
           WorkingDirectory="E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\src\snowflake\" />
       </DTS:ObjectData>

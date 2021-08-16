@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{933F79A0-B364-48C4-98C4-FEDBB87A7536}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{E0C9771F-E567-4D35-9CF6-772D2C53B59D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{EC0816B5-5718-4813-8C3C-CEB57B10BD5B}"
+              DTS:DTSID="{00730C92-1806-499C-9C44-135FDBB1043B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerID"
-              DTS:DTSID="{16FA4F56-4741-4B33-A31B-333E820DF911}"
+              DTS:DTSID="{EB9B105C-5086-4EC2-B42D-9412D198D6E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductID"
-              DTS:DTSID="{4525A387-B38F-4D7B-9B10-D8574B7D4978}"
+              DTS:DTSID="{BD73112F-8C1B-4175-B3B2-6AE25865CA14}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsID"
-              DTS:DTSID="{A2FC6F42-91FD-41E1-8E7B-63EA6393B838}"
+              DTS:DTSID="{BC6D7806-17FA-4359-9DC8-A52C56513020}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="TimeOnAdSite"
-              DTS:DTSID="{E03636E0-C4CC-481D-AAA8-C6408BA488E1}"
+              DTS:DTSID="{5344AFDB-22F6-49D4-8691-27B69FB45662}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,7 +81,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="DailySpentOnPlaftForm"
-              DTS:DTSID="{C47A5168-3829-4668-B230-46C9EFEC42A3}"
+              DTS:DTSID="{5B9AF7AF-4C39-4D40-87FA-01FA9A535C22}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -89,7 +89,7 @@
               DTS:DataType="17"
               DTS:TextQualified="True"
               DTS:ObjectName="ClickTimes"
-              DTS:DTSID="{0A3C202A-7D9E-4B4D-9AF9-5A900D720F43}"
+              DTS:DTSID="{052A8AA7-F9FC-480B-81E2-3366A9069EE5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -97,7 +97,7 @@
               DTS:DataType="17"
               DTS:TextQualified="True"
               DTS:ObjectName="NumberOfBoughtProduct"
-              DTS:DTSID="{17228CCC-FB43-496C-848A-C928651E2BE0}"
+              DTS:DTSID="{533CDDE1-4293-4E2D-AED7-6790754A13E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PurchaseRate"
-              DTS:DTSID="{A48C8426-B124-4A4F-99E8-F19BE65F32F0}"
+              DTS:DTSID="{49B20067-F571-4F09-8036-CEB1F1F6618E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -135,7 +135,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{A9246939-E777-41ED-859B-D3CE3BB40A92}"
+              DTS:DTSID="{24E356DE-358E-4063-AEB7-C9F2DE560A7A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -143,7 +143,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerID"
-              DTS:DTSID="{0BDE997F-D3F9-4479-AE54-57DF18B7AE7B}"
+              DTS:DTSID="{9039C255-1E24-4E66-A1DD-28E74A171377}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductID"
-              DTS:DTSID="{9FEEDA59-745E-477E-B5CF-F67243A86965}"
+              DTS:DTSID="{6C465158-0A76-4577-BF72-AF469807F21F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="AdsID"
-              DTS:DTSID="{9DE28D02-883F-4691-946D-E9197E456AED}"
+              DTS:DTSID="{B86B6D71-27EC-4C9C-9C01-2C60C702B802}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="TimeOnAdSite"
-              DTS:DTSID="{18EAC0CE-FDA0-40FF-A85D-66E45A4A0C8E}"
+              DTS:DTSID="{E1C789FF-EA5A-47A2-931C-694E7C9AEB4A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="DailySpentOnPlaftForm"
-              DTS:DTSID="{50EF2E5D-A735-45D0-B626-7F7F48FE16E7}"
+              DTS:DTSID="{1D225454-1A81-4E00-8E12-F2B08A637CF1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -183,7 +183,7 @@
               DTS:DataType="17"
               DTS:TextQualified="True"
               DTS:ObjectName="ClickTimes"
-              DTS:DTSID="{BB0A65D1-AE95-4A75-9EC5-957B35E6E269}"
+              DTS:DTSID="{F5E8DB31-4401-4731-872F-5CECC02F2A8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -191,7 +191,7 @@
               DTS:DataType="17"
               DTS:TextQualified="True"
               DTS:ObjectName="NumberOfBoughtProduct"
-              DTS:DTSID="{684FEBC1-5052-427F-93A3-2B82F1B2756D}"
+              DTS:DTSID="{8EABCC9B-7BB9-4612-8082-DCA915595163}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -199,7 +199,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PurchaseRate"
-              DTS:DTSID="{44E86290-0382-4F58-B9DF-6CA5D608ABDF}"
+              DTS:DTSID="{E66D93CE-35DF-41A2-804A-DBB0F2EAA641}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2192,7 +2192,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\Load SQL to large CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42"
           Id="Package\Load SQL to large CSV\SQL table"
@@ -2224,9 +2224,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2248,9 +2246,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

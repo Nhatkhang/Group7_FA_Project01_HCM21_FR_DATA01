@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{B3F1ABE0-B9C9-4B8A-B77C-2CC9BFB5FE06}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{FC851810-6F78-44FE-A23E-54B089730298}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,7 +40,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerID"
-              DTS:DTSID="{3448D4DC-3776-4A82-89F7-94258E9B5A8F}"
+              DTS:DTSID="{8BA584F3-9F83-4713-B509-6EB59108238A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerName"
-              DTS:DTSID="{A9FE5104-F805-4C6E-B803-E486BB355DE0}"
+              DTS:DTSID="{73FB6110-8195-49C1-BB4B-2D7A35E4291C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{4BCEA66E-854B-4043-AE58-A8F1A7AB21BD}"
+              DTS:DTSID="{802CCA52-0EF1-4863-8656-DE3E0325F182}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Email"
-              DTS:DTSID="{F371235B-2075-40AF-81B4-2511CF3937C2}"
+              DTS:DTSID="{E993E691-E97C-4CE1-86B5-84A23E0D87DB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Address"
-              DTS:DTSID="{3AC0709A-81F9-4CF6-B579-0179A144F64F}"
+              DTS:DTSID="{0337818F-8175-4A4B-8C45-656C92FE2CB0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{D19CEB08-7172-482B-99A4-ADAE0655BA7A}"
+              DTS:DTSID="{4F3A7457-B5F8-4DE2-AF8A-2D91964E4304}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Income"
-              DTS:DTSID="{98BD2CEF-37DA-4800-9515-966418C8B924}"
+              DTS:DTSID="{97ABB807-4C6F-4C65-A0DC-434E9ADC7F1C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{CB68D93B-CA6B-4AFE-93BF-0DC6ACEA2680}"
+              DTS:DTSID="{F5A12400-1463-4DA6-BE0A-41E2E0360709}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -110,23 +110,15 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{B8FC448C-609A-45B6-9580-DFADF1FD07D6}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="133"
-              DTS:TextQualified="True"
-              DTS:ObjectName="RegisteredDate"
-              DTS:DTSID="{778410E3-C6A5-40F9-919A-03BA815901C9}"
+              DTS:DTSID="{9A529E59-6507-4B42-BF34-936EE5A60FDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="11"
+              DTS:DataType="133"
               DTS:TextQualified="True"
-              DTS:ObjectName="ValidFlag"
-              DTS:DTSID="{24E5958E-FBCE-4928-9D0C-158B6ADE3FED}"
+              DTS:ObjectName="RegisteredDate"
+              DTS:DTSID="{4251184A-588C-41DF-87E7-855FCCCA4D55}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -155,7 +147,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerID"
-              DTS:DTSID="{DC4BB792-E325-4A4D-B75D-A4D32093CE18}"
+              DTS:DTSID="{0620F0CD-4D81-40FA-9B0A-C0E02409698A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -164,7 +156,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="CustomerName"
-              DTS:DTSID="{2666CBB2-39F1-40F8-A276-5D5983120446}"
+              DTS:DTSID="{493745FB-E96F-4E11-B96A-267822B24EA6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -173,7 +165,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{6179CAD9-8179-4680-BE04-54FB051DEA89}"
+              DTS:DTSID="{E3DD2B93-A4B6-46A5-8749-B82D99726F9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -182,7 +174,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Email"
-              DTS:DTSID="{F0369EFD-CE29-4680-930C-15E572D448FA}"
+              DTS:DTSID="{29825BA2-43A1-4A70-83C0-2533CD301FBB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -191,7 +183,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Address"
-              DTS:DTSID="{D9C58B06-6368-42A3-BD75-B85E9D999EA8}"
+              DTS:DTSID="{A3E9873F-2D16-4597-A892-8ACC04FAB949}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -199,7 +191,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{C3539465-F0C3-4E8E-9326-150498E3EA90}"
+              DTS:DTSID="{BF797778-212A-472D-9C00-A141285F5DB8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -207,7 +199,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Income"
-              DTS:DTSID="{6EBEAC06-43D2-4357-8E4C-044BE3B3793F}"
+              DTS:DTSID="{89A73DA9-7542-4D0B-8E97-7BF438729DEC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -216,7 +208,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{458FFC4A-3920-486D-BFCC-3CAB0CEA11A3}"
+              DTS:DTSID="{F6E904E3-A222-4CFA-ABFF-906C6E132EA9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -225,23 +217,15 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{6F093A6A-E2C8-4926-B6BA-EE5F67B5DBEC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x007C_"
-              DTS:DataType="133"
-              DTS:TextQualified="True"
-              DTS:ObjectName="RegisteredDate"
-              DTS:DTSID="{0CCD4AFB-BAB7-4984-90B8-E1F581EBEFFA}"
+              DTS:DTSID="{9C9088B1-48E2-4BB3-8D1B-A4314A7ED690}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="11"
+              DTS:DataType="133"
               DTS:TextQualified="True"
-              DTS:ObjectName="ValidFlag"
-              DTS:DTSID="{E9AC7C8A-6583-4B61-BB5B-EAC4CABAC500}"
+              DTS:ObjectName="RegisteredDate"
+              DTS:DTSID="{BE1704E1-8A45-4596-926E-07C450BF75EA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -489,22 +473,9 @@
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[RegisteredDate]"
                       name="RegisteredDate"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ValidFlag]"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]"
-                      name="ValidFlag"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[ValidFlag]"
-                      dataType="bool"
-                      name="ValidFlag" />
                     <externalMetadataColumn
                       refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
                       dataType="i4"
@@ -626,11 +597,6 @@
                       dataType="dbDate"
                       lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[RegisteredDate]"
                       name="RegisteredDate" />
-                    <outputColumn
-                      refId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ValidFlag]"
-                      dataType="bool"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Error Output].Columns[ValidFlag]"
-                      name="ValidFlag" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -672,12 +638,6 @@
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Load SQL to large CSV\temp CSV file.Inputs[Flat File Destination Input].Columns[ValidFlag]"
-                      cachedDataType="bool"
-                      cachedName="ValidFlag"
-                      externalMetadataColumnId="Package\Load SQL to large CSV\temp CSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                      lineageId="Package\Load SQL to large CSV\SQL table.Outputs[OLE DB Source Output].Columns[ValidFlag]" />
                     <inputColumn
                       refId="Package\Load SQL to large CSV\temp CSV file.Inputs[Flat File Destination Input].Columns[CustomerID]"
                       cachedDataType="i4"
@@ -747,10 +707,6 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load SQL to large CSV\temp CSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                      dataType="bool"
-                      name="ValidFlag" />
                     <externalMetadataColumn
                       refId="Package\Load SQL to large CSV\temp CSV file.Inputs[Flat File Destination Input].ExternalColumns[CustomerID]"
                       dataType="i4"
@@ -1188,33 +1144,9 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
-                        <outputColumn
-                          refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]"
-                          dataType="bool"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ValidFlag]"
-                          lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]"
-                          name="ValidFlag"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[ValidFlag]"
-                          dataType="bool"
-                          name="ValidFlag" />
                         <externalMetadataColumn
                           refId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].ExternalColumns[CustomerID]"
                           dataType="i4"
@@ -1329,12 +1261,6 @@
                       name="Flat File Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].Columns[ValidFlag]"
-                          cachedDataType="bool"
-                          cachedName="ValidFlag"
-                          externalMetadataColumnId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                          lineageId="Package\Split Loop\Split CSV\CSV file.Outputs[Flat File Source Output].Columns[ValidFlag]" />
-                        <inputColumn
                           refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].Columns[CustomerID]"
                           cachedDataType="i4"
                           cachedName="CustomerID"
@@ -1403,10 +1329,6 @@
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[ValidFlag]"
-                          dataType="bool"
-                          name="ValidFlag" />
                         <externalMetadataColumn
                           refId="Package\Split Loop\Split CSV\SplitCSV file.Inputs[Flat File Destination Input].ExternalColumns[CustomerID]"
                           dataType="i4"
@@ -2459,7 +2381,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\Load SQL to large CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42"
           Id="Package\Load SQL to large CSV\SQL table"
@@ -2503,9 +2425,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2539,9 +2459,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
