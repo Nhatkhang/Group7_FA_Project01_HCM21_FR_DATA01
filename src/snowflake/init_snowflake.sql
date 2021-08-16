@@ -267,9 +267,11 @@ CREATE OR REPLACE PROCEDURE my_unload_sp()
     return result;
   $$;
 
-CREATE TASK unload_data_task
+CREATE TASK unload_data_task 
   WAREHOUSE = FA_PROJECT01_CLOUDDW
   SCHEDULE = '1 minute'
   WHEN SYSTEM$STREAM_HAS_DATA('unload_dimads_stream')
 AS
   CALL my_unload_sp();
+  
+ ALTER TASK unload_data_task resume; 
