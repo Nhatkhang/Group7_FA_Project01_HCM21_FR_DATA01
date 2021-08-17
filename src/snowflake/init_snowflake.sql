@@ -16,7 +16,7 @@ CREATE or REPLACE DATABASE FA_Project01_DB;
 CREATE SCHEMA AdsBI;
 /********************CREATE TABLES***************************/
 -- TABLES for Staging
-CREATE or replace TABLE AdsBI.AdsHeaderDetails (
+CREATE or REPLACE TABLE AdsBI.AdsHeaderDetails (
 	AdsID int NOT NULL,
 	AdsName nvarchar(30) NOT NULL,
 	AdsCategory nvarchar(100) NOT NULL,
@@ -25,7 +25,7 @@ CREATE or replace TABLE AdsBI.AdsHeaderDetails (
 	Cost_Per_Click float(2) NOT NULL,
 	CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsID)
 );
-CREATE or replace TABLE AdsBI.CustomerDetails (
+CREATE or REPLACE TABLE AdsBI.CustomerDetails (
 	CustomerID int NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
 	Gender nvarchar(10) NOT NULL,
@@ -38,7 +38,7 @@ CREATE or replace TABLE AdsBI.CustomerDetails (
 	RegisteredDate date NOT NULL,
 	CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
 );
-CREATE  or replace TABLE AdsBI.ProductDetails (
+CREATE or REPLACE TABLE AdsBI.ProductDetails (
 	ProductID int NOT NULL,
 	ProductName nvarchar(200) NOT NULL,
 	ProductCategory nvarchar(200) NOT NULL,
@@ -47,7 +47,7 @@ CREATE  or replace TABLE AdsBI.ProductDetails (
 	Price float(2) NOT NULL,
 	CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
-CREATE OR REPLACE TABLE AdsBI.AdsTransactionDetails(
+CREATE or REPLACE TABLE AdsBI.AdsTransactionDetails(
 	Date date NOT NULL,
 	CustomerID int NOT NULL,
 	ProductID int NOT NULL,
@@ -66,7 +66,7 @@ CREATE OR REPLACE TABLE AdsBI.AdsTransactionDetails(
 
 -- CREATE DIM/FACT TABLES
 
-CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
     (ProductKey int identity(1,1),
     ProductID int NOT NULL,
     ProductName nvarchar(200) NOT NULL,
@@ -75,7 +75,7 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
     Price number NOT NULL,
     CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductKey));
    
-CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
     AdsKey int identity(1,1),
     AdsID int NOT NULL,
     AdsName nvarchar(30) NOT NULL ,
@@ -87,7 +87,7 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
 );
 
 
-CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
     CustomerKey int identity(1,1),
     CustomerID int NOT NULL,
     CustomerName nvarchar(100) NOT NULL,
@@ -100,7 +100,7 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
 );
 
 
-CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_DATE" (
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_DATE" (
    DATEKEY        int NOT NULL
    ,DATE          DATE        NOT NULL
    ,DAYOFMONTH       SMALLINT    NOT NULL
@@ -116,7 +116,7 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_DATE" (
 AS
   WITH CTE_MY_DATE AS (
     SELECT DATEADD(DAY, SEQ4(), '2017-01-01') AS DATEKEY
-      FROM TABLE(GENERATOR(ROWCOUNT=>2000))  
+      FROM TABLE((ROWCOUNT=>2000))  
   )
   SELECT TO_CHAR(DATE(DATEKEY),'YYYYMMDD'),
          DATE(DATEKEY)
@@ -134,7 +134,7 @@ AS
         ,YEAR(DATEKEY)
     FROM CTE_MY_DATE;
     
-CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
     DateKey int NOT NULL,
     CustomerKey int NOT NULL,
     ProductKey int NOT NULL,
@@ -152,12 +152,12 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
 );
 
 ---LOAD DATA STREAM
-CREATE OR REPLACE STREAM fact_ads_stream
+CREATE or REPLACE STREAM fact_ads_stream
 ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
 
----CREATE A STORED PROCEDURE
+---CREATE A STorED PROCEDURE
 
-CREATE OR REPLACE PROCEDURE load_data_sp()
+CREATE or REPLACE PROCEDURE load_data_sp()
   returns string
   language javascript
   as     
@@ -200,13 +200,13 @@ CREATE OR REPLACE PROCEDURE load_data_sp()
     result = "Succeeded"
  }
  catch(err) {
- result = "Failed" + err;
+ result = "Failed: " + err;
  }
  return result;
   $$
 ;
 
-CREATE OR REPLACE TASK ETL_To_WH
+CREATE or REPLACE TASK ETL_To_WH
 WAREHOUSE = FA_PROJECT01_CLOUDDW
 SCHEDULE = '5 MINUTE'
 WHEN SYSTEM$STREAM_HAS_DATA('fact_ads_stream')
