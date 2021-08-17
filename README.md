@@ -27,6 +27,7 @@ Data is generated based on Python sript. The database (.csv flat files) will inc
 
 4. AdsDetailData.csv
 
+
     This file contains trasaction information with the components:
     - Date: Indicates the date of record.
     - Customer_ID: this is ramdomly select from the customer ID list saved aboved to ensure that the data exist in      CustomerData.

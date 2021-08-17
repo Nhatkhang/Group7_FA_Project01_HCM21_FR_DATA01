@@ -1,5 +1,6 @@
 -- Set up Warehouse
-CREATE WAREHOUSE FA_Project01_CloudDW WITH 
+
+CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW WITH 
 	WAREHOUSE_SIZE = 'XSMALL' 
 	WAREHOUSE_TYPE = 'STANDARD' 
 	AUTO_SUSPEND = 300 
@@ -10,23 +11,21 @@ CREATE WAREHOUSE FA_Project01_CloudDW WITH
 -- Set up Database
 /********************CREATE DATABASE***************************/
 --CREATE DATABASE
-CREATE DATABASE FA_Project01_DB;
+CREATE or REPLACE DATABASE FA_Project01_DB;
 /********************CREATE SCHEMA***************************/
-USE FA_Project01_CloudDB;
 CREATE SCHEMA AdsBI;
 /********************CREATE TABLES***************************/
 -- TABLES for Staging
-CREATE TABLE AdsBI.AdsHeaderDetails (
+CREATE or REPLACE TABLE AdsBI.AdsHeaderDetails (
 	AdsID int NOT NULL,
 	AdsName nvarchar(30) NOT NULL,
 	AdsCategory nvarchar(100) NOT NULL,
 	AdsPlatform nvarchar(100) NOT NULL,
 	StandardCost float(2) NOT NULL,
 	Cost_Per_Click float(2) NOT NULL,
-	ValidFlag Binary,
 	CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsID)
 );
-CREATE TABLE AdsBI.CustomerDetails (
+CREATE or REPLACE TABLE AdsBI.CustomerDetails (
 	CustomerID int NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
 	Gender nvarchar(10) NOT NULL,
@@ -37,26 +36,24 @@ CREATE TABLE AdsBI.CustomerDetails (
 	City nvarchar(50) NOT NULL,
 	Region nvarchar(100) NOT NULL,
 	RegisteredDate date NOT NULL,
-	ValidFlag Binary,
 	CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
 );
-CREATE TABLE AdsBI.ProductDetails (
+CREATE or REPLACE TABLE AdsBI.ProductDetails (
 	ProductID int NOT NULL,
 	ProductName nvarchar(200) NOT NULL,
 	ProductCategory nvarchar(200) NOT NULL,
 	ProductColor nvarchar(100) NOT NULL,
 	Cost float(2) NOT NULL,
 	Price float(2) NOT NULL,
-	ValidFlag Binary,
 	CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
-CREATE TABLE AdsBI.AdsTransactionDetails(
+CREATE or REPLACE TABLE AdsBI.AdsTransactionDetails(
 	Date date NOT NULL,
 	CustomerID int NOT NULL,
 	ProductID int NOT NULL,
 	AdsID int NOT NULL,
 	TimeOnAdSite int NOT NULL,
-	DailySpentOnPlaftForm float (2) NOT NULL,
+	DailySpentOnPlatForm float (2) NOT NULL,
 	ClickTimes tinyint NOT NULL,
 	NumberOfBoughtProduct tinyint NOT NULL,
 	PurchaseRate float (2) NULL,
@@ -66,16 +63,154 @@ CREATE TABLE AdsBI.AdsTransactionDetails(
 	CONSTRAINT FK_Ads FOREIGN KEY (AdsID) REFERENCES AdsBI.AdsHeaderDetails(AdsID)
 );
 
--- Create Trigger
 
--- Set up Snowpipe
--- create pipe and change accessibility
-create pipe AdsBI.AdsPipe if not exists as copy into AdsBI.AdsHeaderDetails from @AdsBI.%AdsHeaderDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-create pipe AdsBI.ProductPipe if not exists as copy into AdsBI.ProductDetails from @AdsBI.%ProductDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-create pipe AdsBI.CustomerPipe if not exists as copy into AdsBI.CustomerDetails from @AdsBI.%CustomerDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-create pipe AdsBI.TransactionPipe if not exists as copy into AdsBI.AdsTransactionDetails from @AdsBI.%AdsTransactionDetails FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8') ON_ERROR = SKIP_FILE;
-grant ownership on pipe AdsBI.AdsPipe to role accountadmin;
-grant ownership on pipe AdsBI.ProductPipe to role accountadmin;
-grant ownership on pipe AdsBI.CustomerPipe to role accountadmin;
-grant ownership on pipe AdsBI.TransactionPipe to role accountadmin;
--- Task
+-- CREATE DIM/FACT TABLES
+
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
+    (ProductKey int identity(1,1),
+    ProductID int NOT NULL,
+    ProductName nvarchar(200) NOT NULL,
+	ProductCategory nvarchar(200) NOT NULL,
+    Cost number NOT NULL,
+    Price number NOT NULL,
+    CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductKey));
+   
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
+    AdsKey int identity(1,1),
+    AdsID int NOT NULL,
+    AdsName nvarchar(30) NOT NULL ,
+    AdsCategory nvarchar(100) NOT NULL,
+    AdsPlatform nvarchar(100) NOT NULL,
+    StandardCost number NOT NULL,
+    Cost_Per_Click float NOT NULL,
+    CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsKey)
+);
+
+
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
+    CustomerKey int identity(1,1),
+    CustomerID int NOT NULL,
+    CustomerName nvarchar(100) NOT NULL,
+    Gender nvarchar(10) NOT NULL,
+    Age int NOT NULL,
+    Income int NOT NULL,
+    City nvarchar(50) NOT NULL,
+    Region nvarchar(100) NOT NULL,
+    CONSTRAINT PK_CustomerDIM PRIMARY KEY (Customerkey)
+);
+
+
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_DATE" (
+   DATEKEY        int NOT NULL
+   ,DATE          DATE        NOT NULL
+   ,DAYOFMONTH       SMALLINT    NOT NULL
+   ,WEEKDAYNAME    VARCHAR(10) NOT NULL
+   ,WEEK     SMALLINT    NOT NULL
+   ,DAYOFWEEK      VARCHAR(9)  NOT NULL
+   ,MONTH            SMALLINT    NOT NULL
+   ,MONTHNAME       CHAR(3)     NOT NULL
+   ,QUARTER          SMALLINT NOT NULL
+  ,YEAR             SMALLINT    NOT NULL,
+  CONSTRAINT PK_DateDim PRIMARY KEY (DATEKEY)
+)
+AS
+  WITH CTE_MY_DATE AS (
+    SELECT DATEADD(DAY, SEQ4(), '2017-01-01') AS DATEKEY
+      FROM TABLE((ROWCOUNT=>2000))  
+  )
+  SELECT TO_CHAR(DATE(DATEKEY),'YYYYMMDD'),
+         DATE(DATEKEY)
+         ,DAY(DATEKEY),
+         DECODE(DAYNAME(DATEKEY),
+    'Mon','Monday','Tue','Tuesday',
+    'Wed','Wednesday','Thu','Thursday',
+    'Fri','Friday','Sat','Saturday',
+          'Sun','Sunday')
+         ,WEEKOFYEAR(DATEKEY)        
+         ,DAYOFWEEK(DATEKEY)
+         ,MONTH(DATEKEY)
+        ,MONTHNAME(DATEKEY),
+         QUARTER(DATEKEY)
+        ,YEAR(DATEKEY)
+    FROM CTE_MY_DATE;
+    
+CREATE or REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
+    DateKey int NOT NULL,
+    CustomerKey int NOT NULL,
+    ProductKey int NOT NULL,
+    AdsKey int NOT NULL,
+    TimeOnAdSite int NOT NULL,
+    DailySpentOnPlatForm float  NOT NULL,
+    ClickTimes tinyint NOT NULL,
+    NumberOfBoughtProduct tinyint NOT NULL,
+    IsBoughtFlag boolean NULL,
+    constraint pk_adsfact PRIMARY KEY (DateKey, CustomerKey, ProductKey, AdsKey),
+    CONSTRAINT FK_date FOREIGN KEY (dateKey) REFERENCES ADSBI.DIM_date(DAteKey),
+    CONSTRAINT FK_Customer FOREIGN KEY (CustomerKey) REFERENCES ADSBI.DIM_CUSTOMER(CustomerKey),
+    CONSTRAINT FK_Product FOREIGN KEY (ProductKey) REFERENCES ADSBI.DIM_PRODUCT(ProductKey),
+    CONSTRAINT FK_Ads FOREIGN KEY (AdsKey) REFERENCES ADSBI.DIM_ADS(AdsKey)
+);
+
+---LOAD DATA STREAM
+CREATE or REPLACE STREAM fact_ads_stream
+ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
+
+---CREATE A STorED PROCEDURE
+
+CREATE or REPLACE PROCEDURE load_data_sp()
+  returns string
+  language javascript
+  as     
+  $$  
+  var result;
+  var sqlcommand0 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_PRODUCT;`;
+  var sqlcommand1 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_ADS;`;
+  var sqlcommand2 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_CUSTOMER;`;
+  var sqlcommand3= `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.FACT_ADS;`;
+
+  var sqlcommand4 = `INSERT INTO ADSBI.DIM_ADS (AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click) 
+  SELECT AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click FROM Adsbi.AdsHeaderDetails;`;
+  var sqlcommand5 = `INSERT INTO ADSBI.DIM_CUSTOMER (CustomerID,CustomerName,Gender,Age,Income,City,Region) 
+  SELECT CustomerID,CustomerName,Gender,Age,Income,City,Region FROM AdsBi.CustomerDetails;`;
+  var sqlcommand6= ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,ProductCategory, Cost,Price) 
+  SELECT ProductID, ProductName, ProductCategory, Cost,Price FROM AdsBI.ProductDetails;`;
+  var sqlcommand7 = `INSERT INTO ADSBI.FACT_ADS(DateKey,CustomerKey,ProductKey,AdsKey, TimeOnAdSite, DailySpentOnPlatForm,ClickTimes, NumberOfBoughtProduct, IsBoughtFlag) 
+  SELECT dimdate.DateKey, customer.Customerkey, product.productkey, ads.adskey, transact.TimeOnAdSite, transact.DailySpentOnPlatForm,transact.ClickTimes, transact.NumberOfBoughtProduct,
+        CASE
+        WHEN transact.NumberOfBoughtProduct >0 THEN True
+        WHEN transact.NumberOfBoughtProduct <1 THEN False
+        END
+        AS IsBoughtFlag
+ FROM fact_ads_stream AS transact
+ JOIN adsbi.dim_ads AS ads ON (transact.adsid=ads.adsid)
+ JOIN adsbi.dim_product AS product ON (transact.productid=product.productid)
+ JOIN adsbi.dim_customer AS customer ON (transact.customerid=customer.customerid)
+ JOIN adsbi.dim_date AS dimdate ON (transact.date=dimdate.date)
+ WHERE transact.METADATA$ACTION = 'INSERT';`;
+
+ try {
+    snowflake.execute({sqlText: sqlcommand0 });        
+    snowflake.execute({sqlText: sqlcommand1 });
+    snowflake.execute({sqlText: sqlcommand2 });
+    snowflake.execute({sqlText: sqlcommand3 });
+    snowflake.execute({sqlText: sqlcommand4 });
+    snowflake.execute({sqlText: sqlcommand5 });
+    snowflake.execute({sqlText: sqlcommand6 });
+    snowflake.execute({sqlText: sqlcommand7 });
+    result = "Succeeded"
+ }
+ catch(err) {
+ result = "Failed: " + err;
+ }
+ return result;
+  $$
+;
+
+CREATE or REPLACE TASK ETL_To_WH
+WAREHOUSE = FA_PROJECT01_CLOUDDW
+SCHEDULE = '5 MINUTE'
+WHEN SYSTEM$STREAM_HAS_DATA('fact_ads_stream')
+AS
+call load_data_sp();
+ALTER TASK ETL_To_WH RESUME;
+
