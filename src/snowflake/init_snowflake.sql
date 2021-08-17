@@ -1,4 +1,3 @@
-----IMPORTANT: PLEASE HELP MODIFY THE FILE PATHS TO SAVE UNLOAD CSV FILES IN GET TASK.
 -- Set up Warehouse
 
 CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW WITH 
@@ -71,6 +70,7 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
     (ProductKey int identity(1,1),
     ProductID int NOT NULL,
     ProductName nvarchar(200) NOT NULL,
+	ProductCategory nvarchar(200) NOT NULL,
     Cost number NOT NULL,
     Price number NOT NULL,
     CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductKey));
@@ -151,10 +151,11 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
     CONSTRAINT FK_Ads FOREIGN KEY (AdsKey) REFERENCES ADSBI.DIM_ADS(AdsKey)
 );
 
----CREATE A STORED PROCEDURE
-
+---LOAD DATA STREAM
 CREATE OR REPLACE STREAM fact_ads_stream
 ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
+
+---CREATE A STORED PROCEDURE
 
 CREATE OR REPLACE PROCEDURE load_data_sp()
   returns string
@@ -171,8 +172,8 @@ CREATE OR REPLACE PROCEDURE load_data_sp()
   SELECT AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click FROM Adsbi.AdsHeaderDetails;`;
   var sqlcommand5 = `INSERT INTO ADSBI.DIM_CUSTOMER (CustomerID,CustomerName,Gender,Age,Income,City,Region) 
   SELECT CustomerID,CustomerName,Gender,Age,Income,City,Region FROM AdsBi.CustomerDetails;`;
-  var sqlcommand6= ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,Cost,Price) 
-  SELECT ProductID, ProductName,Cost,Price FROM AdsBI.ProductDetails;`;
+  var sqlcommand6= ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,ProductCategory, Cost,Price) 
+  SELECT ProductID, ProductName, ProductCategory, Cost,Price FROM AdsBI.ProductDetails;`;
   var sqlcommand7 = `INSERT INTO ADSBI.FACT_ADS(DateKey,CustomerKey,ProductKey,AdsKey, TimeOnAdSite, DailySpentOnPlatForm,ClickTimes, NumberOfBoughtProduct, IsBoughtFlag) 
   SELECT dimdate.DateKey, customer.Customerkey, product.productkey, ads.adskey, transact.TimeOnAdSite, transact.DailySpentOnPlatForm,transact.ClickTimes, transact.NumberOfBoughtProduct,
         CASE
@@ -213,65 +214,3 @@ AS
 call load_data_sp();
 ALTER TASK ETL_To_WH RESUME;
 
-
------CREATE STORED PROCEDURE TO UNLOAD DATA
-CREATE OR REPLACE STREAM unload_dimads_stream
-ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS";
-CREATE OR REPLACE STREAM unload_product_stream
-ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT";
-CREATE OR REPLACE STREAM unload_customer_stream
-ON TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER";
-CREATE OR REPLACE STREAM unload_factads_stream
-ON TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS";
-
-CREATE OR REPLACE PROCEDURE my_unload_sp()
-  RETURNS string 
-  LANGUAGE javascript
-  as
-  $$
-    var result;
-    var sql_command0 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_dimads AS SELECT ADSKEY,ADSID,ADSNAME,ADSCATEGORY,ADSPLATFORM,STANDARDCOST,COST_PER_CLICK FROM unload_dimads_stream WHERE metadata$action = 'INSERT';`;
-    var sql_command1 = `COPY INTO @adsbi.%dim_ads from tmp_table_dimads file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
-    var sql_command2 = `GET @adsbi.%dim_ads file://D:\unload\table2;`;
-    
-    var sql_command3 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_product AS SELECT PRODUCTKEY,PRODUCTID,PRODUCTNAME,COST,PRICE FROM unload_product_stream WHERE metadata$action = 'INSERT';`;
-    var sql_command4 = `COPY INTO @adsbi.%dim_product from tmp_table_product file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
-    var sql_command5 = `GET @adsbi.%dim_product file://D:\unload\table2`;
-    
-    var sql_command6 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_customer AS SELECT CUSTOMERKEY,CUSTOMERID,CUSTOMERNAME,GENDER,AGE,INCOME,CITY,REGION FROM unload_customer_stream WHERE metadata$action = 'INSERT';`;
-    var sql_command7 = `COPY INTO @adsbi.%dim_customer from tmp_table_customer file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
-    var sql_command8 = `GET @adsbi.%dim_customer file://D:\unload\table3`;
-    
-    var sql_command9 = `CREATE OR REPLACE TEMPORARY TABLE tmp_table_factads AS SELECT DATEKEY,CUSTOMERKEY,PRODUCTKEY,ADSKEY,TIMEONADSITE,DAILYSPENTONPLATFORM,CLICKTIMES,NUMBEROFBOUGHTPRODUCT,ISBOUGHTFLAG FROM unload_factads_stream WHERE metadata$action = 'INSERT';`;
-    var sql_command10 = `COPY INTO @adsbi.%fact_ads from tmp_table file_format = (TYPE=CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8' compression=none) header= true single=true  overwrite=true;`;
-    var sql_command11 = `GET @adsbi.%fact_ads file://D:\unload\table4`;
-    
-    try {
-    snowflake.execute ({sqlText: sql_command0});
-    snowflake.execute ({sqlText: sql_command1});
-    snowflake.execute ({sqlText: sql_command2});
-    snowflake.execute ({sqlText: sql_command3});
-    snowflake.execute ({sqlText: sql_command4});
-    snowflake.execute ({sqlText: sql_command5});
-    snowflake.execute ({sqlText: sql_command6});
-    snowflake.execute ({sqlText: sql_command7});
-    snowflake.execute ({sqlText: sql_command8});
-    snowflake.execute ({sqlText: sql_command9});
-    snowflake.execute ({sqlText: sql_command10});
-     snowflake.execute ({sqlText: sql_command11});
-    result = "Succeeded";
-    }
-    catch (err) {
-    result = "Failed"+err;
-    }
-    return result;
-  $$;
-
-CREATE TASK unload_data_task 
-  WAREHOUSE = FA_PROJECT01_CLOUDDW
-  SCHEDULE = '1 minute'
-  WHEN SYSTEM$STREAM_HAS_DATA('unload_dimads_stream')
-AS
-  CALL my_unload_sp();
-  
- ALTER TASK unload_data_task resume; 
