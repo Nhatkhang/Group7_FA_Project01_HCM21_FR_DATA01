@@ -2,6 +2,7 @@
 SET NOCOUNT ON
 /********************CREATE DATABASE***************************/
 --CREATE DATABASE
+
 CREATE DATABASE FA_Project01_DB;
 GO
 /********************CREATE SCHEMA***************************/
