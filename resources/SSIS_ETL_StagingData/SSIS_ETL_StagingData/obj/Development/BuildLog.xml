@@ -2,38 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS_ETL_StagingData</Name>
-    <LastWriteTime>2021-08-16T05:09:57.8494432Z</LastWriteTime>
+    <LastWriteTime>2021-09-01T13:29:42.3290759Z</LastWriteTime>
     <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>AdsBI.dtsx</Name>
-      <LastWriteTime>2021-08-16T04:51:55.9993209Z</LastWriteTime>
+      <LastWriteTime>2021-09-01T13:18:57.9606491Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>PushToSnow.dtsx</Name>
-      <LastWriteTime>2021-08-16T05:12:05.1650323Z</LastWriteTime>
+      <LastWriteTime>2021-09-01T13:29:38.245716Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadSplitAds.dtsx</Name>
-      <LastWriteTime>2021-08-16T05:02:29.1824829Z</LastWriteTime>
+      <LastWriteTime>2021-08-30T04:17:34.9389526Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadSplitProduct.dtsx</Name>
-      <LastWriteTime>2021-08-16T04:55:08.0276967Z</LastWriteTime>
+      <LastWriteTime>2021-08-30T04:17:34.9429709Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadSplitCustomer.dtsx</Name>
-      <LastWriteTime>2021-08-16T04:54:13.0966032Z</LastWriteTime>
+      <LastWriteTime>2021-08-30T04:17:34.9419644Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadTransaction.dtsx</Name>
-      <LastWriteTime>2021-08-16T05:09:57.8094406Z</LastWriteTime>
+      <LastWriteTime>2021-08-30T04:17:34.9469489Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
