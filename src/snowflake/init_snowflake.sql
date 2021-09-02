@@ -1,6 +1,5 @@
--- Set up Warehouse
-
-CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW WITH 
+-- SET UP WAREHOUSE
+CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW_LOADING WITH 
 	WAREHOUSE_SIZE = 'XSMALL' 
 	WAREHOUSE_TYPE = 'STANDARD' 
 	AUTO_SUSPEND = 300 
@@ -8,13 +7,31 @@ CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW WITH
 	MIN_CLUSTER_COUNT = 1 
 	MAX_CLUSTER_COUNT = 2 
 	SCALING_POLICY = 'STANDARD';
--- Set up Database
-/********************CREATE DATABASE***************************/
---CREATE DATABASE
+
+CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW_TRANSFORM WITH 
+	WAREHOUSE_SIZE = 'XSMALL' 
+	WAREHOUSE_TYPE = 'STANDARD' 
+	AUTO_SUSPEND = 300 
+	AUTO_RESUME = TRUE 
+	MIN_CLUSTER_COUNT = 1 
+	MAX_CLUSTER_COUNT = 2 
+	SCALING_POLICY = 'STANDARD';
+
+CREATE or REPLACE WAREHOUSE FA_Project01_CloudDW_BI WITH 
+	WAREHOUSE_SIZE = 'XSMALL' 
+	WAREHOUSE_TYPE = 'STANDARD' 
+	AUTO_SUSPEND = 300 
+	AUTO_RESUME = TRUE 
+	MIN_CLUSTER_COUNT = 1 
+	MAX_CLUSTER_COUNT = 2 
+	SCALING_POLICY = 'STANDARD';
+
+-- SET UP DATABASE
+-- CREATE DATABASE
 CREATE or REPLACE DATABASE FA_Project01_DB;
-/********************CREATE SCHEMA***************************/
+
 CREATE SCHEMA AdsBI;
-/********************CREATE TABLES***************************/
+
 -- TABLES for Staging
 CREATE or replace TABLE AdsBI.AdsHeaderDetails (
 	AdsID int NOT NULL,
@@ -25,6 +42,7 @@ CREATE or replace TABLE AdsBI.AdsHeaderDetails (
 	Cost_Per_Click float(2) NOT NULL,
 	CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsID)
 );
+
 CREATE or replace TABLE AdsBI.CustomerDetails (
 	CustomerID int NOT NULL,
 	CustomerName nvarchar(100) NOT NULL,
@@ -38,6 +56,7 @@ CREATE or replace TABLE AdsBI.CustomerDetails (
 	RegisteredDate date NOT NULL,
 	CONSTRAINT PK_CustomerDIM PRIMARY KEY (CustomerID)
 );
+
 CREATE  or replace TABLE AdsBI.ProductDetails (
 	ProductID int NOT NULL,
 	ProductName nvarchar(200) NOT NULL,
@@ -47,6 +66,7 @@ CREATE  or replace TABLE AdsBI.ProductDetails (
 	Price float(2) NOT NULL,
 	CONSTRAINT PK_ProductDIM PRIMARY KEY (ProductID)
 );
+
 CREATE OR REPLACE TABLE AdsBI.AdsTransactionDetails(
 	Date date NOT NULL,
 	CustomerID int NOT NULL,
@@ -65,7 +85,6 @@ CREATE OR REPLACE TABLE AdsBI.AdsTransactionDetails(
 
 
 -- CREATE DIM/FACT TABLES
-
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_PRODUCT"
     (ProductKey int identity(1,1),
     ProductID int NOT NULL,
@@ -86,7 +105,6 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_ADS" (
     CONSTRAINT PK_AdsDIM PRIMARY KEY (AdsKey)
 );
 
-
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
     CustomerKey int identity(1,1),
     CustomerID int NOT NULL,
@@ -98,7 +116,6 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_CUSTOMER" (
     Region nvarchar(100) NOT NULL,
     CONSTRAINT PK_CustomerDIM PRIMARY KEY (Customerkey)
 );
-
 
 CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."DIM_DATE" (
    DATEKEY        int NOT NULL
@@ -151,12 +168,62 @@ CREATE OR REPLACE TABLE "FA_PROJECT01_DB"."ADSBI"."FACT_ADS"(
     CONSTRAINT FK_Ads FOREIGN KEY (AdsKey) REFERENCES ADSBI.DIM_ADS(AdsKey)
 );
 
----LOAD DATA STREAM
+-- CREATE CSV FILE FORMAT
+CREATE OR REPLACE FILE FORMAT csv_format
+TYPE = CSV FIELD_DELIMITER = '|' BINARY_FORMAT = 'UTF-8';
+
+-- CREATE INTERNAL STAGE
+create or replace stage FA_Project01_DB.AdsBI.AdsHeaderDetails_stage;
+create or replace stage FA_Project01_DB.AdsBI.CustomerDetails_stage;
+create or replace stage FA_Project01_DB.AdsBI.ProductDetails_stage;
+create or replace stage FA_Project01_DB.AdsBI.AdsTransactionDetails_stage;
+
+-- SETUP SNOWPIPE
+create or replace pipe FA_Project01_DB.AdsBI.AdsHeaderDetails_pipe
+as
+copy into FA_Project01_DB.AdsBI.AdsHeaderDetails
+from (
+  select t.*
+  from @FA_Project01_DB.AdsBI.AdsHeaderDetails_stage t
+)
+file_format = csv_format
+ON_ERROR = SKIP_FILE;
+
+create or replace pipe FA_Project01_DB.AdsBI.CustomerDetails_pipe
+as
+copy into FA_Project01_DB.AdsBI.CustomerDetails
+from (
+  select t.*
+  from @FA_Project01_DB.AdsBI.CustomerDetails_stage t
+)
+file_format = csv_format
+ON_ERROR = SKIP_FILE;
+
+create or replace pipe FA_Project01_DB.AdsBI.ProductDetails_pipe
+as
+copy into FA_Project01_DB.AdsBI.ProductDetails
+from (
+  select t.*
+  from @FA_Project01_DB.AdsBI.ProductDetails_stage t
+)
+file_format = csv_format
+ON_ERROR = SKIP_FILE;
+
+create or replace pipe FA_Project01_DB.AdsBI.AdsTransactionDetails_pipe
+as
+copy into FA_Project01_DB.AdsBI.AdsTransactionDetails
+from (
+  select t.*
+  from @FA_Project01_DB.AdsBI.AdsTransactionDetails_stage t
+)
+file_format = csv_format
+ON_ERROR = SKIP_FILE;
+
+-- LOAD DATA STREAM
 CREATE OR REPLACE STREAM fact_ads_stream
 ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
 
----CREATE A STORED PROCEDURE
-
+-- CREATE A STORED PROCEDURE
 CREATE OR REPLACE PROCEDURE load_data_sp()
   returns string
   language javascript
@@ -166,13 +233,13 @@ CREATE OR REPLACE PROCEDURE load_data_sp()
   var sqlcommand0 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_PRODUCT;`;
   var sqlcommand1 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_ADS;`;
   var sqlcommand2 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_CUSTOMER;`;
-  var sqlcommand3= `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.FACT_ADS;`;
+  var sqlcommand3 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.FACT_ADS;`;
 
   var sqlcommand4 = `INSERT INTO ADSBI.DIM_ADS (AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click) 
   SELECT AdsID,AdsName,AdsCategory,AdsPlatform,StandardCost,Cost_Per_Click FROM Adsbi.AdsHeaderDetails;`;
   var sqlcommand5 = `INSERT INTO ADSBI.DIM_CUSTOMER (CustomerID,CustomerName,Gender,Age,Income,City,Region) 
   SELECT CustomerID,CustomerName,Gender,Age,Income,City,Region FROM AdsBi.CustomerDetails;`;
-  var sqlcommand6= ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,ProductCategory, Cost,Price) 
+  var sqlcommand6 = ` INSERT INTO ADSBI.DIM_PRODUCT(ProductID, ProductName,ProductCategory, Cost,Price) 
   SELECT ProductID, ProductName, ProductCategory, Cost,Price FROM AdsBI.ProductDetails;`;
   var sqlcommand7 = `INSERT INTO ADSBI.FACT_ADS(DateKey,CustomerKey,ProductKey,AdsKey, TimeOnAdSite, DailySpentOnPlatForm,ClickTimes, NumberOfBoughtProduct, IsBoughtFlag) 
   SELECT dimdate.DateKey, customer.Customerkey, product.productkey, ads.adskey, transact.TimeOnAdSite, transact.DailySpentOnPlatForm,transact.ClickTimes, transact.NumberOfBoughtProduct,
@@ -189,14 +256,14 @@ CREATE OR REPLACE PROCEDURE load_data_sp()
  WHERE transact.METADATA$ACTION = 'INSERT';`;
 
  try {
-    snowflake.execute({sqlText: sqlcommand0 });        
-    snowflake.execute({sqlText: sqlcommand1 });
-    snowflake.execute({sqlText: sqlcommand2 });
-    snowflake.execute({sqlText: sqlcommand3 });
-    snowflake.execute({sqlText: sqlcommand4 });
-    snowflake.execute({sqlText: sqlcommand5 });
-    snowflake.execute({sqlText: sqlcommand6 });
-    snowflake.execute({sqlText: sqlcommand7 });
+    snowflake.execute({sqlText: sqlcommand0});        
+    snowflake.execute({sqlText: sqlcommand1});
+    snowflake.execute({sqlText: sqlcommand2});
+    snowflake.execute({sqlText: sqlcommand3});
+    snowflake.execute({sqlText: sqlcommand4});
+    snowflake.execute({sqlText: sqlcommand5});
+    snowflake.execute({sqlText: sqlcommand6});
+    snowflake.execute({sqlText: sqlcommand7});
     result = "Succeeded"
  }
  catch(err) {
