@@ -3,16 +3,14 @@ import snowflake.connector
 import configparser
 import argparse
 
-def executesnowsql(sqlfile, logfile, cursor, n_err):
-    logfile.write('File sql process: '+sqlfile +'\n')
-    f= open(sqlfile, 'r', encoding='utf-8')
-    lines = f.readlines()
-    f.close()
-    for line in lines:
+def executesnowsql(processName, sqlCode, logFile, cursor, n_err):
+    logFile.write('File sql process: '+ processName +'\n')
+
+    for line in sqlCode:
         try:
             cursor.execute(line)
         except snowflake.connector.errors.ProgrammingError as e:
-            logfile.write('Error {0}  ({1}): {2}  ({3})+\n'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
+            logFile.write('Error {0}  ({1}): {2}  ({3})+\n'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
             n_err = n_err + 1
     return n_err
 
@@ -20,6 +18,7 @@ def executesnowsql(sqlfile, logfile, cursor, n_err):
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument("config", help="SnowSQL folder path")
 parser.add_argument("snowflakePath", help="Snowflake folder path")
+parser.add_argument("workingFolderPath", help="Working folder path")
 args = parser.parse_args()
 
 config = args.config + "\config"
@@ -48,15 +47,33 @@ conn = snowflake.connector.connect(
 )
 
 cs = conn.cursor()
-dropfile = args.snowflakePath + '\\TruncateData.sql'
-putfile = args.snowflakePath + '\\PutSSIS.sql'
+
+dropFileCode = [
+    'USE DATABASE '+ database + ';',
+    'TRUNCATE TABLE ADSBI.AdsHeaderDetails;',
+    'TRUNCATE TABLE ADSBI.CustomerDetails;',
+    'TRUNCATE TABLE ADSBI.ProductDetails;',
+    'TRUNCATE TABLE ADSBI.AdsTransactionDetails;'
+]
+
+putFileCode = [
+    'USE DATABASE '+ database + ';',
+    'USE WAREHOUSE ' + warehouse + ';',
+    'put file://' + args.workingFolderPath + '\\tmpCSV\\AdsHeaderSplit\\*.csv @AdsBI.AdsHeaderDetails_stage OVERWRITE = TRUE;',
+    'put file://' + args.workingFolderPath + '\\tmpCSV\\ProductSplit\\*.csv @AdsBI.ProductDetails_stage OVERWRITE = TRUE;',
+    'put file://' + args.workingFolderPath + '\\tmpCSV\\CustomerSplit\\*.csv @AdsBI.CustomerDetails_stage OVERWRITE = TRUE;',
+    'put file://' + args.workingFolderPath + '\\tmpCSV\\AdsTransactionSplit\\*.csv @AdsBI.AdsTransactionDetails_stage OVERWRITE = TRUE;'
+]
+
 n_err = 0
 
 print('Loading data to snowflake')
-n_err = executesnowsql(dropfile, w, cs, n_err)
-n_err = executesnowsql(putfile, w, cs, n_err)
+n_err = executesnowsql("Drop File", dropFileCode, w, cs, n_err)
+n_err = executesnowsql("Put File", putFileCode, w, cs, n_err)
+
 cs.close()
 conn.close()
+
 w.write('Finish loading Data to SnowFlake with {0} Error'.format(str(n_err)))
 w.close()
 print('Finish loading Data to SnowFlake with {0} Error'.format(str(n_err)))
