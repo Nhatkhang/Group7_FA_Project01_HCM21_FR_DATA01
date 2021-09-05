@@ -59,7 +59,13 @@ CREATE TABLE [AdsBI].[AdsTransactionDetails](
 	CONSTRAINT FK_Product FOREIGN KEY (ProductID) REFERENCES [AdsBI].[ProductDetails](ProductID),
 	CONSTRAINT FK_Ads FOREIGN KEY (AdsID) REFERENCES [AdsBI].[AdsHeaderDetails](AdsID),
 );
-/********************CREATE VIEW***************************/
+/********************CREATE INDEX***************************/
+CREATE INDEX idx_AdsHeaderDetails 
+ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails](AdsID, AdsCategory, AdsName,AdsPlatform);
+CREATE INDEX idx_CustomerDetails
+ON [FA_Project01_DB].[AdsBI].[CustomerDetails](CustomerID,CustomerName, Gender);
+CREATE INDEX idx_ProductDetails
+on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductName, ProductCategory);
 /********************CREATE LOGEVENT***************************/
 CREATE TABLE [AdsBI].[EventLog](
 	[IDlog] [int] IDENTITY(1,1) NOT NULL,
