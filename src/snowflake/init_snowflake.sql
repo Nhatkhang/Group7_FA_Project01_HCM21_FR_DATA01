@@ -192,18 +192,20 @@ create
 or replace stage FA_Project01_DB.AdsBI.AdsTransactionDetails_stage;
 
 -- SETUP SNOWPIPE
-create
-or replace pipe FA_Project01_DB.AdsBI.AdsHeaderDetails_pipe as copy into FA_Project01_DB.AdsBI.AdsHeaderDetails
+create or replace pipe FA_Project01_DB.AdsBI.AdsHeaderDetails_pipe 
+as copy into FA_Project01_DB.AdsBI.AdsHeaderDetails
 from
     (
         select
             t.*
         from
             @FA_Project01_DB.AdsBI.AdsHeaderDetails_stage t
-    ) file_format = csv_format ON_ERROR = SKIP_FILE;
+    ) 
+file_format = csv_format ON_ERROR = SKIP_FILE;
 
 create
-or replace pipe FA_Project01_DB.AdsBI.CustomerDetails_pipe as copy into FA_Project01_DB.AdsBI.CustomerDetails
+or replace pipe FA_Project01_DB.AdsBI.CustomerDetails_pipe 
+as copy into FA_Project01_DB.AdsBI.CustomerDetails
 from
     (
         select
@@ -212,33 +214,33 @@ from
             @FA_Project01_DB.AdsBI.CustomerDetails_stage t
     ) file_format = csv_format ON_ERROR = SKIP_FILE;
 
-create
-or replace pipe FA_Project01_DB.AdsBI.ProductDetails_pipe as copy into FA_Project01_DB.AdsBI.ProductDetails
+create or replace pipe FA_Project01_DB.AdsBI.ProductDetails_pipe 
+as copy into FA_Project01_DB.AdsBI.ProductDetails
 from
     (
         select
             t.*
         from
             @FA_Project01_DB.AdsBI.ProductDetails_stage t
-    ) file_format = csv_format ON_ERROR = SKIP_FILE;
+    ) 
+file_format = csv_format ON_ERROR = SKIP_FILE;
 
-create
-or replace pipe FA_Project01_DB.AdsBI.AdsTransactionDetails_pipe as copy into FA_Project01_DB.AdsBI.AdsTransactionDetails
+create or replace pipe FA_Project01_DB.AdsBI.AdsTransactionDetails_pipe 
+as copy into FA_Project01_DB.AdsBI.AdsTransactionDetails
 from
     (
         select
             t.*
         from
             @FA_Project01_DB.AdsBI.AdsTransactionDetails_stage t
-    ) file_format = csv_format ON_ERROR = SKIP_FILE;
+    ) 
+file_format = csv_format ON_ERROR = SKIP_FILE;
 
 -- LOAD DATA STREAM
-CREATE
-OR REPLACE STREAM fact_ads_stream ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
+CREATE OR REPLACE STREAM fact_ads_stream ON TABLE "FA_PROJECT01_DB"."ADSBI"."ADSTRANSACTIONDETAILS";
 
 -- CREATE A STORED PROCEDURE
-CREATE
-OR REPLACE PROCEDURE load_data_sp() returns string language javascript as $$ var result;
+CREATE OR REPLACE PROCEDURE load_data_sp() returns string language javascript as $$ var result;
 
 var sqlcommand0 = `TRUNCATE TABLE FA_PROJECT01_DB.ADSBI.DIM_PRODUCT;`;
 

@@ -37,11 +37,11 @@ def executesnowsql(processName, sqlCode, logFile, cursor, n_err):
 def get_private_key_passphrase():
   return '12345'
 
-def loadData(file_list_name, pipe, account, host, user, private_key_text, logger):
+def loadData(file_list_name, pipe, account, host, user, private_key_text, logger, timestamp):
     fileList = os.listdir(args.workingFolderPath + '\\tmpCSV\\' + file_list_name)
-    # fileList_new = [a + ".gz" for a in fileList]
+    fileList_new = [a + ".gz" for a in fileList]
     # print(fileList_new)
-    fileList_new = ['adstransactiondetails_stage/Split0.csv.gz', 'adstransactiondetails_stage/Split100.csv.gz']
+    # fileList_new = ['Split200.csv.gz']
     ingest_manager = SimpleIngestManager(account=account,
                                         host=host,
                                         user=user,
@@ -60,7 +60,7 @@ def loadData(file_list_name, pipe, account, host, user, private_key_text, logger
         exit(1)
 
     # This means Snowflake has received file and will start loading
-    assert(resp['responseCode'] == 'SUCCESS')
+    # assert(resp['responseCode'] == 'SUCCESS')
 
     while True:
         history_resp = ingest_manager.get_history()
@@ -119,6 +119,11 @@ putFileCode = [
     'put file://' + args.workingFolderPath + '\\tmpCSV\\CustomerSplit\\*.csv @' + schema + '.CustomerDetails_stage OVERWRITE = TRUE;',
     'put file://' + args.workingFolderPath + '\\tmpCSV\\AdsTransactionSplit\\*.csv @' + schema + '.AdsTransactionDetails_stage OVERWRITE = TRUE;'
 ]
+#     'copy into AdsBI.AdsHeaderDetails from @ADSBI.AdsHeaderDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;',
+#     'copy into AdsBI.ProductDetails from @ADSBI.ProductDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;',
+#     'copy into AdsBI.CustomerDetails from @ADSBI.CustomerDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;',
+#     'copy into AdsBI.AdsTransactionDetails from @ADSBI.AdsTransactionDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;'
+# ]
 
 removeStageCode = [
     'USE DATABASE '+ database + ';',
@@ -132,6 +137,14 @@ SRA_PATH = args.sraPath + '\\rsa_key.p8'
 LOG_PATH = args.snowflakePath + '\\ingest.log'
 
 w = open(args.snowflakePath + '\\LogSnowPipe.log', 'w')
+
+ts = int(time.time())
+
+path = args.workingFolderPath + '\\tmpCSV\\AdsTransactionSplit'
+files = os.listdir(path)
+
+for index, file in enumerate(files):
+    os.rename(os.path.join(path, file), os.path.join(path, str(ts) + '_' + file))
 
 # Create snowflake connection
 conn = snowflake.connector.connect(
@@ -153,13 +166,6 @@ n_err = executesnowsql("Drop File", dropFileCode, w, cs, n_err)
 n_err = executesnowsql("Remove Stage File", removeStageCode, w, cs, n_err)
 n_err = executesnowsql("Put File", putFileCode, w, cs, n_err)
 
-cs.close()
-conn.close()
-
-w.write('Finish loading Data to SnowFlake with {0} Error'.format(str(n_err)))
-w.close()
-print('Finish loading Data to SnowFlake with {0} Error'.format(str(n_err)))
-
 
 logging.basicConfig(
         filename=LOG_PATH,
@@ -180,7 +186,8 @@ private_key_text = private_key_obj.private_bytes(Encoding.PEM, PrivateFormat.PKC
 #     account + '.snowflakecomputing.com', 
 #     user, 
 #     private_key_text, 
-#     logger
+#     logger,
+#     ts
 # )
 
 # loadData('CustomerSplit', 
@@ -189,7 +196,8 @@ private_key_text = private_key_obj.private_bytes(Encoding.PEM, PrivateFormat.PKC
 #     account + '.snowflakecomputing.com', 
 #     user, 
 #     private_key_text, 
-#     logger
+#     logger,
+#     ts
 # )
 
 # loadData('ProductSplit', 
@@ -198,7 +206,8 @@ private_key_text = private_key_obj.private_bytes(Encoding.PEM, PrivateFormat.PKC
 #     account + '.snowflakecomputing.com', 
 #     user, 
 #     private_key_text, 
-#     logger
+#     logger,
+#     ts
 # )
 
 loadData('AdsTransactionSplit', 
@@ -207,5 +216,15 @@ loadData('AdsTransactionSplit',
     account + '.snowflakecomputing.com', 
     user, 
     private_key_text, 
-    logger
+    logger,
+    ts
 )
+
+n_err = executesnowsql("Remove Stage File", removeStageCode, w, cs, n_err)
+
+cs.close()
+conn.close()
+
+w.write('Finish loading Data to SnowFlake with {0} Error'.format(str(n_err)))
+w.close()
+print('Finish loading Data to SnowFlake with {0} Error'.format(str(n_err)))

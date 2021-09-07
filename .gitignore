@@ -5,3 +5,4 @@ resources/SSIS_ETL_StagingData/LogEvent.txt
 src/snowflake/LogSnowPipe.log
 src/snowflake/PutSSIS.sql
 src/snowflake/ingest.log
+src/snowflake/test_snowflake.py
