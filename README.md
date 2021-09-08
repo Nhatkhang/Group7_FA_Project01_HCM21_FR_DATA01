@@ -89,14 +89,21 @@ Then you can run the following:
     - Change variable *SnowflakePath* with your path that contains **scr/snowflake** such as *$User/src/snowflake*;
     - Change variable *python* with your your path that contains **python.exe** file;
     - Run a trial then if error occurs you can track them down in EvenLog table in you newly created Database;
-    - Deploy SSIS package to your SSISDB.
+    - Deploy SSIS package to your SSISDB. Please ensure that your Integration services catalogs already have set up SSISDB.
 
         **$your-path should not contain any spaces character**
+5. Open SQL Server Management Studio (SSMS) - Integration Services Catalogs > SSISDB
+   - Create Environment & set up Variables within the Environment which coincide with the Parameters from the SSIS project.
+   - Configure Project.
+   - Execute in SSMS Via the Catalog. You need to check the box and choose the correct environment.
+   - Create Agent Job ( see the index 6 for instruction ) and Associate Job to the Environment. Open the Job properties > Configure page and specific which Environment the job should use
 
-5. Open [create_job_run_weekly.sql](./src/mssql/create_job_run_weekly.sql), then personalize your informations to     create job and weekly schedule. Howerever, we do not recommend to do this because of the complexity in modification, reference to our presentation is highly recommended.
+6. Open [create_job_run_weekly.sql](./src/mssql/create_job_run_weekly.sql), then personalize your informations to     create job and weekly schedule. 
     - Please ensure that your SQL Agent access right level is the same as your user account. Please note that, if you fail to do so, the executable file can not be called.
-
-6. Configure your [config.json](./resources/python_source/config.json) then regenerate data [main_gen.py](./resources/python_source/main_gen.py) to update your Database.
+    - If your SQL Agent has already set up Proxy, Operator, please just execute CREATE A JOB/SCHEDULE part.
+    - You need to personalize/modify your informations as required: 
+    IDENTITY, SECRET, email_address, owner_login_name, notify_email_operator_name, command (package path and server name).
+7. Configure your [config.json](./resources/python_source/config.json) then regenerate data [main_gen.py](./resources/python_source/main_gen.py) to update your Database.
 
 **Configuration for generating data**
 
