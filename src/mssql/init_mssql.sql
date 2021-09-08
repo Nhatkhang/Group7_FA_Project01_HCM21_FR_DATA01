@@ -60,12 +60,19 @@ CREATE TABLE [AdsBI].[AdsTransactionDetails](
 	CONSTRAINT FK_Ads FOREIGN KEY (AdsID) REFERENCES [AdsBI].[AdsHeaderDetails](AdsID),
 );
 /********************CREATE INDEX***************************/
-CREATE INDEX idx_AdsHeaderDetails 
-ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails](AdsID, AdsCategory, AdsName,AdsPlatform);
+CREATE unique INDEX idx_AdsHeaderDetails_name 
+ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails]( AdsName);
+CREATE  INDEX idx_AdsHeaderDetails 
+ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails](AdsCategory,AdsPlatform);
+CREATE unique INDEX idx_CustomerDetails_name
+ON [FA_Project01_DB].[AdsBI].[CustomerDetails](CustomerName, Email);
 CREATE INDEX idx_CustomerDetails
-ON [FA_Project01_DB].[AdsBI].[CustomerDetails](CustomerID,CustomerName, Gender);
-CREATE INDEX idx_ProductDetails
-on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductName, ProductCategory);
+ON [FA_Project01_DB].[AdsBI].[CustomerDetails](Gender,Age ,Income ,City,Region);
+CREATE unique INDEX idx_ProductDetails_name
+on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductName);
+CREATE INDEX idx_ProductDetails_category
+on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductCategory, ProductColor);
+
 /********************CREATE LOGEVENT***************************/
 CREATE TABLE [AdsBI].[EventLog](
 	[IDlog] [int] IDENTITY(1,1) NOT NULL,
