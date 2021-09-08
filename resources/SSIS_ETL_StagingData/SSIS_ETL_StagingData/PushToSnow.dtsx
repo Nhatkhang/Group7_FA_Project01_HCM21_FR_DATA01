@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{2E7A5B05-E6AD-4D45-B5D0-7B4AE14BC252}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{F4FB422E-B0FF-40D0-A3EA-5D6662A55512}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -114,12 +114,12 @@
       <DTS:PropertyExpression
         DTS:Name="Executable">@[$Project::PythonPath]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath] +"\\"</DTS:PropertyExpression>
+        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Users\Huy\Anaconda3\python.exe"
-          Arguments="Push2snow.py C:\Users\Huy\.snowsql E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\resources\Working-Folder C:\Users\Huy\ssh_temp2"
-          WorkingDirectory="E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake\" />
+          Arguments="Push2snow.py C:\Users\Huy\.snowsql E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\resources\Working-Folder C:\Users\Huy\ssh_temp"
+          WorkingDirectory="E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
