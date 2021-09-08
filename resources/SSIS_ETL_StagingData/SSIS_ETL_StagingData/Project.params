@@ -8,15 +8,15 @@
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
+        SSIS:Name="Description">Snowflake folder inside Project directory</SSIS:Property>
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\src\snowflake</SSIS:Property>
+        SSIS:Name="Value">E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -29,15 +29,15 @@
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
+        SSIS:Name="Description">Working-folder inside Project directory</SSIS:Property>
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\resources\Working-Folder</SSIS:Property>
+        SSIS:Name="Value">E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\resources\Working-Folder</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -50,15 +50,15 @@
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
+        SSIS:Name="Description">Python path</SSIS:Property>
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\KhangNHN\AppData\Local\Programs\Python\Python39\python.exe</SSIS:Property>
+        SSIS:Name="Value">C:\Users\Huy\Anaconda3\python.exe</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -71,15 +71,15 @@
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
+        SSIS:Name="Description">.snowsql folder</SSIS:Property>
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\KhangNHN\.snowsql</SSIS:Property>
+        SSIS:Name="Value">C:\Users\Huy\.snowsql</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -92,15 +92,57 @@
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
+        SSIS:Name="Description">Error folder to store error log file</SSIS:Property>
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\resources\SSIS_ETL_StagingData</SSIS:Property>
+        SSIS:Name="Value">E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\resources\SSIS_ETL_StagingData</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="ProjectFolderPath">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{3ebb7981-7297-44a0-aeb6-865983bf2623}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description">Project directory</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="SRAPath">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{32558cd2-9458-4fc2-9837-5f0e8e602f6f}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description">Folder that store SRA key</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">C:\Users\Huy\ssh_temp</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

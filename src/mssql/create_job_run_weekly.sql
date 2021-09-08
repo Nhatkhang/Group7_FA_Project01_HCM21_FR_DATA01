@@ -5,8 +5,10 @@
 -- creates credential   
 USE msdb ;  
 GO  
+
 CREATE CREDENTIAL CatalogApplicationCredential WITH IDENTITY = 'DESKTOP-NQAEQ4S\Ha Quyen',   
     SECRET = '*******';  
+
 GO  
 -- creates proxy "proxy test" and assigns
 -- the credential 'CatalogApplicationCredential' to it.  
@@ -33,7 +35,7 @@ GO
 EXEC dbo.sp_add_operator  
     @name = N'OperatorTest',  
     @enabled = 1,  
-    @email_address = N'QUYENMT',  
+    @email_address = N'QUYENMT',
     @pager_address = N'',  
     @weekday_pager_start_time = 080000,  
     @weekday_pager_end_time = 170000,  
@@ -55,6 +57,7 @@ EXEC  msdb.dbo.sp_add_job @job_name=N'Rundemo',
 select @jobId
 GO
 EXEC msdb.dbo.sp_add_jobserver @job_name=N'Rundemo', @server_name = N'DESKTOP-NQAEQ4S'
+
 GO
 USE [msdb]
 GO

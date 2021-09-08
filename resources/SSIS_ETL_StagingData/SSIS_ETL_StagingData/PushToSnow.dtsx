@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{5649E7FA-3087-41A3-8450-13A46DBF10BE}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{F4FB422E-B0FF-40D0-A3EA-5D6662A55512}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -110,16 +110,16 @@
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
-        DTS:Name="Arguments">"Push2snow.py"</DTS:PropertyExpression>
+        DTS:Name="Arguments">"Push2snow.py" + " " +  @[$Project::ConfigsnowsqlPath] + " " +  @[$Project::SnowflakePath] + " " +  @[$Project::WorkingFolderPath] + " " +  @[$Project::SRAPath]</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="Executable">@[$Project::PythonPath]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath] +"\\"</DTS:PropertyExpression>
+        DTS:Name="WorkingDirectory">@[$Project::SnowflakePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ExecuteProcessData
-          Executable="C:\Users\KhangNHN\AppData\Local\Programs\Python\Python39\python.exe"
-          Arguments="Push2snow.py"
-          WorkingDirectory="E:\training_document_data2021\week456-miniproject\project01\Group8_FA_Project01_HCM21_FR_DATA01-main\src\snowflake\" />
+          Executable="C:\Users\Huy\Anaconda3\python.exe"
+          Arguments="Push2snow.py C:\Users\Huy\.snowsql E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\resources\Working-Folder C:\Users\Huy\ssh_temp"
+          WorkingDirectory="E:\fpt\training\Project-2\Group8_FA_Project01_HCM21_FR_DATA01\src\snowflake" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -146,30 +146,30 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitAds"
           TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="189,42"
+          Size="188.8,41.6"
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitCustomer"
           TopLeft="467.5,5.49999999999989" />
         <NodeLayout
-          Size="180,42"
+          Size="180,41.6"
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitProduct"
           TopLeft="227,5.5" />
         <NodeLayout
-          Size="198,42"
+          Size="198.4,41.6"
           Id="Package\Parallel Load SQL to CSV and split\Run LoadSplitTransaction"
           TopLeft="717,5.49999999999989" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="920,103"
-          Size="920,146"
+          PanelSize="920,103.2"
+          Size="920,145.6"
           Id="Package\Parallel Load SQL to CSV and split"
           TopLeft="5.50000000000006,5.49999999999989" />
         <NodeLayout
-          Size="124,42"
+          Size="124,41.6"
           Id="Package\RunScript"
           TopLeft="415,200" />
         <EdgeLayout

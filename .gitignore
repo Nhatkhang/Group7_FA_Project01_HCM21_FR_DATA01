@@ -1,1 +1,9 @@
 __pycache__/
+resources/Working-Folder/tmpCSV
+resources/SSIS_ETL_StagingData/ErrorLog
+resources/SSIS_ETL_StagingData/LogEvent.txt
+src/snowflake/LogSnowPipe.log
+src/snowflake/PutSSIS.sql
+src/snowflake/ingest.log
+src/snowflake/test_snowflake.py
+src/snowflake/TruncateData.sql

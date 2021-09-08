@@ -81,7 +81,3 @@ CREATE TABLE [AdsBI].[EventLog](
 	[EventDescription] [nvarchar] (max) NOT NULL,
 	[Timelog] [date] NULL,
 );
-
-
-
-
