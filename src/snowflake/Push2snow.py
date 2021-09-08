@@ -18,10 +18,6 @@ import logging
 import time
 import datetime
 
-ADSHEADER_PIPE = 'FA_PROJECT01_DB.AdsBI.AdsHeaderDetails_pipe'
-CUSTOMER_PIPE = 'FA_PROJECT01_DB.AdsBI.CustomerDetails_pipe'
-PRODUCT_PIPE = 'FA_PROJECT01_DB.AdsBI.ProductDetails_pipe'
-ADSTRANSACTION_PIPE = 'FA_PROJECT01_DB.AdsBI.AdsTransactionDetails_pipe'
 
 def executesnowsql(processName, sqlCode, logFile, cursor, n_err):
     logFile.write('File sql process: '+ processName +'\n')
@@ -37,7 +33,7 @@ def executesnowsql(processName, sqlCode, logFile, cursor, n_err):
 def get_private_key_passphrase():
   return '12345'
 
-def loadData(file_list_name, pipe, account, host, user, private_key_text, logger, timestamp):
+def loadData(file_list_name, pipe, account, host, user, private_key_text, logger):
     fileList = os.listdir(args.workingFolderPath + '\\tmpCSV\\' + file_list_name)
     fileList_new = [a + ".gz" for a in fileList]
     # print(fileList_new)
@@ -60,8 +56,11 @@ def loadData(file_list_name, pipe, account, host, user, private_key_text, logger
         exit(1)
 
     # This means Snowflake has received file and will start loading
-    # assert(resp['responseCode'] == 'SUCCESS')
+    assert(resp['responseCode'] == 'SUCCESS')
 
+    return ingest_manager
+
+def getHistoryReport(ingest_manager):
     while True:
         history_resp = ingest_manager.get_history()
 
@@ -80,9 +79,20 @@ def loadData(file_list_name, pipe, account, host, user, private_key_text, logger
         print('\nHistory scan report: \n')
         print(history_range_resp)
 
+def changeFilename(workingPath, timestamp):
+    tmpPath = ['\\tmpCSV\\AdsHeaderSplit', '\\tmpCSV\\AdsTransactionSplit', '\\tmpCSV\\CustomerSplit', '\\tmpCSV\\ProductSplit']
+
+    for tmp in tmpPath:
+        path = workingPath + tmp
+        files = os.listdir(path)
+
+        # Add prefix (timestamp) to all filenames
+        for file in files:
+            # file: string before "_" will be removed
+            os.rename(os.path.join(path, file), os.path.join(path, str(timestamp) + '_' + file.split("_")[-1]))
 
 # Create arguments
-parser = argparse.ArgumentParser(description='Process some integers.')
+parser = argparse.ArgumentParser()
 parser.add_argument("config", help="SnowSQL folder path")
 parser.add_argument("snowflakePath", help="Snowflake folder path")
 parser.add_argument("workingFolderPath", help="Working folder path")
@@ -102,7 +112,17 @@ warehouse = parser.get("connections.project2", "warehousename")
 database = parser.get("connections.project2", "dbname")
 schema = parser.get("connections.project2", "schemaname")
 
+# Define SRA key
+sra_path = args.sraPath + '\\rsa_key.p8'
+log_path = args.snowflakePath + '\\ingest.log'
 
+# Define snowpipe
+adsheader_pipe = database + '.' + schema + '.AdsHeaderDetails_pipe'
+customer_pipe = database + '.' + schema + '.CustomerDetails_pipe'
+product_pipe = database + '.' + schema + '.ProductDetails_pipe'
+adstransaction_pipe = database + '.' + schema + '.AdsTransactionDetails_pipe'
+
+# SQL code for truncate data on stage table
 dropFileCode = [
     'USE DATABASE '+ database + ';',
     'TRUNCATE TABLE ' + schema + '.AdsHeaderDetails;',
@@ -111,40 +131,31 @@ dropFileCode = [
     'TRUNCATE TABLE ' + schema + '.AdsTransactionDetails;'
 ]
 
+# SQL code for put data to stage table
 putFileCode = [
     'USE DATABASE '+ database + ';',
     'USE WAREHOUSE ' + warehouse + ';',
-    'put file://' + args.workingFolderPath + '\\tmpCSV\\AdsHeaderSplit\\*.csv @' + schema + '.AdsHeaderDetails_stage OVERWRITE = TRUE;',
-    'put file://' + args.workingFolderPath + '\\tmpCSV\\ProductSplit\\*.csv @' + schema + '.ProductDetails_stage OVERWRITE = TRUE;',
-    'put file://' + args.workingFolderPath + '\\tmpCSV\\CustomerSplit\\*.csv @' + schema + '.CustomerDetails_stage OVERWRITE = TRUE;',
-    'put file://' + args.workingFolderPath + '\\tmpCSV\\AdsTransactionSplit\\*.csv @' + schema + '.AdsTransactionDetails_stage OVERWRITE = TRUE;'
+    'PUT file://' + args.workingFolderPath + '\\tmpCSV\\AdsHeaderSplit\\*.csv @' + schema + '.AdsHeaderDetails_stage OVERWRITE = TRUE;',
+    'PUT file://' + args.workingFolderPath + '\\tmpCSV\\ProductSplit\\*.csv @' + schema + '.ProductDetails_stage OVERWRITE = TRUE;',
+    'PUT file://' + args.workingFolderPath + '\\tmpCSV\\CustomerSplit\\*.csv @' + schema + '.CustomerDetails_stage OVERWRITE = TRUE;',
+    'PUT file://' + args.workingFolderPath + '\\tmpCSV\\AdsTransactionSplit\\*.csv @' + schema + '.AdsTransactionDetails_stage OVERWRITE = TRUE;'
 ]
-#     'copy into AdsBI.AdsHeaderDetails from @ADSBI.AdsHeaderDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;',
-#     'copy into AdsBI.ProductDetails from @ADSBI.ProductDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;',
-#     'copy into AdsBI.CustomerDetails from @ADSBI.CustomerDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;',
-#     'copy into AdsBI.AdsTransactionDetails from @ADSBI.AdsTransactionDetails_stage FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = "|" BINARY_FORMAT = "UTF-8") ON_ERROR = SKIP_FILE;'
-# ]
 
+# SQL code for remove data in internal stage
 removeStageCode = [
     'USE DATABASE '+ database + ';',
-    'REMOVE @ADSBI.AdsHeaderDetails_stage;',
-    'REMOVE @ADSBI.CustomerDetails_stage;',
-    'REMOVE @ADSBI.ProductDetails_stage;',
-    'REMOVE @ADSBI.AdsTransactionDetails_stage;'
+    'REMOVE @' + schema + '.AdsHeaderDetails_stage;',
+    'REMOVE @' + schema + '.CustomerDetails_stage;',
+    'REMOVE @' + schema + '.ProductDetails_stage;',
+    'REMOVE @' + schema + '.AdsTransactionDetails_stage;'
 ]
-
-SRA_PATH = args.sraPath + '\\rsa_key.p8'
-LOG_PATH = args.snowflakePath + '\\ingest.log'
 
 w = open(args.snowflakePath + '\\LogSnowPipe.log', 'w')
 
+# Create timestamp
 ts = int(time.time())
 
-path = args.workingFolderPath + '\\tmpCSV\\AdsTransactionSplit'
-files = os.listdir(path)
-
-for index, file in enumerate(files):
-    os.rename(os.path.join(path, file), os.path.join(path, str(ts) + '_' + file))
+changeFilename(args.workingFolderPath, ts)
 
 # Create snowflake connection
 conn = snowflake.connector.connect(
@@ -161,63 +172,69 @@ cs = conn.cursor()
 
 n_err = 0
 
-print('Loading data to snowflake')
+print('Removing data on stage table to snowflake')
 n_err = executesnowsql("Drop File", dropFileCode, w, cs, n_err)
+
+print('Removing internal stage data to snowflake')
 n_err = executesnowsql("Remove Stage File", removeStageCode, w, cs, n_err)
+
+print('Loading data to snowflake')
 n_err = executesnowsql("Put File", putFileCode, w, cs, n_err)
 
 
 logging.basicConfig(
-        filename=LOG_PATH,
+        filename=log_path,
         level=logging.DEBUG)
 logger = getLogger(__name__)
 
-with open(SRA_PATH, 'rb') as pem_in:
+
+with open(sra_path, 'rb') as pem_in:
     pemlines = pem_in.read()
     private_key_obj = load_pem_private_key(pemlines,
-    get_private_key_passphrase().encode(),
-    default_backend())
+        get_private_key_passphrase().encode(),
+        default_backend()
+    )
     
 private_key_text = private_key_obj.private_bytes(Encoding.PEM, PrivateFormat.PKCS8, NoEncryption()).decode('utf-8')
 
-# loadData('AdsHeaderSplit', 
-#     ADSHEADER_PIPE, 
-#     account, 
-#     account + '.snowflakecomputing.com', 
-#     user, 
-#     private_key_text, 
-#     logger,
-#     ts
-# )
-
-# loadData('CustomerSplit', 
-#     CUSTOMER_PIPE, 
-#     account, 
-#     account + '.snowflakecomputing.com', 
-#     user, 
-#     private_key_text, 
-#     logger,
-#     ts
-# )
-
-# loadData('ProductSplit', 
-#     PRODUCT_PIPE, 
-#     account, 
-#     account + '.snowflakecomputing.com', 
-#     user, 
-#     private_key_text, 
-#     logger,
-#     ts
-# )
-
-loadData('AdsTransactionSplit', 
-    ADSTRANSACTION_PIPE, 
+print("Loading AdsHeader data")
+ingest_manager_header = loadData('AdsHeaderSplit', 
+    adsheader_pipe, 
     account, 
     account + '.snowflakecomputing.com', 
     user, 
     private_key_text, 
-    logger,
-    ts
+    logger
+)
+
+print("Loading Customer data")
+ingest_manager_customer = loadData('CustomerSplit', 
+    customer_pipe, 
+    account, 
+    account + '.snowflakecomputing.com', 
+    user, 
+    private_key_text, 
+    logger
+)
+
+print("Loading Product data")
+ingest_manager_product = loadData('ProductSplit', 
+    product_pipe, 
+    account, 
+    account + '.snowflakecomputing.com', 
+    user, 
+    private_key_text, 
+    logger
+)
+
+print("Loading AdsTransaction data")
+ingest_manager_transaction = loadData('AdsTransactionSplit', 
+    adstransaction_pipe, 
+    account, 
+    account + '.snowflakecomputing.com', 
+    user, 
+    private_key_text, 
+    logger
 )
 
 n_err = executesnowsql("Remove Stage File", removeStageCode, w, cs, n_err)
