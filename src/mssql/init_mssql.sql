@@ -61,13 +61,13 @@ CREATE TABLE [AdsBI].[AdsTransactionDetails](
 );
 /********************CREATE INDEX***************************/
 CREATE unique INDEX idx_AdsHeaderDetails_name 
-ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails]( AdsName);
+ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails](AdsName);
 CREATE  INDEX idx_AdsHeaderDetails 
-ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails](AdsCategory,AdsPlatform);
+ON [FA_Project01_DB].[AdsBI].[AdsHeaderDetails](AdsCategory, AdsPlatform);
 CREATE unique INDEX idx_CustomerDetails_name
 ON [FA_Project01_DB].[AdsBI].[CustomerDetails](CustomerName, Email);
 CREATE INDEX idx_CustomerDetails
-ON [FA_Project01_DB].[AdsBI].[CustomerDetails](Gender,Age ,Income ,City,Region);
+ON [FA_Project01_DB].[AdsBI].[CustomerDetails](Gender, Age, Income, City, Region);
 CREATE unique INDEX idx_ProductDetails_name
 on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductName);
 CREATE INDEX idx_ProductDetails_category
