@@ -69,9 +69,9 @@ ON [FA_Project01_DB].[AdsBI].[CustomerDetails](CustomerName, Email);
 CREATE INDEX idx_CustomerDetails
 ON [FA_Project01_DB].[AdsBI].[CustomerDetails](Gender, Age, Income, City, Region);
 CREATE unique INDEX idx_ProductDetails_name
-on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductName);
+ON [FA_Project01_DB].[AdsBI].[ProductDetails](ProductName);
 CREATE INDEX idx_ProductDetails_category
-on [FA_Project01_DB].[AdsBI].[ProductDetails](ProductCategory, ProductColor);
+ON [FA_Project01_DB].[AdsBI].[ProductDetails](ProductCategory, ProductColor);
 
 /********************CREATE LOGEVENT***************************/
 CREATE TABLE [AdsBI].[EventLog](

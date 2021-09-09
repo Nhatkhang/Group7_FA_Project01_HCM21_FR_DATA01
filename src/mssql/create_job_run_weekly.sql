@@ -50,7 +50,7 @@ EXEC  msdb.dbo.sp_add_job @job_name=N'Rundemo1',
 		@category_name=N'[Uncategorized (Local)]', 
 		@owner_login_name=N'DESKTOP-NQAEQ4S\Ha Quyen', 
 		@notify_email_operator_name=N'OperatorTest', @job_id = @jobId OUTPUT
-select @jobId
+SELECT @jobId
 GO
 EXEC msdb.dbo.sp_add_jobserver @job_name=N'Rundemo1', @server_name = N'DESKTOP-NQAEQ4S'
 
@@ -100,6 +100,6 @@ EXEC msdb.dbo.sp_add_jobschedule @job_name=N'Rundemo1', @name=N'RunWeekly1',
 		@active_end_date=99991231, 
 		@active_start_time=0, 
 		@active_end_time=235959, @schedule_id = @schedule_id OUTPUT
-select @schedule_id
+SELECT @schedule_id
 GO
 
