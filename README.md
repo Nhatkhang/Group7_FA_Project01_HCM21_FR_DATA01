@@ -64,6 +64,8 @@ Please note that the Data will be replaced each time the python script is execut
     - Python connetion to snowpipe
     - Create DataWarehouse and auto update tasks.
 6. Visualize your data using PowerBI
+    ![powerbi1](./PBI/PB1-page1.png)
+    ![powerbi2](./PBI/PB1-page2.png)
 7. Update data
 
 ## :rocket: Getting Started
