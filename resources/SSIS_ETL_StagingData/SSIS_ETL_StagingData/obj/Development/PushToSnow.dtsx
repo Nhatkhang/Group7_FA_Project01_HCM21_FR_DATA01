@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{F4FB422E-B0FF-40D0-A3EA-5D6662A55512}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{EB07352C-258B-4D15-A34F-FA570083FDA1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -110,7 +110,7 @@
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
-        DTS:Name="Arguments">"Push2snow.py" + " " +  @[$Project::ConfigsnowsqlPath] + " " +  @[$Project::SnowflakePath] + " " +  @[$Project::WorkingFolderPath] + " " +  @[$Project::SRAPath]</DTS:PropertyExpression>
+        DTS:Name="Arguments">"Push2snow.py" + " " +  @[$Project::ConfigsnowsqlPath] + " " +  @[$Project::SnowflakePath] + " " +  @[$Project::WorkingFolderPath] + " " +   @[$Project::RSAPath]</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="Executable">@[$Project::PythonPath]</DTS:PropertyExpression>
       <DTS:PropertyExpression

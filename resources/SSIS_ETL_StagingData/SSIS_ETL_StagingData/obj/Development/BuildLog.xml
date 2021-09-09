@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSIS_ETL_StagingData</Name>
-    <LastWriteTime>2021-09-06T14:09:42.3577295Z</LastWriteTime>
+    <LastWriteTime>2021-09-09T12:50:58.6613775Z</LastWriteTime>
     <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>AdsBI.dtsx</Name>
-      <LastWriteTime>2021-09-08T08:05:13.2879296Z</LastWriteTime>
+      <LastWriteTime>2021-09-08T08:44:40.5007924Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>PushToSnow.dtsx</Name>
-      <LastWriteTime>2021-09-08T08:13:00.5721426Z</LastWriteTime>
+      <LastWriteTime>2021-09-09T12:50:25.3993203Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

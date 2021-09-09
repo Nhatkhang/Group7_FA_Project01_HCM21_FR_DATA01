@@ -120,7 +120,7 @@ Please note that the Data will be replaced each time the python script is execut
     - Change `ConfigsnowsqlPath` parameter with  your path that contains your snowsql `config` file.
     - Change `SnowflakePath` parameter with your path that contains `scr/snowflake` such as `$User/src/snowflake`.
     - Change `PythonPath` parameter with your path that contains `python.exe` file.
-    - Change `SRAPath` parameter with your path that contains the RSA key.
+    - Change `RSAPath` parameter with your path that contains the RSA key.
     - Run a trial then if error occurs you can track them down in EvenLog table in you newly created Database;
     - Deploy SSIS package to your SSISDB. Please ensure that your Integration services catalogs already have set up SSISDB.
 

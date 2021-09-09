@@ -8,8 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
-        <ServerName>CVPKHANGNHN\KHANGNHN2019</ServerName>
-        <PathOnServer>/SSISDB/test/SSIS_ETL_StagingData</PathOnServer>
+        <ServerName>localhost</ServerName>
+        <PathOnServer>/SSISDB/FA_Project02/SSIS_ETL_StagingData</PathOnServer>
         <StartObjectID>AdsBI.dtsx</StartObjectID>
         <Run64BitRuntime>false</Run64BitRuntime>
         <UserIDs />

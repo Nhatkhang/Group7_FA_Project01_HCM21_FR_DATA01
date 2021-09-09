@@ -127,7 +127,7 @@
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="SRAPath">
+    SSIS:Name="RSAPath">
     <SSIS:Properties>
       <SSIS:Property
         SSIS:Name="ID">{32558cd2-9458-4fc2-9837-5f0e8e602f6f}</SSIS:Property>
